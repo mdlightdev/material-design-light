@@ -33,6 +33,7 @@
     "css": "npm-run-all css-compile css-minify",
     "css-lint": "npm-run-all --aggregate-output --continue-on-error --parallel css-lint-*",
     "css-lint-stylelint": "stylelint \"scss/**/*.{css,scss}\" --cache --cache-location .cache/.stylelintcache --rd",
+    "css-lint-stylelint-check": "stylelint-config-prettier-check",
     "css-lint-vars": "fusv scss/",
     "css-compile": "sass --style expanded --source-map --embed-sources --no-error-css scss/:dist/css/",
     "css-minify": "csso --input dist/css/material-design-light.css --input-source-map dist/css/material-design-light.css.map --output dist/css/material-design-light.min.css",
