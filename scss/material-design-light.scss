@@ -1,5 +1,5 @@
 /*!
- * Material Design Light v0.1.0 (https://github.com/robinlahtinen/material-design-light)
+ * Material Design Light v0.1.0 (https://www.materialdesignlight.com/)
  * Copyright (c) Robin Lahtinen 2022. All rights reserved.
  *
  * This Source Code Form is subject to the terms of the Mozilla Public
@@ -17,6 +17,7 @@
 @include meta.load-css('root');
 @include meta.load-css('themes');
 @include meta.load-css('reset');
+@include meta.load-css('layout');
 @include meta.load-css('card');
 @include meta.load-css('buttons');
 @include meta.load-css('typography');
