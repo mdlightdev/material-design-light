@@ -138,7 +138,15 @@ $utilities: map.merge(
       property: padding-left,
       class: ps,
       values: variables.$spacers,
-    )
+    ),
+    // Gap utility
+    'gap':
+      (
+        responsive: true,
+        property: gap,
+        class: gap,
+        values: variables.$spacers,
+      )
   ),
   $utilities
 );
