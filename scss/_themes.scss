@@ -1,0 +1,187 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+@use 'variables';
+@use 'tokens/sys/themes/light';
+@use 'tokens/sys/themes/dark';
+
+body,
+.#{variables.$prefix}theme-light {
+  // Primary
+  --md-sys-color-primary: #{light.$md-sys-color-primary};
+
+  // Primary container
+  --md-sys-color-primary-container: #{light.$md-sys-color-primary-container};
+
+  // On primary
+  --md-sys-color-on-primary: #{light.$md-sys-color-on-primary};
+
+  // On primary container
+  --md-sys-color-on-primary-container: #{light.$md-sys-color-on-primary-container};
+
+  // Inverse primary
+  --md-sys-color-inverse-primary: #{light.$md-sys-color-inverse-primary};
+
+  // Secondary
+  --md-sys-color-secondary: #{light.$md-sys-color-secondary};
+
+  // Secondary container
+  --md-sys-color-secondary-container: #{light.$md-sys-color-secondary-container};
+
+  // On secondary
+  --md-sys-color-on-secondary: #{light.$md-sys-color-on-secondary};
+
+  // On secondary container
+  --md-sys-color-on-secondary-container: #{light.$md-sys-color-on-secondary-container};
+
+  // Surface
+  --md-sys-color-surface: #{light.$md-sys-color-surface};
+
+  // Surface Variant
+  --md-sys-color-surface-variant: #{light.$md-sys-color-surface-variant};
+
+  // On surface
+  --md-sys-color-on-surface: #{light.$md-sys-color-on-surface};
+
+  // On surface variant
+  --md-sys-color-on-surface-variant: #{light.$md-sys-color-on-surface-variant};
+
+  // Inverse surface
+  --md-sys-color-inverse-surface: #{light.$md-sys-color-inverse-surface};
+
+  // Inverse on surface
+  --md-sys-color-inverse-on-surface: #{light.$md-sys-color-inverse-on-surface};
+
+  // Background
+  --md-sys-color-background: #{light.$md-sys-color-background};
+
+  // On background
+  --md-sys-color-on-background: #{light.$md-sys-color-on-background};
+
+  // Outline
+  --md-sys-color-outline: #{light.$md-sys-color-outline};
+
+  // Error
+  --md-sys-color-error: #{light.$md-sys-color-error};
+
+  // Shadow
+  --md-sys-color-shadow: #{light.$md-sys-color-shadow};
+
+  // Tertiary
+  --md-sys-color-tertiary: #{light.$md-sys-color-tertiary};
+
+  // Tertiary container
+  --md-sys-color-tertiary-container: #{light.$md-sys-color-tertiary-container};
+
+  // On tertiary
+  --md-sys-color-on-tertiary: #{light.$md-sys-color-on-tertiary};
+
+  // On tertiary container
+  --md-sys-color-on-tertiary-container: #{light.$md-sys-color-on-tertiary-container};
+
+  // Error container
+  --md-sys-color-error-container: #{light.$md-sys-color-error-container};
+
+  // On error
+  --md-sys-color-on-error: #{light.$md-sys-color-on-error};
+
+  // On error container
+  --md-sys-color-on-error-container: #{light.$md-sys-color-on-error-container};
+
+  // Surface tint color
+  --md-sys-color-surface-tint-color: var(--md-sys-color-primary);
+
+  // Surface tint
+  --md-sys-color-surface-tint: var(--md-sys-color-primary);
+}
+
+body[data-#{variables.$prefix}theme='dark'],
+.#{variables.$prefix}theme-dark {
+  // Primary
+  --md-sys-color-primary: #{dark.$md-sys-color-primary};
+
+  // Primary container
+  --md-sys-color-primary-container: #{dark.$md-sys-color-primary-container};
+
+  // On primary
+  --md-sys-color-on-primary: #{dark.$md-sys-color-on-primary};
+
+  // On primary container
+  --md-sys-color-on-primary-container: #{dark.$md-sys-color-on-primary-container};
+
+  // Inverse primary
+  --md-sys-color-inverse-primary: #{dark.$md-sys-color-inverse-primary};
+
+  // Secondary
+  --md-sys-color-secondary: #{dark.$md-sys-color-secondary};
+
+  // Secondary container
+  --md-sys-color-secondary-container: #{dark.$md-sys-color-secondary-container};
+
+  // On secondary
+  --md-sys-color-on-secondary: #{dark.$md-sys-color-on-secondary};
+
+  // On secondary container
+  --md-sys-color-on-secondary-container: #{dark.$md-sys-color-on-secondary-container};
+
+  // Surface
+  --md-sys-color-surface: #{dark.$md-sys-color-surface};
+
+  // Surface Variant
+  --md-sys-color-surface-variant: #{dark.$md-sys-color-surface-variant};
+
+  // On surface
+  --md-sys-color-on-surface: #{dark.$md-sys-color-on-surface};
+
+  // On surface variant
+  --md-sys-color-on-surface-variant: #{dark.$md-sys-color-on-surface-variant};
+
+  // Inverse surface
+  --md-sys-color-inverse-surface: #{dark.$md-sys-color-inverse-surface};
+
+  // Inverse on surface
+  --md-sys-color-inverse-on-surface: #{dark.$md-sys-color-inverse-on-surface};
+
+  // Background
+  --md-sys-color-background: #{dark.$md-sys-color-background};
+
+  // On background
+  --md-sys-color-on-background: #{dark.$md-sys-color-on-background};
+
+  // Outline
+  --md-sys-color-outline: #{dark.$md-sys-color-outline};
+
+  // Error
+  --md-sys-color-error: #{dark.$md-sys-color-error};
+
+  // Shadow
+  --md-sys-color-shadow: #{dark.$md-sys-color-shadow};
+
+  // Tertiary
+  --md-sys-color-tertiary: #{dark.$md-sys-color-tertiary};
+
+  // Tertiary container
+  --md-sys-color-tertiary-container: #{dark.$md-sys-color-tertiary-container};
+
+  // On tertiary
+  --md-sys-color-on-tertiary: #{dark.$md-sys-color-on-tertiary};
+
+  // On tertiary container
+  --md-sys-color-on-tertiary-container: #{dark.$md-sys-color-on-tertiary-container};
+
+  // Error container
+  --md-sys-color-error-container: #{dark.$md-sys-color-error-container};
+
+  // On error
+  --md-sys-color-on-error: #{dark.$md-sys-color-on-error};
+
+  // On error container
+  --md-sys-color-on-error-container: #{dark.$md-sys-color-on-error-container};
+
+  // Surface tint color
+  --md-sys-color-surface-tint-color: var(--md-sys-color-primary);
+
+  // Surface tint
+  --md-sys-color-surface-tint: var(--md-sys-color-primary);
+}

@@ -1,0 +1,69 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+@use '../variables';
+@use '../mixins/breakpoints';
+@use '../utilities';
+@use '../../node_modules/rfs/scss' as rfs;
+@use '../mixins/utilities' as mixins-utilities;
+
+// Loop over each breakpoint
+@each $breakpoint in map-keys(variables.$grid-breakpoints) {
+  // Generate media query if needed
+  @include breakpoints.media-breakpoint-up($breakpoint) {
+    $infix: breakpoints.breakpoint-infix(
+      $breakpoint,
+      variables.$grid-breakpoints
+    );
+
+    // Loop over each utility property
+    @each $key, $utility in utilities.$utilities {
+      // The utility can be disabled with `false`, thus check if the utility is a map first
+      // Only proceed if responsive media queries are enabled or if it's the base media query
+      @if type-of($utility) ==
+        'map' and
+        (map-get($utility, responsive) or $infix == '')
+      {
+        @include mixins-utilities.generate-utility($utility, $infix);
+      }
+    }
+  }
+}
+
+// RFS rescaling
+@media (min-width: rfs.$rfs-mq-value) {
+  @each $breakpoint in map-keys(variables.$grid-breakpoints) {
+    $infix: breakpoints.breakpoint-infix(
+      $breakpoint,
+      variables.$grid-breakpoints
+    );
+
+    @if map-get(variables.$grid-breakpoints, $breakpoint) < rfs.$rfs-breakpoint
+    {
+      // Loop over each utility property
+      @each $key, $utility in utilities.$utilities {
+        // The utility can be disabled with `false`, thus check if the utility is a map first
+        // Only proceed if responsive media queries are enabled or if it's the base media query
+        @if type-of($utility) ==
+          'map' and
+          map-get($utility, rfs) and
+          (map-get($utility, responsive) or $infix == '')
+        {
+          @include mixins-utilities.generate-utility($utility, $infix, true);
+        }
+      }
+    }
+  }
+}
+
+// Print utilities
+@media print {
+  @each $key, $utility in utilities.$utilities {
+    // The utility can be disabled with `false`, thus check if the utility is a map first
+    // Then check if the utility needs print styles
+    @if type-of($utility) == 'map' and map-get($utility, print) == true {
+      @include mixins-utilities.generate-utility($utility, '-print');
+    }
+  }
+}

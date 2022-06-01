@@ -1,0 +1,25 @@
+/*!
+ * Material Design Light v0.1.0 (https://github.com/robinlahtinen/material-design-light)
+ * Copyright (c) Robin Lahtinen 2022. All rights reserved.
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+@use 'sass:meta';
+
+// Material Design Tokens
+@include meta.load-css('tokens/sys/themes/light');
+@include meta.load-css('tokens/sys/themes/dark');
+
+// Layout and components
+@include meta.load-css('root');
+@include meta.load-css('themes');
+@include meta.load-css('reset');
+@include meta.load-css('card');
+@include meta.load-css('buttons');
+@include meta.load-css('typography');
+
+// Utilities
+@include meta.load-css('utilities/api');

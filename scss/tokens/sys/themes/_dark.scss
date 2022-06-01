@@ -1,0 +1,92 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+@use '../../ref/palette';
+
+// Primary
+$md-sys-color-primary: palette.$md-ref-palette-primary80;
+
+// Primary container
+$md-sys-color-primary-container: palette.$md-ref-palette-primary30;
+
+// On primary
+$md-sys-color-on-primary: palette.$md-ref-palette-primary20;
+
+// On primary container
+$md-sys-color-on-primary-container: palette.$md-ref-palette-primary90;
+
+// Inverse primary
+$md-sys-color-inverse-primary: palette.$md-ref-palette-primary40;
+
+// Secondary
+$md-sys-color-secondary: palette.$md-ref-palette-secondary80;
+
+// Secondary container
+$md-sys-color-secondary-container: palette.$md-ref-palette-secondary30;
+
+// On secondary
+$md-sys-color-on-secondary: palette.$md-ref-palette-secondary20;
+
+// On secondary container
+$md-sys-color-on-secondary-container: palette.$md-ref-palette-secondary90;
+
+// Surface
+$md-sys-color-surface: palette.$md-ref-palette-neutral10;
+
+// Surface Variant
+$md-sys-color-surface-variant: palette.$md-ref-palette-neutral-variant30;
+
+// On surface
+$md-sys-color-on-surface: palette.$md-ref-palette-neutral90;
+
+// On surface variant
+$md-sys-color-on-surface-variant: palette.$md-ref-palette-neutral-variant80;
+
+// Inverse surface
+$md-sys-color-inverse-surface: palette.$md-ref-palette-neutral90;
+
+// Inverse on surface
+$md-sys-color-inverse-on-surface: palette.$md-ref-palette-neutral20;
+
+// Background
+$md-sys-color-background: palette.$md-ref-palette-neutral10;
+
+// On background
+$md-sys-color-on-background: palette.$md-ref-palette-neutral90;
+
+// Outline
+$md-sys-color-outline: palette.$md-ref-palette-neutral-variant60;
+
+// Error
+$md-sys-color-error: palette.$md-ref-palette-error80;
+
+// Shadow
+$md-sys-color-shadow: palette.$md-ref-palette-neutral0;
+
+// Tertiary
+$md-sys-color-tertiary: palette.$md-ref-palette-tertiary80;
+
+// Tertiary container
+$md-sys-color-tertiary-container: palette.$md-ref-palette-tertiary30;
+
+// On tertiary
+$md-sys-color-on-tertiary: palette.$md-ref-palette-tertiary20;
+
+// On tertiary container
+$md-sys-color-on-tertiary-container: palette.$md-ref-palette-tertiary90;
+
+// Error container
+$md-sys-color-error-container: palette.$md-ref-palette-error30;
+
+// On error
+$md-sys-color-on-error: palette.$md-ref-palette-error20;
+
+// On error container
+$md-sys-color-on-error-container: palette.$md-ref-palette-error80;
+
+// Surface tint color
+$md-sys-color-surface-tint-color: $md-sys-color-primary;
+
+// Surface tint
+$md-sys-color-surface-tint: $md-sys-color-primary;

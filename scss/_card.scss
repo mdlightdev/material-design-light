@@ -1,0 +1,86 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+@use 'functions';
+@use 'variables';
+@use 'tokens/sys/themes/light';
+@use 'tokens/sys/themes/dark';
+@use 'tokens/sys/elevation';
+
+.card {
+  box-sizing: border-box;
+}
+
+.card,
+.card-image-top {
+  border-radius: 0.75rem;
+}
+
+.card-elevated {
+  background: functions.surface-elevation(
+    light.$md-sys-color-surface,
+    light.$md-sys-color-surface-tint,
+    1
+  );
+  @include elevation.md-sys-elevation-level1-box-shadow(
+    light.$md-sys-color-shadow
+  );
+
+  @at-root body[data-#{variables.$prefix}theme='dark'] &,
+    .#{variables.$prefix}theme-dark & {
+    background: functions.surface-elevation(
+      dark.$md-sys-color-surface,
+      dark.$md-sys-color-surface-tint,
+      1
+    );
+    @include elevation.md-sys-elevation-level1-box-shadow(
+      dark.$md-sys-color-shadow
+    );
+  }
+}
+
+.card-filled {
+  background: functions.surface-elevation(
+    light.$md-sys-color-surface-variant,
+    light.$md-sys-color-surface-tint,
+    0
+  );
+
+  @at-root body[data-#{variables.$prefix}theme='dark'] &,
+    .#{variables.$prefix}theme-dark & {
+    background: functions.surface-elevation(
+      dark.$md-sys-color-surface-variant,
+      dark.$md-sys-color-surface-tint,
+      0
+    );
+  }
+}
+
+.card-outlined {
+  background: functions.surface-elevation(
+    light.$md-sys-color-surface,
+    light.$md-sys-color-surface-tint,
+    0
+  );
+  border: solid thin light.$md-sys-color-outline;
+
+  @at-root body[data-#{variables.$prefix}theme='dark'] &,
+    .#{variables.$prefix}theme-dark & {
+    background: functions.surface-elevation(
+      dark.$md-sys-color-surface,
+      dark.$md-sys-color-surface-tint,
+      0
+    );
+    border: solid thin dark.$md-sys-color-outline;
+  }
+}
+
+.card-image,
+.card-image-top {
+  width: 100%;
+}
+
+.card-body {
+  padding: 0 1rem;
+}

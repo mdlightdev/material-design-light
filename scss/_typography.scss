@@ -1,0 +1,30 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+@use 'variables';
+@use 'tokens/sys/typescale';
+
+.headline-large {
+  font-family: var(--#{variables.$prefix}font-sans-serif);
+  font-size: typescale.$md-sys-typescale-headline-large-size;
+  line-height: typescale.$md-sys-typescale-headline-large-line-height;
+  letter-spacing: typescale.$md-sys-typescale-headline-large-tracking;
+  font-weight: typescale.$md-sys-typescale-headline-large-weight;
+}
+
+.headline-medium {
+  font-family: var(--#{variables.$prefix}font-sans-serif);
+  font-size: typescale.$md-sys-typescale-headline-medium-size;
+  line-height: typescale.$md-sys-typescale-headline-medium-line-height;
+  letter-spacing: typescale.$md-sys-typescale-headline-medium-tracking;
+  font-weight: typescale.$md-sys-typescale-headline-medium-weight;
+}
+
+.body-large {
+  font-family: var(--#{variables.$prefix}font-sans-serif);
+  font-size: typescale.$md-sys-typescale-body-large-size;
+  line-height: typescale.$md-sys-typescale-body-large-line-height;
+  letter-spacing: typescale.$md-sys-typescale-body-large-tracking;
+  font-weight: typescale.$md-sys-typescale-body-large-weight;
+}

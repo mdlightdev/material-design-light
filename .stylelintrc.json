@@ -1,0 +1,6 @@
+{
+  "extends": ["stylelint-config-standard-scss", "stylelint-config-prettier"],
+  "rules": {
+    "number-max-precision": 6
+  }
+}

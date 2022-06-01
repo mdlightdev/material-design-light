@@ -1,0 +1,13 @@
+/*
+    Content-Security-Policy: script-src 'self' static.cloudflareinsights.com; connect-src 'self' cloudflareinsights.com; frame-ancestors 'self'
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    Referrer-Policy: strict-origin
+    Permissions-Policy: accelerometer=(), autoplay=(self), camera=(), cross-origin-isolated=(self), display-capture=(), document-domain=(), encrypted-media=(), fullscreen=(self), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(self), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), web-share=(self), xr-spatial-tracking=(), clipboard-read=(), clipboard-write=(), hid=(), idle-detection=(self), serial=(), window-placement=(self)
+    Cross-Origin-Embedder-Policy: require-corp
+    Cross-Origin-Opener-Policy: same-origin
+    Cross-Origin-Resource-Policy: same-origin
+    Access-Control-Allow-Origin: *
+
+/manifest.webmanifest
+    Content-Type: application/manifest+json

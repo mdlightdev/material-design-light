@@ -1,0 +1,25 @@
+{
+  "name": "robinlahtinen/material-design-light",
+  "description": "A lightweight CSS framework implementing the Material Design 3.",
+  "keywords": [
+    "css",
+    "sass",
+    "mobile-first",
+    "responsive",
+    "front-end",
+    "framework",
+    "web",
+    "material-design"
+  ],
+  "homepage": "https://www.materialdesignlight.com/",
+  "authors": [
+    {
+      "name": "Robin Lahtinen",
+      "email": "robin.lahtinen@gmail.com"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/robinlahtinen/material-design-light/issues"
+  },
+  "license": "MPL-2.0"
+}

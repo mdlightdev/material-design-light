@@ -1,0 +1,14 @@
+{
+  "name": "en-US",
+  "shortname": "en",
+  "path": "/",
+  "metadata": {
+    "title": "Material Design Light"
+  },
+  "string": {
+    "site": {
+      "name": "Material Design Light"
+    },
+    "thumbseo": "Pastel photograph with the Material Design Light logo."
+  }
+}

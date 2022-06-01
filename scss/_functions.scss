@@ -1,0 +1,73 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+@use 'sass:color';
+@use 'tokens/sys/elevation';
+@use 'tokens/sys/state';
+
+// Get surface tone based on content layer and surface color.
+// @param Color $content-layer-color Content layer color.
+// @param Color $surface-color Surface color.
+// @param Integer $elevation Elevation level, 0-5.
+@function surface-elevation($content-layer-color, $surface-color, $elevation) {
+  $opacity: elevation.$md-sys-elevation-level0-opacity;
+
+  @if $elevation < 0 or $elevation > 5 {
+    @error 'Surface elevation level must be between 0 to 5.';
+  }
+
+  @if $elevation == 1 {
+    $opacity: elevation.$md-sys-elevation-level1-opacity;
+  }
+
+  @if $elevation == 2 {
+    $opacity: elevation.$md-sys-elevation-level2-opacity;
+  }
+
+  @if $elevation == 3 {
+    $opacity: elevation.$md-sys-elevation-level3-opacity;
+  }
+
+  @if $elevation == 4 {
+    $opacity: elevation.$md-sys-elevation-level4-opacity;
+  }
+
+  @if $elevation == 5 {
+    $opacity: elevation.$md-sys-elevation-level5-opacity;
+  }
+
+  @return color.mix($content-layer-color, $surface-color, 100% - $opacity);
+}
+
+@function state-layer(
+  $container-color,
+  $state-layer-color,
+  $state-layer-opacity
+) {
+  $opacity: 100%;
+
+  @if not
+    index([ 'hover', 'focus', 'pressed', 'dragged' ], $state-layer-opacity)
+  {
+    @error 'State layer opacity identifier is invalid.';
+  }
+
+  @if $state-layer-opacity == 'hover' {
+    $opacity: state.$md-sys-state-hover-state-layer-opacity;
+  }
+
+  @if $state-layer-opacity == 'focus' {
+    $opacity: state.$md-sys-state-focus-state-layer-opacity;
+  }
+
+  @if $state-layer-opacity == 'pressed' {
+    $opacity: state.$md-sys-state-pressed-state-layer-opacity;
+  }
+
+  @if $state-layer-opacity == 'dragged' {
+    $opacity: state.$md-sys-state-dragged-state-layer-opacity;
+  }
+
+  @return color.mix($container-color, $state-layer-color, 100% - $opacity);
+}

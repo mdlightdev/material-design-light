@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="{{ locale.name }}" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if title !== locale.metadata.title %}{{ title }} | {{ locale.metadata.title }}{% else %}{{ locale.metadata.title }}{% endif %}</title>
+    {% if robots %}<meta name="robots" content="{% set comma = joiner() %}{% for r in robots %}{{ comma() }}{% if not loop.first %} {% endif %}{{ r }}{% endfor %}">{% endif %}
+    <link rel="canonical" href="{{ metadata.url + page.url }}">
+    {% for n, i in alternate %}
+      <link rel="alternate" hreflang="{{ n }}" href="{{ metadata.url + i }}">
+    {% endfor %}
+    {% if alternate %}
+      {% if alternate["en-US"] %}
+        <link rel="alternate" hreflang="x-default" href="{{ metadata.url + alternate["en-US"] }}">
+      {% elseif locale.name === "en-US" %}
+        <link rel="alternate" hreflang="x-default" href="{{ metadata.url + page.url }}">
+      {% endif %}
+    {% else %}
+      <link rel="alternate" hreflang="x-default" href="{{ metadata.url + page.url }}">
+    {% endif %}
+    {% if pagination.href.previous %}
+      <link rel="prev" href="{{ metadata.url }}{{ pagination.href.previous }}">
+    {% endif %}
+    {% if pagination.href.next %}
+      <link rel="next" href="{{ metadata.url }}{{ pagination.href.next }}">
+    {% endif %}
+    <link rel="license" href="{{ metadata.url }}{{ locale.path }}license/">
+    {% if description %}<meta name="description" content="{{ description }}">{% endif %}
+    {% if keywords %}<meta name="keywords" content="{% set comma = joiner() %}{% for k in keywords %}{{ comma() }}{% if not loop.first %} {% endif %}{{ k }}{% endfor %}">{% endif %}
+    <meta property="og:title" content="{% if title !== locale.metadata.title %}{{ title }} | {{ locale.metadata.title }}{% else %}{{ locale.metadata.title }}{% endif %}">
+    <meta property="og:type" content="{% if og.type %}{{ og.type }}{% else %}website{% endif %}">
+    {% if thumbnail %}
+      {% if thumbnail.path %}
+        <meta property="og:image" content="{{ metadata.url + thumbnail.path }}">
+        <meta property="og:image:secure_url" content="{{ metadata.url + thumbnail.path }}">
+      {% endif %}
+      {% if thumbnail.type %}
+        <meta property="og:image:type" content="{{ thumbnail.type }}">
+      {% endif %}
+      {% if thumbnail.width %}
+        <meta property="og:image:width" content="{{ thumbnail.width }}">
+      {% endif %}
+      {% if thumbnail.height %}
+        <meta property="og:image:height" content="{{ thumbnail.height }}">
+      {% endif %}
+      {% if thumbnail.alt %}
+        <meta property="og:image:alt" content="{{ thumbnail.alt }}">
+      {% endif %}
+    {% else %}
+      <meta property="og:image" content="{{ metadata.url }}/assets/img/thumb.png">
+      <meta property="og:image:secure_url" content="{{ metadata.url }}/assets/img/thumb.png">
+      <meta property="og:image:type" content="image/png">
+      <meta property="og:image:width" content="1280">
+      <meta property="og:image:height" content="720">
+      <meta property="og:image:alt" content="{{ locale.string.thumbseo }}">
+    {% endif %}
+    <meta property="og:url" content="{{ metadata.url + page.url }}">
+    <meta property="og:locale" content="{{ locale.name | replace("-", "_") }}">
+    {% for n, i in alternate %}
+      <meta property="og:locale:alternate" content="{{ n | replace("-", "_") }}">
+    {% endfor %}
+    <meta property="og:site_name" content="{{ locale.string.site.name }}">
+    {% if og.type and og.type === "article" %}
+      <meta property="og:published_time" content="{{ page.date.toISOString() }}">
+      {% if date_modified %}
+        {% set datemod = date_modified | toDate %}
+        <meta property="og:modified_time" content="{{ datemod.toISOString() }}">
+      {% endif %}
+      {% for label in labels %}
+        <meta property="og:tag" content="{{ label }}">
+      {% endfor %}
+      {% for keyword in keywords %}
+        <meta property="og:tag" content="{{ keyword }}">
+      {% endfor %}
+    {% endif %}
+    <meta name="twitter:card" content="summary">
+    {% if description %}<meta name="twitter:description" content="{{ description }}">{% endif %}
+    <meta name="twitter:title" content="{% if title !== locale.metadata.title %}{{ title }} | {{ locale.metadata.title }}{% else %}{{ locale.metadata.title }}{% endif %}">
+    {% if thumbnail %}
+      {% if thumbnail.path %}
+        <meta name="twitter:image" content="{{ metadata.url + thumbnail.path }}">
+      {% endif %}
+      {% if thumbnail.alt %}
+        <meta name="twitter:image:alt" content="{{ thumbnail.alt }}">
+      {% endif %}
+    {% else %}
+      <meta name="twitter:image" content="{{ metadata.url }}/assets/img/thumb.png">
+      <meta name="twitter:image:alt" content="{{ locale.string.thumbseo }}">
+    {% endif %}
+    <meta name="generator" content="{{ eleventy.generator }}">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg">
+    <link rel="manifest" href="{{ locale.path }}manifest.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#6750a4">
+    <meta name="apple-mobile-web-app-title" content="{{ locale.string.site.name }}">
+    <meta name="application-name" content="{{ locale.string.site.name }}">
+    <meta name="msapplication-TileColor" content="#6750a4">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#6750a4">
+    <link rel="stylesheet" href="/assets/css/material-design-light.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+  </head>
+  <body>
+    {{ content | safe }}
+    {% if scripts %}
+      {% for script in scripts %}
+      <script src="{{ script }}" defer></script>
+      {% endfor %}
+    {% else %}
+      <script> </script>
+    {% endif %}
+  </body>
+</html>

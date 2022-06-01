@@ -1,0 +1,1 @@
+Material Design Light is an open source project made by volunteer contributors: https://github.com/robinlahtinen/material-design-light/graphs/contributors
