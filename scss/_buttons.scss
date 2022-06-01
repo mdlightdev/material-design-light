@@ -19,9 +19,11 @@
 }
 
 .button {
+  -webkit-tap-highlight-color: transparent;
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  gap: 0.5em;
   white-space: nowrap;
   border: 0;
   cursor: pointer;
@@ -44,442 +46,248 @@
   &:disabled {
     cursor: auto;
   }
+
+  .button-icon {
+    font-size: 1.125rem;
+  }
 }
 
 .button-elevated {
   color: light.$md-sys-color-primary;
-  background: functions.surface-elevation(
-    light.$md-sys-color-surface,
-    light.$md-sys-color-surface-tint,
-    1
-  );
+  background: functions.surface-elevation(light.$md-sys-color-surface, light.$md-sys-color-surface-tint, 1);
   padding: 0 1.5rem;
-  @include elevation.md-sys-elevation-level1-box-shadow(
-    light.$md-sys-color-shadow
-  );
+  @include elevation.md-sys-elevation-level1-box-shadow(light.$md-sys-color-shadow);
 
   &:disabled {
     color: color.scale(light.$md-sys-color-on-surface, $alpha: -62%);
-    background: color.scale(
-      functions.surface-elevation(
-        light.$md-sys-color-on-surface,
-        light.$md-sys-color-surface-tint,
-        0
-      ),
-      $alpha: -88%
-    );
-    @include elevation.md-sys-elevation-level0-box-shadow(
-      light.$md-sys-color-shadow
-    );
+    background: color.scale(light.$md-sys-color-on-surface, $alpha: -88%);
+    @include elevation.md-sys-elevation-level0-box-shadow(light.$md-sys-color-shadow);
   }
 
   &:hover:not(:disabled) {
     background: functions.state-layer(
-      functions.surface-elevation(
-        light.$md-sys-color-surface,
-        light.$md-sys-color-primary,
-        2
-      ),
+      functions.surface-elevation(light.$md-sys-color-surface, light.$md-sys-color-surface-tint, 2),
       light.$md-sys-color-primary,
       'hover'
     );
-    @include elevation.md-sys-elevation-level2-box-shadow(
-      light.$md-sys-color-shadow
-    );
+    @include elevation.md-sys-elevation-level2-box-shadow(light.$md-sys-color-shadow);
   }
 
   &:focus-visible:not(:disabled) {
     background: functions.state-layer(
-      functions.surface-elevation(
-        light.$md-sys-color-surface,
-        light.$md-sys-color-primary,
-        1
-      ),
+      functions.surface-elevation(light.$md-sys-color-surface, light.$md-sys-color-surface-tint, 1),
       light.$md-sys-color-primary,
       'focus'
     );
-    @include elevation.md-sys-elevation-level1-box-shadow(
-      light.$md-sys-color-shadow
-    );
+    @include elevation.md-sys-elevation-level1-box-shadow(light.$md-sys-color-shadow);
   }
 
   &:active:not(:disabled) {
     background: functions.state-layer(
-      functions.surface-elevation(
-        light.$md-sys-color-surface,
-        light.$md-sys-color-primary,
-        1
-      ),
+      functions.surface-elevation(light.$md-sys-color-surface, light.$md-sys-color-surface-tint, 1),
       light.$md-sys-color-primary,
       'pressed'
     );
-    @include elevation.md-sys-elevation-level1-box-shadow(
-      light.$md-sys-color-shadow
-    );
+    @include elevation.md-sys-elevation-level1-box-shadow(light.$md-sys-color-shadow);
   }
 
   @at-root body[data-#{variables.$prefix}theme='dark'] &,
     .#{variables.$prefix}theme-dark & {
     color: dark.$md-sys-color-primary;
-    background: functions.surface-elevation(
-      dark.$md-sys-color-surface,
-      dark.$md-sys-color-surface-tint,
-      1
-    );
-    @include elevation.md-sys-elevation-level1-box-shadow(
-      dark.$md-sys-color-shadow
-    );
+    background: functions.surface-elevation(dark.$md-sys-color-surface, dark.$md-sys-color-surface-tint, 1);
+    @include elevation.md-sys-elevation-level1-box-shadow(dark.$md-sys-color-shadow);
 
     &:disabled {
       color: color.scale(dark.$md-sys-color-on-surface, $alpha: -62%);
-      background: color.scale(
-        functions.surface-elevation(
-          dark.$md-sys-color-on-surface,
-          dark.$md-sys-color-surface-tint,
-          0
-        ),
-        $alpha: -88%
-      );
-      @include elevation.md-sys-elevation-level0-box-shadow(
-        dark.$md-sys-color-shadow
-      );
+      background: color.scale(dark.$md-sys-color-on-surface, $alpha: -88%);
+      @include elevation.md-sys-elevation-level0-box-shadow(dark.$md-sys-color-shadow);
     }
 
     &:hover:not(:disabled) {
       background: functions.state-layer(
-        functions.surface-elevation(
-          dark.$md-sys-color-surface,
-          dark.$md-sys-color-primary,
-          2
-        ),
+        functions.surface-elevation(dark.$md-sys-color-surface, dark.$md-sys-color-surface-tint, 2),
         dark.$md-sys-color-primary,
         'hover'
       );
-      @include elevation.md-sys-elevation-level2-box-shadow(
-        dark.$md-sys-color-shadow
-      );
+      @include elevation.md-sys-elevation-level2-box-shadow(dark.$md-sys-color-shadow);
     }
 
     &:focus-visible:not(:disabled) {
       background: functions.state-layer(
-        functions.surface-elevation(
-          dark.$md-sys-color-surface,
-          dark.$md-sys-color-primary,
-          1
-        ),
+        functions.surface-elevation(dark.$md-sys-color-surface, dark.$md-sys-color-surface-tint, 1),
         dark.$md-sys-color-primary,
         'focus'
       );
-      @include elevation.md-sys-elevation-level1-box-shadow(
-        dark.$md-sys-color-shadow
-      );
+      @include elevation.md-sys-elevation-level1-box-shadow(dark.$md-sys-color-shadow);
     }
 
     &:active:not(:disabled) {
       background: functions.state-layer(
-        functions.surface-elevation(
-          dark.$md-sys-color-surface,
-          dark.$md-sys-color-primary,
-          1
-        ),
+        functions.surface-elevation(dark.$md-sys-color-surface, dark.$md-sys-color-surface-tint, 1),
         dark.$md-sys-color-primary,
         'pressed'
       );
-      @include elevation.md-sys-elevation-level1-box-shadow(
-        dark.$md-sys-color-shadow
-      );
+      @include elevation.md-sys-elevation-level1-box-shadow(dark.$md-sys-color-shadow);
     }
+  }
+
+  &.button-with-icon {
+    padding: 0 1.5rem 0 1rem;
   }
 }
 
 .button-filled {
   color: light.$md-sys-color-on-primary;
-  background: functions.surface-elevation(
-    light.$md-sys-color-primary,
-    light.$md-sys-color-surface-tint,
-    0
-  );
+  background: light.$md-sys-color-primary;
   padding: 0 1.5rem;
-  @include elevation.md-sys-elevation-level0-box-shadow(
-    light.$md-sys-color-shadow
-  );
+
+  @include elevation.md-sys-elevation-level0-box-shadow(light.$md-sys-color-shadow);
 
   &:disabled {
     color: color.scale(light.$md-sys-color-on-surface, $alpha: -62%);
-    background: color.scale(
-      functions.surface-elevation(
-        light.$md-sys-color-on-surface,
-        light.$md-sys-color-surface-tint,
-        0
-      ),
-      $alpha: -88%
-    );
-    @include elevation.md-sys-elevation-level0-box-shadow(
-      light.$md-sys-color-shadow
-    );
+    background: color.scale(light.$md-sys-color-on-surface, $alpha: -88%);
+
+    @include elevation.md-sys-elevation-level0-box-shadow(light.$md-sys-color-shadow);
   }
 
   &:hover:not(:disabled) {
-    background: functions.state-layer(
-      functions.surface-elevation(
-        light.$md-sys-color-primary,
-        light.$md-sys-color-on-primary,
-        1
-      ),
-      light.$md-sys-color-on-primary,
-      'hover'
-    );
-    @include elevation.md-sys-elevation-level1-box-shadow(
-      light.$md-sys-color-shadow
-    );
+    background: functions.state-layer(light.$md-sys-color-primary, light.$md-sys-color-on-primary, 'hover');
+
+    @include elevation.md-sys-elevation-level1-box-shadow(light.$md-sys-color-shadow);
   }
 
   &:focus-visible:not(:disabled) {
-    background: functions.state-layer(
-      functions.surface-elevation(
-        light.$md-sys-color-primary,
-        light.$md-sys-color-on-primary,
-        0
-      ),
-      light.$md-sys-color-on-primary,
-      'focus'
-    );
-    @include elevation.md-sys-elevation-level0-box-shadow(
-      light.$md-sys-color-shadow
-    );
+    background: functions.state-layer(light.$md-sys-color-primary, light.$md-sys-color-on-primary, 'focus');
+
+    @include elevation.md-sys-elevation-level0-box-shadow(light.$md-sys-color-shadow);
   }
 
   &:active:not(:disabled) {
-    background: functions.state-layer(
-      functions.surface-elevation(
-        light.$md-sys-color-primary,
-        light.$md-sys-color-on-primary,
-        0
-      ),
-      light.$md-sys-color-on-primary,
-      'hover'
-    );
-    @include elevation.md-sys-elevation-level0-box-shadow(
-      light.$md-sys-color-shadow
-    );
+    background: functions.state-layer(light.$md-sys-color-primary, light.$md-sys-color-on-primary, 'hover');
+
+    @include elevation.md-sys-elevation-level0-box-shadow(light.$md-sys-color-shadow);
   }
 
   @at-root body[data-#{variables.$prefix}theme='dark'] &,
     .#{variables.$prefix}theme-dark & {
     color: dark.$md-sys-color-on-primary;
-    background: functions.surface-elevation(
-      dark.$md-sys-color-primary,
-      dark.$md-sys-color-surface-tint,
-      0
-    );
-    @include elevation.md-sys-elevation-level0-box-shadow(
-      dark.$md-sys-color-shadow
-    );
+    background: dark.$md-sys-color-primary;
+
+    @include elevation.md-sys-elevation-level0-box-shadow(dark.$md-sys-color-shadow);
 
     &:disabled {
       color: color.scale(dark.$md-sys-color-on-surface, $alpha: -62%);
-      background: color.scale(
-        functions.surface-elevation(
-          dark.$md-sys-color-on-surface,
-          dark.$md-sys-color-surface-tint,
-          0
-        ),
-        $alpha: -88%
-      );
-      @include elevation.md-sys-elevation-level0-box-shadow(
-        dark.$md-sys-color-shadow
-      );
+      background: color.scale(dark.$md-sys-color-on-surface, $alpha: -88%);
+
+      @include elevation.md-sys-elevation-level0-box-shadow(dark.$md-sys-color-shadow);
     }
 
     &:hover:not(:disabled) {
-      background: functions.state-layer(
-        functions.surface-elevation(
-          dark.$md-sys-color-primary,
-          dark.$md-sys-color-on-primary,
-          1
-        ),
-        dark.$md-sys-color-on-primary,
-        'hover'
-      );
-      @include elevation.md-sys-elevation-level1-box-shadow(
-        dark.$md-sys-color-shadow
-      );
+      background: functions.state-layer(dark.$md-sys-color-primary, dark.$md-sys-color-on-primary, 'hover');
+
+      @include elevation.md-sys-elevation-level1-box-shadow(dark.$md-sys-color-shadow);
     }
 
     &:focus-visible:not(:disabled) {
-      background: functions.state-layer(
-        functions.surface-elevation(
-          dark.$md-sys-color-primary,
-          dark.$md-sys-color-on-primary,
-          0
-        ),
-        dark.$md-sys-color-on-primary,
-        'focus'
-      );
-      @include elevation.md-sys-elevation-level0-box-shadow(
-        dark.$md-sys-color-shadow
-      );
+      background: functions.state-layer(dark.$md-sys-color-primary, dark.$md-sys-color-on-primary, 'focus');
+
+      @include elevation.md-sys-elevation-level0-box-shadow(dark.$md-sys-color-shadow);
     }
 
     &:active:not(:disabled) {
-      background: functions.state-layer(
-        functions.surface-elevation(
-          dark.$md-sys-color-primary,
-          dark.$md-sys-color-on-primary,
-          0
-        ),
-        dark.$md-sys-color-on-primary,
-        'hover'
-      );
-      @include elevation.md-sys-elevation-level0-box-shadow(
-        dark.$md-sys-color-shadow
-      );
+      background: functions.state-layer(dark.$md-sys-color-primary, dark.$md-sys-color-on-primary, 'hover');
+
+      @include elevation.md-sys-elevation-level0-box-shadow(dark.$md-sys-color-shadow);
     }
   }
 }
 
 .button-tonal {
   color: light.$md-sys-color-on-secondary-container;
-  background: functions.surface-elevation(
-    light.$md-sys-color-secondary-container,
-    light.$md-sys-color-surface-tint,
-    0
-  );
+  background: light.$md-sys-color-secondary-container;
   padding: 0 1.5rem;
-  @include elevation.md-sys-elevation-level0-box-shadow(
-    light.$md-sys-color-shadow
-  );
+
+  @include elevation.md-sys-elevation-level0-box-shadow(light.$md-sys-color-shadow);
 
   &:disabled {
     color: color.scale(light.$md-sys-color-on-surface, $alpha: -62%);
-    background: color.scale(
-      functions.surface-elevation(
-        light.$md-sys-color-on-surface,
-        light.$md-sys-color-surface-tint,
-        0
-      ),
-      $alpha: -88%
-    );
-    @include elevation.md-sys-elevation-level0-box-shadow(
-      light.$md-sys-color-shadow
-    );
+    background: color.scale(light.$md-sys-color-on-surface, $alpha: -88%);
+
+    @include elevation.md-sys-elevation-level0-box-shadow(light.$md-sys-color-shadow);
   }
 
   &:hover:not(:disabled) {
     background: functions.state-layer(
-      functions.surface-elevation(
-        light.$md-sys-color-secondary-container,
-        light.$md-sys-color-on-secondary-container,
-        1
-      ),
+      light.$md-sys-color-secondary-container,
       light.$md-sys-color-on-secondary-container,
       'hover'
     );
-    @include elevation.md-sys-elevation-level1-box-shadow(
-      light.$md-sys-color-shadow
-    );
+
+    @include elevation.md-sys-elevation-level1-box-shadow(light.$md-sys-color-shadow);
   }
 
   &:focus-visible:not(:disabled) {
     background: functions.state-layer(
-      functions.surface-elevation(
-        light.$md-sys-color-secondary-container,
-        light.$md-sys-color-on-secondary-container,
-        0
-      ),
+      light.$md-sys-color-secondary-container,
       light.$md-sys-color-on-secondary-container,
       'focus'
     );
-    @include elevation.md-sys-elevation-level0-box-shadow(
-      light.$md-sys-color-shadow
-    );
+
+    @include elevation.md-sys-elevation-level0-box-shadow(light.$md-sys-color-shadow);
   }
 
   &:active:not(:disabled) {
     background: functions.state-layer(
-      functions.surface-elevation(
-        light.$md-sys-color-secondary-container,
-        light.$md-sys-color-on-secondary-container,
-        0
-      ),
+      light.$md-sys-color-secondary-container,
       light.$md-sys-color-on-secondary-container,
       'pressed'
     );
-    @include elevation.md-sys-elevation-level0-box-shadow(
-      light.$md-sys-color-shadow
-    );
+
+    @include elevation.md-sys-elevation-level0-box-shadow(light.$md-sys-color-shadow);
   }
 
   @at-root body[data-#{variables.$prefix}theme='dark'] &,
     .#{variables.$prefix}theme-dark & {
     color: dark.$md-sys-color-on-secondary-container;
-    background: functions.surface-elevation(
-      dark.$md-sys-color-secondary-container,
-      dark.$md-sys-color-surface-tint,
-      0
-    );
-    @include elevation.md-sys-elevation-level0-box-shadow(
-      dark.$md-sys-color-shadow
-    );
+    background: dark.$md-sys-color-secondary-container;
+
+    @include elevation.md-sys-elevation-level0-box-shadow(dark.$md-sys-color-shadow);
 
     &:disabled {
       color: color.scale(dark.$md-sys-color-on-surface, $alpha: -62%);
-      background: color.scale(
-        functions.surface-elevation(
-          dark.$md-sys-color-on-surface,
-          dark.$md-sys-color-surface-tint,
-          0
-        ),
-        $alpha: -88%
-      );
-      @include elevation.md-sys-elevation-level0-box-shadow(
-        dark.$md-sys-color-shadow
-      );
+      background: color.scale(dark.$md-sys-color-on-surface, $alpha: -88%);
+
+      @include elevation.md-sys-elevation-level0-box-shadow(dark.$md-sys-color-shadow);
     }
 
     &:hover:not(:disabled) {
       background: functions.state-layer(
-        functions.surface-elevation(
-          dark.$md-sys-color-secondary-container,
-          dark.$md-sys-color-on-secondary-container,
-          1
-        ),
+        dark.$md-sys-color-secondary-container,
         dark.$md-sys-color-on-secondary-container,
         'hover'
       );
-      @include elevation.md-sys-elevation-level1-box-shadow(
-        dark.$md-sys-color-shadow
-      );
+
+      @include elevation.md-sys-elevation-level1-box-shadow(dark.$md-sys-color-shadow);
     }
 
     &:focus-visible:not(:disabled) {
       background: functions.state-layer(
-        functions.surface-elevation(
-          dark.$md-sys-color-secondary-container,
-          dark.$md-sys-color-on-secondary-container,
-          0
-        ),
+        dark.$md-sys-color-secondary-container,
         dark.$md-sys-color-on-secondary-container,
         'focus'
       );
-      @include elevation.md-sys-elevation-level0-box-shadow(
-        dark.$md-sys-color-shadow
-      );
+
+      @include elevation.md-sys-elevation-level0-box-shadow(dark.$md-sys-color-shadow);
     }
 
     &:active:not(:disabled) {
       background: functions.state-layer(
-        functions.surface-elevation(
-          dark.$md-sys-color-secondary-container,
-          dark.$md-sys-color-on-secondary-container,
-          0
-        ),
+        dark.$md-sys-color-secondary-container,
         dark.$md-sys-color-on-secondary-container,
         'pressed'
       );
-      @include elevation.md-sys-elevation-level0-box-shadow(
-        dark.$md-sys-color-shadow
-      );
+
+      @include elevation.md-sys-elevation-level0-box-shadow(dark.$md-sys-color-shadow);
     }
   }
 }
@@ -496,28 +304,16 @@
   }
 
   &:hover:not(:disabled) {
-    background: functions.state-layer(
-      rgb(0 0 0 / 0%),
-      light.$md-sys-color-primary,
-      'hover'
-    );
+    background: functions.state-layer(rgb(0 0 0 / 0%), light.$md-sys-color-primary, 'hover');
   }
 
   &:focus-visible:not(:disabled) {
     border-color: light.$md-sys-color-primary;
-    background: functions.state-layer(
-      rgb(0 0 0 / 0%),
-      light.$md-sys-color-primary,
-      'focus'
-    );
+    background: functions.state-layer(rgb(0 0 0 / 0%), light.$md-sys-color-primary, 'focus');
   }
 
   &:active:not(:disabled) {
-    background: functions.state-layer(
-      rgb(0 0 0 / 0%),
-      light.$md-sys-color-primary,
-      'pressed'
-    );
+    background: functions.state-layer(rgb(0 0 0 / 0%), light.$md-sys-color-primary, 'pressed');
   }
 
   @at-root body[data-#{variables.$prefix}theme='dark'] &,
@@ -531,28 +327,16 @@
     }
 
     &:hover:not(:disabled) {
-      background: functions.state-layer(
-        rgb(0 0 0 / 0%),
-        dark.$md-sys-color-primary,
-        'hover'
-      );
+      background: functions.state-layer(rgb(0 0 0 / 0%), dark.$md-sys-color-primary, 'hover');
     }
 
     &:focus-visible:not(:disabled) {
       border-color: dark.$md-sys-color-primary;
-      background: functions.state-layer(
-        rgb(0 0 0 / 0%),
-        dark.$md-sys-color-primary,
-        'focus'
-      );
+      background: functions.state-layer(rgb(0 0 0 / 0%), dark.$md-sys-color-primary, 'focus');
     }
 
     &:active:not(:disabled) {
-      background: functions.state-layer(
-        rgb(0 0 0 / 0%),
-        dark.$md-sys-color-primary,
-        'pressed'
-      );
+      background: functions.state-layer(rgb(0 0 0 / 0%), dark.$md-sys-color-primary, 'pressed');
     }
   }
 }
@@ -567,27 +351,15 @@
   }
 
   &:hover:not(:disabled) {
-    background: functions.state-layer(
-      rgb(0 0 0 / 0%),
-      light.$md-sys-color-primary,
-      'hover'
-    );
+    background: functions.state-layer(rgb(0 0 0 / 0%), light.$md-sys-color-primary, 'hover');
   }
 
   &:focus-visible:not(:disabled) {
-    background: functions.state-layer(
-      rgb(0 0 0 / 0%),
-      light.$md-sys-color-primary,
-      'focus'
-    );
+    background: functions.state-layer(rgb(0 0 0 / 0%), light.$md-sys-color-primary, 'focus');
   }
 
   &:active:not(:disabled) {
-    background: functions.state-layer(
-      rgb(0 0 0 / 0%),
-      light.$md-sys-color-primary,
-      'pressed'
-    );
+    background: functions.state-layer(rgb(0 0 0 / 0%), light.$md-sys-color-primary, 'pressed');
   }
 
   @at-root body[data-#{variables.$prefix}theme='dark'] &,
@@ -599,27 +371,15 @@
     }
 
     &:hover:not(:disabled) {
-      background: functions.state-layer(
-        rgb(0 0 0 / 0%),
-        dark.$md-sys-color-primary,
-        'hover'
-      );
+      background: functions.state-layer(rgb(0 0 0 / 0%), dark.$md-sys-color-primary, 'hover');
     }
 
     &:focus-visible:not(:disabled) {
-      background: functions.state-layer(
-        rgb(0 0 0 / 0%),
-        dark.$md-sys-color-primary,
-        'focus'
-      );
+      background: functions.state-layer(rgb(0 0 0 / 0%), dark.$md-sys-color-primary, 'focus');
     }
 
     &:active:not(:disabled) {
-      background: functions.state-layer(
-        rgb(0 0 0 / 0%),
-        dark.$md-sys-color-primary,
-        'pressed'
-      );
+      background: functions.state-layer(rgb(0 0 0 / 0%), dark.$md-sys-color-primary, 'pressed');
     }
   }
 }
