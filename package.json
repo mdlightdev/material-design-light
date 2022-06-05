@@ -70,7 +70,7 @@
     "postcss-nested": "^5.0.6",
     "prettier": "2.6.2",
     "rfs": "^9.0.6",
-    "sass": "^1.52.1",
+    "sass": "^1.52.2",
     "stylelint": "^14.8.5",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard-scss": "^4.0.0"
