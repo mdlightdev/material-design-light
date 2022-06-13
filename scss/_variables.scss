@@ -6,6 +6,8 @@
 $prefix: ml- !default;
 
 // Options
+$enable-grid-classes: true !default;
+$enable-cssgrid: false !default;
 $enable-important-utilities: true !default;
 
 // Spacing
@@ -28,3 +30,8 @@ $grid-breakpoints: (
   xl: 1200px,
   xxl: 1400px,
 ) !default;
+
+// Grid columns
+$grid-columns: 12 !default;
+$grid-gutter-width: 1.5rem !default;
+$grid-row-columns: 6 !default;
