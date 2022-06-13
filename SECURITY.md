@@ -20,7 +20,7 @@ Thank you for improving the
 security of `material-design-light`. We appreciate your efforts and responsible disclosure and will make every effort to
 acknowledge your contributions.
 
-Report security vulnerabilities by emailing the lead maintainer at <robin.lahtinen@gmail.com>.
+Report security vulnerabilities by emailing the lead maintainer at <contact@materialdesignlight.com>.
 
 Report security vulnerabilities in third-party modules to the person or team maintaining the module.
 
