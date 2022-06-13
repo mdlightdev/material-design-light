@@ -1,5 +1,5 @@
 {
-  "name": "robinlahtinen/material-design-light",
+  "name": "mdlightdev/material-design-light",
   "description": "A lightweight CSS framework implementing the Material Design 3.",
   "keywords": [
     "css",
@@ -14,12 +14,17 @@
   "homepage": "https://www.materialdesignlight.com/",
   "authors": [
     {
-      "name": "Robin Lahtinen",
-      "email": "robin.lahtinen@gmail.com"
+      "name": "Material Design Light",
+      "email": "contact@materialdesignlight.com",
+      "homepage": "https://www.materialdesignlight.com/",
+      "role": "Team"
     }
   ],
   "support": {
-    "issues": "https://github.com/robinlahtinen/material-design-light/issues"
+    "docs": "https://www.materialdesignlight.com/",
+    "email": "contact@materialdesignlight.com",
+    "issues": "https://github.com/mdlightdev/material-design-light/issues",
+    "source": "https://github.com/mdlightdev/material-design-light"
   },
   "license": "MPL-2.0"
 }
