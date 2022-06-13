@@ -12,20 +12,19 @@
     "web",
     "material-design"
   ],
-  "contributors": [
-    {
-      "name": "Robin Lahtinen",
-      "email": "robin.lahtinen@gmail.com"
-    }
-  ],
+  "author": {
+    "name": "Material Design Light",
+    "email": "contact@materialdesignlight.com",
+    "url": "https://www.materialdesignlight.com/"
+  },
   "homepage": "https://www.materialdesignlight.com/",
   "license": "MPL-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/robinlahtinen/material-design-light.git"
+    "url": "https://github.com/mdlightdev/material-design-light.git"
   },
   "bugs": {
-    "url": "https://github.com/robinlahtinen/material-design-light/issues"
+    "url": "https://github.com/mdlightdev/material-design-light/issues"
   },
   "scripts": {
     "prepare": "husky install",
