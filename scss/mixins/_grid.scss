@@ -1,0 +1,144 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+@use 'sass:meta';
+@use 'sass:math';
+@use 'breakpoints';
+@use '../variables';
+@use '../maps';
+
+// Grid system
+@mixin make-row($gutter: variables.$grid-gutter-width) {
+  --#{variables.$prefix}gutter-x: #{$gutter};
+  --#{variables.$prefix}gutter-y: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--#{variables.$prefix}gutter-y));
+  margin-right: calc(-0.5 * var(--#{variables.$prefix}gutter-x));
+  margin-left: calc(-0.5 * var(--#{variables.$prefix}gutter-x));
+}
+
+@mixin make-col-ready() {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--#{variables.$prefix}gutter-x) * 0.5);
+  padding-left: calc(var(--#{variables.$prefix}gutter-x) * 0.5);
+  margin-top: var(--#{variables.$prefix}gutter-y);
+}
+
+@mixin make-col($size: false, $columns: variables.$grid-columns) {
+  @if $size {
+    flex: 0 0 auto;
+    width: math.percentage(math.div($size, $columns));
+  } @else {
+    flex: 1 1 0;
+    max-width: 100%;
+  }
+}
+
+@mixin make-col-auto() {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+@mixin make-col-offset($size, $columns: variables.$grid-columns) {
+  $num: math.div($size, $columns);
+
+  margin-left: if($num == 0, 0, math.percentage($num));
+}
+
+// Row columns
+@mixin row-cols($count) {
+  > * {
+    flex: 0 0 auto;
+    width: math.div(100%, $count);
+  }
+}
+
+// Framework grid generation
+@mixin make-grid-columns(
+  $columns: variables.$grid-columns,
+  $gutter: variables.$grid-gutter-width,
+  $breakpoints: variables.$grid-breakpoints
+) {
+  @each $breakpoint in map-keys($breakpoints) {
+    $infix: breakpoints.breakpoint-infix($breakpoint, $breakpoints);
+
+    @include breakpoints.media-breakpoint-up($breakpoint, $breakpoints) {
+      .col#{$infix} {
+        flex: 1 0 0;
+      }
+
+      .row-cols#{$infix}-auto > * {
+        @include make-col-auto;
+      }
+
+      @if variables.$grid-row-columns > 0 {
+        @for $i from 1 through variables.$grid-row-columns {
+          .row-cols#{$infix}-#{$i} {
+            @include row-cols($i);
+          }
+        }
+      }
+
+      .col#{$infix}-auto {
+        @include make-col-auto;
+      }
+
+      @if $columns > 0 {
+        @for $i from 1 through $columns {
+          .col#{$infix}-#{$i} {
+            @include make-col($i, $columns);
+          }
+        }
+
+        @for $i from 0 through ($columns - 1) {
+          @if not($infix == '' and $i == 0) {
+            .offset#{$infix}-#{$i} {
+              @include make-col-offset($i, $columns);
+            }
+          }
+        }
+      }
+
+      // Gutters
+      @each $key, $value in maps.$gutters {
+        .g#{$infix}-#{$key},
+        .gx#{$infix}-#{$key} {
+          --#{variables.$prefix}gutter-x: #{$value};
+        }
+
+        .g#{$infix}-#{$key},
+        .gy#{$infix}-#{$key} {
+          --#{variables.$prefix}gutter-y: #{$value};
+        }
+      }
+    }
+  }
+}
+
+@mixin make-cssgrid($columns: variables.$grid-columns, $breakpoints: variables.$grid-breakpoints) {
+  @each $breakpoint in map-keys($breakpoints) {
+    $infix: breakpoints.breakpoint-infix($breakpoint, $breakpoints);
+
+    @include breakpoints.media-breakpoint-up($breakpoint, $breakpoints) {
+      @if $columns > 0 {
+        @for $i from 1 through $columns {
+          .g-col#{$infix}-#{$i} {
+            grid-column: auto / span $i;
+          }
+        }
+
+        @for $i from 1 through ($columns - 1) {
+          .g-start#{$infix}-#{$i} {
+            grid-column-start: $i;
+          }
+        }
+      }
+    }
+  }
+}

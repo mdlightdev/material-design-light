@@ -1,0 +1,33 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+@use 'variables';
+@use 'mixins/grid';
+
+// Row
+@if variables.$enable-grid-classes {
+  .row {
+    @include grid.make-row;
+
+    > * {
+      @include grid.make-col-ready;
+    }
+  }
+}
+
+@if variables.$enable-cssgrid {
+  .grid {
+    display: grid;
+    grid-template-rows: repeat(var(--#{variables.$prefix}rows, 1), 1fr);
+    grid-template-columns: repeat(var(--#{variables.$prefix}columns, #{variables.$grid-columns}), 1fr);
+    gap: var(--#{variables.$prefix}gap, #{variables.$grid-gutter-width});
+
+    @include grid.make-cssgrid;
+  }
+}
+
+// Columns
+@if variables.$enable-grid-classes {
+  @include grid.make-grid-columns;
+}
