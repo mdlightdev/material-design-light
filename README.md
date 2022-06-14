@@ -13,6 +13,8 @@
     <a href="https://www.materialdesignlight.com/"><img alt="Website" src="https://img.shields.io/website?url=https%3A%2F%2Fwww.materialdesignlight.com%2F"></a>
     <a href="https://github.com/mdlightdev/material-design-light/blob/main/LICENSE"><img alt="GitHub" src="https://img.shields.io/github/license/mdlightdev/material-design-light"></a>
     <a href="https://www.npmjs.com/package/material-design-light"><img alt="npm" src="https://img.shields.io/npm/v/material-design-light"></a>
+    <a href="https://packagist.org/packages/mdlightdev/material-design-light"><img alt="Packagist Version" src="https://img.shields.io/packagist/v/mdlightdev/material-design-light"></a>
+    <a href="https://github.com/mdlightdev/material-design-light/blob/main/dist/css/material-design-light.min.css"><img alt="GitHub file size in bytes" src="https://img.shields.io/github/size/mdlightdev/material-design-light/dist/css/material-design-light.min.css?label=CSS%20minified%20size"></a>
 </p>
 </div>
 
@@ -29,14 +31,30 @@ Several quick start options are available:
 
 - [Download the latest release](https://github.com/mdlightdev/material-design-light/releases/latest)
 - Clone the repository: `git clone https://github.com/mdlightdev/material-design-light.git`
+- Install with [npm](https://www.npmjs.com/package/material-design-light): `npm i material-design-light`
+- Install with [Composer](): `composer require mdlightdev/material-design-light`
 
-## Versioning
+## What's included
 
-For transparency into the release cycle and in striving to maintain backward compatibility, Material Design Light is
-maintained under the [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html) guidelines.
+Within the download you'll find the following directories and files, logically grouping common assets and providing both
+compiled and minified variations.
 
-See the [Releases](https://github.com/mdlightdev/material-design-light/releases) section of the GitHub project for
-changelogs for each release version of Material Design Light.
+```text
+material-design-light/
+└── css/
+    ├── material-design-light.css
+    ├── material-design-light.css.map
+    └── material-design-light.min.css
+```
+
+Material Design Light provides compiled CSS (`material-design-light.*`), as well as compiled and minified
+CSS (`material-design-light.min.*`). Source maps (`material-design-light.*.map`) are available for use with certain
+browsers' developer tools.
+
+## Bugs and feature requests
+
+Have a bug or a feature request? If your problem or idea is not addressed
+yet, [please open a new issue](https://github.com/mdlightdev/material-design-light/issues/new/choose).
 
 ## Contributing
 
@@ -47,6 +65,14 @@ git clone https://github.com/mdlightdev/material-design-light.git
 cd material-design-light
 npm install
 ```
+
+## Versioning
+
+For transparency into the release cycle and in striving to maintain backward compatibility, Material Design Light is
+maintained under the [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html) guidelines.
+
+See the [Releases](https://github.com/mdlightdev/material-design-light/releases) section of the GitHub project for
+changelogs for each release version of Material Design Light.
 
 ## Copyright and license
 
