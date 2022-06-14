@@ -25,6 +25,13 @@ $md-sys-typescale-headline-small-size: 1.5rem;
 $md-sys-typescale-headline-small-tracking: 0;
 $md-sys-typescale-headline-small-weight: typeface.$md-ref-typeface-weight-regular;
 
+// Title small
+$md-sys-typescale-title-small-font: typeface.$md-ref-typeface-plain;
+$md-sys-typescale-title-small-line-height: 1.25rem;
+$md-sys-typescale-title-small-size: 0.875rem;
+$md-sys-typescale-title-small-tracking: 0.00625rem;
+$md-sys-typescale-title-small-weight: typeface.$md-ref-typeface-weight-medium;
+
 // Label large
 $md-sys-typescale-label-large-font: typeface.$md-ref-typeface-plain;
 $md-sys-typescale-label-large-line-height: 1.25rem;

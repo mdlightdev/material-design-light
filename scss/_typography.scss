@@ -21,6 +21,22 @@
   font-weight: typescale.$md-sys-typescale-headline-medium-weight;
 }
 
+.headline-small {
+  font-family: var(--#{variables.$prefix}font-sans-serif);
+  font-size: typescale.$md-sys-typescale-headline-small-size;
+  line-height: typescale.$md-sys-typescale-headline-small-line-height;
+  letter-spacing: typescale.$md-sys-typescale-headline-small-tracking;
+  font-weight: typescale.$md-sys-typescale-headline-small-weight;
+}
+
+.title-small {
+  font-family: var(--#{variables.$prefix}font-sans-serif);
+  font-size: typescale.$md-sys-typescale-title-small-size;
+  line-height: typescale.$md-sys-typescale-title-small-line-height;
+  letter-spacing: typescale.$md-sys-typescale-title-small-tracking;
+  font-weight: typescale.$md-sys-typescale-title-small-weight;
+}
+
 .body-large {
   font-family: var(--#{variables.$prefix}font-sans-serif);
   font-size: typescale.$md-sys-typescale-body-large-size;
