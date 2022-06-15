@@ -67,7 +67,7 @@
     "postcss-custom-selectors": "^6.0.3",
     "postcss-import": "^14.1.0",
     "postcss-nested": "^5.0.6",
-    "prettier": "2.6.2",
+    "prettier": "2.7.0",
     "rfs": "^9.0.6",
     "sass": "^1.52.3",
     "stylelint": "^14.9.1",
