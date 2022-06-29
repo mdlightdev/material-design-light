@@ -58,6 +58,8 @@ yet, [please open a new issue](https://github.com/mdlightdev/material-design-lig
 
 ## Contributing
 
+Check out the [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
+
 Clone and setup the repository:
 
 ```sh
