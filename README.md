@@ -11,10 +11,12 @@
     <br />
     <br />
     <a href="https://www.materialdesignlight.com/"><img alt="Website" src="https://img.shields.io/website?url=https%3A%2F%2Fwww.materialdesignlight.com%2F"></a>
+    <a href="https://github.com/mdlightdev/material-design-light/actions"><img alt="GitHub branch checks state" src="https://img.shields.io/github/checks-status/mdlightdev/material-design-light/main"></a>
     <a href="https://github.com/mdlightdev/material-design-light/blob/main/LICENSE"><img alt="GitHub" src="https://img.shields.io/github/license/mdlightdev/material-design-light"></a>
     <a href="https://www.npmjs.com/package/material-design-light"><img alt="npm" src="https://img.shields.io/npm/v/material-design-light"></a>
     <a href="https://packagist.org/packages/mdlightdev/material-design-light"><img alt="Packagist Version" src="https://img.shields.io/packagist/v/mdlightdev/material-design-light"></a>
     <a href="https://github.com/mdlightdev/material-design-light/blob/main/dist/css/material-design-light.min.css"><img alt="GitHub file size in bytes" src="https://img.shields.io/github/size/mdlightdev/material-design-light/dist/css/material-design-light.min.css?label=CSS%20minified%20size"></a>
+    <a href="https://github.com/mdlightdev/material-design-light/blob/main/package.json"><img alt="Libraries.io dependency status for GitHub repo" src="https://img.shields.io/librariesio/github/mdlightdev/material-design-light"></a>
 </p>
 </div>
 
