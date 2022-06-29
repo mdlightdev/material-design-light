@@ -13,11 +13,6 @@
 @use 'tokens/sys/typescale';
 @use 'tokens/sys/motion';
 
-.button-group {
-  display: inline-flex;
-  gap: 0.5rem;
-}
-
 .button {
   -webkit-tap-highlight-color: transparent;
   display: inline-flex;
