@@ -40,16 +40,14 @@
   @return color.mix($content-layer-color, $surface-color, 100% - $opacity);
 }
 
-@function state-layer(
-  $container-color,
-  $state-layer-color,
-  $state-layer-opacity
-) {
+// State layers provide a systematic approach to visualizing states by using opacity.
+// @param Color $container-color Container color.
+// @param Color $state-layer-color State layer color.
+// @param String $state-layer-opacity Opacity token.
+@function state-layer($container-color, $state-layer-color, $state-layer-opacity) {
   $opacity: 100%;
 
-  @if not
-    index([ 'hover', 'focus', 'pressed', 'dragged' ], $state-layer-opacity)
-  {
+  @if not index([ 'hover', 'focus', 'pressed', 'dragged' ], $state-layer-opacity) {
     @error 'State layer opacity identifier is invalid.';
   }
 
