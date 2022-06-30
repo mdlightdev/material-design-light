@@ -1,0 +1,48 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+@use 'variables';
+@use 'mixins/container';
+@use 'mixins/breakpoints';
+
+// Container widths
+
+@if variables.$enable-container-classes {
+  // Single container class with breakpoint max-widths
+  .container,
+
+    // 100% wide container at all breakpoints
+  .container-fluid, %container-fluid {
+    @include container.make-container;
+  }
+
+  // Responsive containers that are 100% wide until a breakpoint
+  @each $breakpoint, $container-max-width in variables.$container-max-widths {
+    .container-#{$breakpoint} {
+      @extend %container-fluid;
+    }
+
+    @include breakpoints.media-breakpoint-up($breakpoint, variables.$grid-breakpoints) {
+      %responsive-container-#{$breakpoint} {
+        max-width: $container-max-width;
+      }
+
+      // Extend each breakpoint which is smaller or equal to the current breakpoint
+      $extend-breakpoint: true;
+
+      @each $name, $width in variables.$grid-breakpoints {
+        @if $extend-breakpoint {
+          .container#{breakpoints.breakpoint-infix($name, variables.$grid-breakpoints)} {
+            @extend %responsive-container-#{$breakpoint};
+          }
+
+          // Once the current breakpoint is reached, stop extending
+          @if $breakpoint == $name {
+            $extend-breakpoint: false;
+          }
+        }
+      }
+    }
+  }
+}
