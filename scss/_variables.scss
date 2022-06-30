@@ -7,6 +7,7 @@ $prefix: ml- !default;
 
 // Options
 $enable-grid-classes: true !default;
+$enable-container-classes: true !default;
 $enable-cssgrid: false !default;
 $enable-important-utilities: true !default;
 
@@ -35,3 +36,15 @@ $grid-breakpoints: (
 $grid-columns: 12 !default;
 $grid-gutter-width: 1.5rem !default;
 $grid-row-columns: 6 !default;
+
+// Grid containers
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px,
+) !default;
+
+// Container padding
+$container-padding-x: $grid-gutter-width !default;
