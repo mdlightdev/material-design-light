@@ -26,7 +26,8 @@ Start a script to watch for changes:
 npm run watch
 ```
 
-Then open the `./_site/index.html` on browser to see changes.
+Then open the `./_site/index.html` on browser to see self-hosted documentation. Documentation site uses minified version
+of the Material Design Light that isn't compiled on watch.
 
 ## License
 
