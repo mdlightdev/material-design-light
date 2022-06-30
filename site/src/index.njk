@@ -9,51 +9,112 @@ thumbnail:
     height: 720
     alt: Pastel photograph with the Material Design Light logo.
 keywords:
-    - CSS
-    - CSS framework
-    - Material Design
-    - Material Design 3
-    - MD3
-    - Web
-    - HTML
-    - Sass
-    - SCSS
+- CSS
+- CSS framework
+- Material Design
+- Material Design 3
+- MD3
+- Web
+- HTML
+- Sass
+- SCSS
 ---
-<main style='padding:10rem' data-ml-theme='light'>
-  <h1 class='headline-large'>Material Design Light</h1>
-  <hr>
-  <div class='card card-elevated' style='width:18rem;height:10rem;'>
-  </div>
-  <hr>
-  <div class='card card-filled' style='width:18rem;height:10rem;'>
-  </div>
-  <hr>
-  <div class='card card-outlined' style='width:18rem;height:10rem;'>
-  </div>
-  <hr>
-  <button type='button' class='button button-elevated'>Elevated button</button>
-  <hr>
-  <button type='button' class='button button-elevated' disabled>Elevated button</button>
-  <hr>
-  <a href='#' class='button button-elevated'>Elevated button</a>
-  <hr>
-  <button type='button' class='button button-filled'>Filled button</button>
-  <hr>
-  <button type='button' class='button button-tonal'>Tonal button</button>
-  <hr>
-  <button type='button' class='button button-outlined'>Outlined button</button>
-  <hr>
-  <button type='button' class='button button-text'>Text button</button>
-  <hr>
-  <div class='card card-elevated' style='width:26rem'>
-    <img src='https://picsum.photos/384/216' alt='Demo' class='card-image-top'>
-    <div class='card-body'>
-      <h5 class='headline-medium mt-2 mb-1'>Glass Souls' World Tour</h5>
-      <p class='body-large m-0'>From your recent favorites</p>
-      <div class='group-inline gap-2 mt-4 mb-3'>
-        <button type='button' class='button button-filled'>Buy tickets</button>
-        <button type='button' class='button button-outlined'>Buy tickets</button>
+<div style='display:flex'>
+  <nav class='nav-drawer-modal'>
+    <h5 class='typography-title-small nav-drawer-modal-headline'>Mall</h5>
+    <a href='#' class='nav-drawer-modal-item nav-drawer-modal-item-active'><span
+        class='material-symbols-outlined material-symbols-outlined-fill nav--drawer-item-icon'>inbox</span>
+      Inbox</a>
+    <a href='#' class='nav-drawer-modal-item'><span class='material-symbols-outlined nav--drawer-item-icon'>send</span>
+      Outbox</a>
+    <a href='#' class='nav-drawer-modal-item'><span
+        class='material-symbols-outlined nav--drawer-item-icon'>favorite</span>
+      Favorites</a>
+    <a href='#' class='nav-drawer-modal-item'><span
+        class='material-symbols-outlined nav--drawer-item-icon'>delete</span>
+      Trash</a>
+    <hr class='nav-drawer-modal-break'>
+    <h5 class='typography-title-small nav-drawer-modal-headline'>Labels</h5>
+    <a href='#' class='nav-drawer-modal-item'><span
+        class='material-symbols-outlined nav--drawer-item-icon'>folder</span>
+      Label</a>
+  </nav>
+  <div style='width: 22.5rem;height:100vh'></div>
+  <div class='container m-5'>
+    <h1 style='font-family: var(--ml-font-sans-serif)'>Material Design Light</h1>
+    <p class='typography-body-large'><strong>Notice:</strong> This CSS framework is heavily work-in-progress. New
+      components and layouts are added in chronological order to this page.</p>
+    <hr>
+    <div class='card card-elevated' style='width:18rem;height:10rem;'>
+    </div>
+    <hr>
+    <div class='card card-filled' style='width:18rem;height:10rem;'>
+    </div>
+    <hr>
+    <div class='card card-outlined' style='width:18rem;height:10rem;'>
+    </div>
+    <hr>
+    <button type='button' class='button button-elevated'>Elevated button</button>
+    <hr>
+    <button type='button' class='button button-elevated' disabled>Elevated button</button>
+    <hr>
+    <a href='#' class='button button-elevated'>Elevated button</a>
+    <hr>
+    <button type='button' class='button button-filled'>Filled button</button>
+    <hr>
+    <button type='button' class='button button-tonal'>Tonal button</button>
+    <hr>
+    <button type='button' class='button button-outlined'>Outlined button</button>
+    <hr>
+    <button type='button' class='button button-text'>Text button</button>
+    <hr>
+    <button type='button' class='button button-elevated button-with-icon'><span
+        class='material-symbols-outlined button-icon'>add</span> Elevated
+    </button>
+    <hr>
+    <div class='card card-elevated card-hover' style='width:26rem'>
+      <img src='https://picsum.photos/seed/71/384/216' crossorigin alt='Demo' class='card-image-top'>
+      <div class='card-body'>
+        <h5 class='typography-headline-medium mt-2 mb-1'>Glass Souls' World Tour</h5>
+        <p class='typography-body-large m-0'>From your recent favorites</p>
+        <div class='group-inline gap-3 mt-4 mb-3'>
+          <button type='button' class='button button-filled'>Buy tickets</button>
+          <button type='button' class='button button-outlined'>Buy tickets</button>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class='card card-filled card-hover' style='width:26rem'>
+      <img src='https://picsum.photos/seed/2/384/216' crossorigin alt='Demo' class='card-image-top'>
+      <div class='card-body'>
+        <h5 class='typography-headline-medium mt-2 mb-1'>Glass Souls' World Tour</h5>
+        <p class='typography-body-large m-0'>From your recent favorites</p>
+        <div class='group-inline gap-3 mt-4 mb-3'>
+          <button type='button' class='button button-filled'>Buy tickets</button>
+          <button type='button' class='button button-outlined'>Buy tickets</button>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class='card card-outlined card-hover' style='width:26rem'>
+      <img src='https://picsum.photos/seed/212/384/216' crossorigin alt='Demo' class='card-image-top'>
+      <div class='card-body'>
+        <h5 class='typography-headline-medium mt-2 mb-1'>Glass Souls' World Tour</h5>
+        <p class='typography-body-large m-0'>From your recent favorites</p>
+        <div class='group-inline gap-3 mt-4 mb-3'>
+          <button type='button' class='button button-filled'>Buy tickets</button>
+          <button type='button' class='button button-outlined'>Buy tickets</button>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class='row'>
+      <div class='col-10'>
+        <p class='typography-body-large'>Left (col-10)</p>
+      </div>
+      <div class='col-2'>
+        <p class='typography-body-large'>Right (col-2)</p>
       </div>
     </div>
   </div>
-</main>
+</div>
