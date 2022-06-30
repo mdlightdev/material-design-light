@@ -44,3 +44,12 @@
   letter-spacing: typescale.$md-sys-typescale-body-large-tracking;
   font-weight: typescale.$md-sys-typescale-body-large-weight;
 }
+
+.font-xxxl{
+  font-size: typescale.$md-sys-typescale-font-xxxl !important; 
+  font-weight:900 !important
+}
+
+.text-muted{
+  color: gray;
+}

@@ -1,0 +1,4 @@
+# Add 'documentation' label to any site file changes or root md-file changes.
+documentation:
+  - any: ['site/**/*']
+  - any: ['*.md']

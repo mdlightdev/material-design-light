@@ -1238,6 +1238,18 @@ body[data-ml-theme=dark] .card-outlined:hover:not(:disabled).card-hover, .ml-the
   padding: 0 1rem;
 }
 
+.card-rounded-xxl {
+  border-radius: 4rem;
+}
+
+.card-rounded-xl {
+  border-radius: 2rem;
+}
+
+.card-rounded-l {
+  border-radius: 1rem;
+}
+
 .button-group {
   display: inline-flex;
   gap: 0.5rem;
@@ -1552,12 +1564,37 @@ body[data-ml-theme=dark] .button-text:active:not(:disabled), .ml-theme-dark .but
   font-weight: 400;
 }
 
+.headline-small {
+  font-family: var(--ml-font-sans-serif);
+  font-size: 1.5rem;
+  line-height: 2rem;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.title-small {
+  font-family: var(--ml-font-sans-serif);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  letter-spacing: 0.00625rem;
+  font-weight: 500;
+}
+
 .body-large {
   font-family: var(--ml-font-sans-serif);
   font-size: 1rem;
   line-height: 1.5rem;
   letter-spacing: 0.03125rem;
   font-weight: 400;
+}
+
+.font-xxxl {
+  font-size: 6rem !important;
+  font-weight: 900 !important;
+}
+
+.text-muted {
+  color: gray;
 }
 
 .m-0 {
