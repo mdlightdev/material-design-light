@@ -1,0 +1,239 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+@use 'functions';
+@use 'variables';
+@use 'tokens/sys/themes/light';
+@use 'tokens/sys/themes/dark';
+@use 'tokens/sys/typescale';
+
+@mixin nav-drawer($class-name, $surface-elevation) {
+  background: functions.surface-elevation(
+    light.$md-sys-color-surface,
+    light.$md-sys-color-surface-tint,
+    $surface-elevation
+  );
+  border-radius: 0 1rem 1rem 0;
+  width: 22.5rem;
+  padding: 0.75rem 0;
+  box-sizing: border-box;
+
+  @if $class-name == 'nav-drawer-modal' {
+    position: fixed;
+    height: 100vh;
+  }
+
+  .#{$class-name}-headline {
+    color: light.$md-sys-color-on-surface-variant;
+    margin: 0;
+    padding: 1rem 1.75rem;
+  }
+
+  .#{$class-name}-break {
+    height: 0.0625rem;
+    margin: 0 1.75rem;
+    border: 0;
+    background: light.$md-sys-color-on-surface-variant;
+  }
+
+  .#{$class-name}-item {
+    display: flex;
+    height: 3.5rem;
+    padding: 0 1.5rem 0 1rem;
+    margin: 0 0.75rem;
+    gap: 0.75rem;
+    border-radius: 1.75rem;
+    align-items: center;
+    background: functions.surface-elevation(
+      light.$md-sys-color-surface,
+      light.$md-sys-color-surface-tint,
+      $surface-elevation
+    );
+    color: light.$md-sys-color-on-surface-variant;
+    font-family: var(--#{variables.$prefix}font-sans-serif);
+    font-size: typescale.$md-sys-typescale-label-large-size;
+    line-height: typescale.$md-sys-typescale-label-large-line-height;
+    letter-spacing: typescale.$md-sys-typescale-label-large-tracking;
+    font-weight: typescale.$md-sys-typescale-label-large-weight;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition-property: background-color, color;
+    transition-duration: 150ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:focus-visible {
+      outline: 0;
+    }
+
+    &:disabled {
+      cursor: auto;
+    }
+
+    &.#{$class-name}-item-active {
+      background: functions.surface-elevation(
+        light.$md-sys-color-secondary-container,
+        light.$md-sys-color-surface-tint,
+        $surface-elevation
+      );
+      color: light.$md-sys-color-on-secondary-container;
+    }
+
+    &:hover:not(:disabled) {
+      background: functions.state-layer(
+        functions.surface-elevation(light.$md-sys-color-surface, light.$md-sys-color-surface-tint, $surface-elevation),
+        light.$md-sys-color-on-surface,
+        'hover'
+      );
+      color: light.$md-sys-color-on-surface;
+
+      &.#{$class-name}-item-active {
+        background: functions.state-layer(
+          functions.surface-elevation(
+            light.$md-sys-color-surface,
+            light.$md-sys-color-surface-tint,
+            $surface-elevation
+          ),
+          light.$md-sys-color-on-secondary-container,
+          'hover'
+        );
+        color: light.$md-sys-color-on-secondary-container;
+      }
+    }
+
+    &:focus-visible:not(:disabled) {
+      background: functions.state-layer(
+        functions.surface-elevation(light.$md-sys-color-surface, light.$md-sys-color-surface-tint, $surface-elevation),
+        light.$md-sys-color-on-surface,
+        'focus'
+      );
+      color: light.$md-sys-color-on-surface;
+
+      &.#{$class-name}-item-active {
+        background: functions.state-layer(
+          functions.surface-elevation(
+            light.$md-sys-color-surface,
+            light.$md-sys-color-surface-tint,
+            $surface-elevation
+          ),
+          light.$md-sys-color-on-secondary-container,
+          'focus'
+        );
+        color: light.$md-sys-color-on-secondary-container;
+      }
+    }
+
+    &:active:not(:disabled) {
+      background: functions.state-layer(
+        functions.surface-elevation(light.$md-sys-color-surface, light.$md-sys-color-surface-tint, $surface-elevation),
+        light.$md-sys-color-on-secondary-container,
+        'pressed'
+      );
+      color: light.$md-sys-color-on-surface;
+
+      &.#{$class-name}-item-active {
+        color: light.$md-sys-color-on-secondary-container;
+      }
+    }
+
+    .#{$class-name}-item-icon {
+      font-size: 1.5rem;
+    }
+  }
+
+  @at-root body[data-#{variables.$prefix}theme='dark'] &,
+    .#{variables.$prefix}theme-dark & {
+    background: functions.surface-elevation(
+      dark.$md-sys-color-surface,
+      dark.$md-sys-color-surface-tint,
+      $surface-elevation
+    );
+
+    .#{$class-name}-headline {
+      color: dark.$md-sys-color-on-surface-variant;
+    }
+
+    .#{$class-name}-item {
+      background: functions.surface-elevation(
+        dark.$md-sys-color-surface,
+        dark.$md-sys-color-surface-tint,
+        $surface-elevation
+      );
+      color: dark.$md-sys-color-on-surface-variant;
+
+      &.#{$class-name}-item-active {
+        background: functions.surface-elevation(
+          dark.$md-sys-color-secondary-container,
+          dark.$md-sys-color-surface-tint,
+          $surface-elevation
+        );
+        color: dark.$md-sys-color-on-secondary-container;
+      }
+
+      &:hover:not(:disabled) {
+        background: functions.state-layer(
+          functions.surface-elevation(dark.$md-sys-color-surface, dark.$md-sys-color-surface-tint, $surface-elevation),
+          dark.$md-sys-color-on-surface,
+          'hover'
+        );
+        color: dark.$md-sys-color-on-surface;
+
+        &.#{$class-name}-item-active {
+          background: functions.state-layer(
+            functions.surface-elevation(
+              dark.$md-sys-color-surface,
+              dark.$md-sys-color-surface-tint,
+              $surface-elevation
+            ),
+            dark.$md-sys-color-on-secondary-container,
+            'hover'
+          );
+          color: dark.$md-sys-color-on-secondary-container;
+        }
+      }
+
+      &:focus-visible:not(:disabled) {
+        background: functions.state-layer(
+          functions.surface-elevation(dark.$md-sys-color-surface, dark.$md-sys-color-surface-tint, $surface-elevation),
+          dark.$md-sys-color-on-surface,
+          'focus'
+        );
+        color: dark.$md-sys-color-on-surface;
+
+        &.#{$class-name}-item-active {
+          background: functions.state-layer(
+            functions.surface-elevation(
+              dark.$md-sys-color-surface,
+              dark.$md-sys-color-surface-tint,
+              $surface-elevation
+            ),
+            dark.$md-sys-color-on-secondary-container,
+            'focus'
+          );
+          color: dark.$md-sys-color-on-secondary-container;
+        }
+      }
+
+      &:active:not(:disabled) {
+        background: functions.state-layer(
+          functions.surface-elevation(dark.$md-sys-color-surface, dark.$md-sys-color-surface-tint, $surface-elevation),
+          dark.$md-sys-color-on-secondary-container,
+          'pressed'
+        );
+        color: dark.$md-sys-color-on-surface;
+
+        &.#{$class-name}-item-active {
+          color: dark.$md-sys-color-on-secondary-container;
+        }
+      }
+    }
+  }
+}
+
+.nav-drawer {
+  @include nav-drawer('nav-drawer', 0);
+}
+
+.nav-drawer-modal {
+  @include nav-drawer('nav-drawer-modal', 1);
+}
