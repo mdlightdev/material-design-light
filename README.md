@@ -15,6 +15,7 @@
     <a href="https://github.com/mdlightdev/material-design-light/blob/main/LICENSE"><img alt="GitHub" src="https://img.shields.io/github/license/mdlightdev/material-design-light"></a>
     <a href="https://www.npmjs.com/package/material-design-light"><img alt="npm" src="https://img.shields.io/npm/v/material-design-light"></a>
     <a href="https://packagist.org/packages/mdlightdev/material-design-light"><img alt="Packagist Version" src="https://img.shields.io/packagist/v/mdlightdev/material-design-light"></a>
+    <a href="https://www.nuget.org/packages/MaterialDesignLight/"><img alt="Nuget" src="https://img.shields.io/nuget/v/MaterialDesignLight"></a>
     <a href="https://github.com/mdlightdev/material-design-light/blob/main/dist/css/material-design-light.min.css"><img alt="GitHub file size in bytes" src="https://img.shields.io/github/size/mdlightdev/material-design-light/dist/css/material-design-light.min.css?label=CSS%20minified%20size"></a>
     <a href="https://github.com/mdlightdev/material-design-light/blob/main/package.json"><img alt="Libraries.io dependency status for GitHub repo" src="https://img.shields.io/librariesio/github/mdlightdev/material-design-light"></a>
 </p>
@@ -34,7 +35,9 @@ Several quick start options are available:
 - [Download the latest release](https://github.com/mdlightdev/material-design-light/releases/latest)
 - Clone the repository: `git clone https://github.com/mdlightdev/material-design-light.git`
 - Install with [npm](https://www.npmjs.com/package/material-design-light): `npm i material-design-light`
-- Install with [Composer](): `composer require mdlightdev/material-design-light`
+- Install
+  with [Composer](https://packagist.org/packages/mdlightdev/material-design-light): `composer require mdlightdev/material-design-light`
+- Install with [NuGet](https://www.nuget.org/packages/MaterialDesignLight/): `Install-Package MaterialDesignLight`
 
 ## What's included
 
