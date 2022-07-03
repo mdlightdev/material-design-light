@@ -38,6 +38,7 @@
   }
 
   .#{$class-name}-item {
+    -webkit-tap-highlight-color: transparent;
     display: flex;
     height: 3.5rem;
     padding: 0 1.5rem 0 1rem;
