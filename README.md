@@ -28,6 +28,17 @@ the full extent.
 
 The project is heavily work in progress and offers zero support or assurances on anything.
 
+## Features
+
+- 💅 **Material Design 3** _(Material You)_ - adheres to the latest design by Google
+- 🎨 **Customizable** - with the [design tokens](./scss/tokens/sys/) you can make the framework truly yours
+- ⚡ **Cutting-Edge Technology** - uses the latest CSS features allowing for zero JavaScript
+- 🏎 **Lighweight** - minified version is lighter than the popular CSS frameworks
+- 🤟 **No JavaScript** - framework doesn't rely on JavaScript
+- 😎 **Clean HTML** - uses the _right_ elements and supports accessibility features
+- 🔧 **Vanilla CSS** - compiled as "vanilla" CSS, written with SCSS superset (SASS)
+- 📱 **Responsive** - works with any screen size follows the adaptive design
+
 ## Quick start
 
 Several quick start options are available:
