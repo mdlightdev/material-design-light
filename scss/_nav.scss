@@ -124,7 +124,8 @@
       }
     }
 
-    &:active:not(:disabled) {
+    &:active:not(:disabled),
+    &.#{$class-name}-item-active:active:not(:disabled) {
       background: functions.state-layer(
         functions.surface-elevation(light.$md-sys-color-surface, light.$md-sys-color-surface-tint, $surface-elevation),
         light.$md-sys-color-on-secondary-container,
