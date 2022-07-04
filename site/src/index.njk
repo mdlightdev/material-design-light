@@ -3,11 +3,11 @@ layout: layouts/base.njk
 title: Material Design Light
 description: A lightweight CSS framework implementing the Material Design 3.
 thumbnail:
-    path: /assets/img/thumb.png
-    type: image/jpeg
-    width: 1280
-    height: 720
-    alt: Pastel photograph with the Material Design Light logo.
+path: /assets/img/thumb.png
+type: image/jpeg
+width: 1280
+height: 720
+alt: Pastel photograph with the Material Design Light logo.
 keywords:
 - CSS
 - CSS framework
@@ -42,78 +42,136 @@ keywords:
   <div style='width: 22.5rem;height:100vh'></div>
   <div class='container m-5'>
     <h1 style='font-family: var(--ml-font-sans-serif)'>Material Design Light</h1>
-    <p class='typography-body-large'><strong>Notice:</strong> This CSS framework is heavily work-in-progress. New
-      components and layouts are added in chronological order to this page.</p>
+    <p class='typography-body-large'><strong>Notice:</strong> This CSS framework is heavily work-in-progress. Browse the
+      components below or <a href='https://github.com/mdlightdev/material-design-light' target='_blank'>check out the
+        repository</a>.</p>
     <hr>
-    <div class='card card-elevated' style='width:18rem;height:10rem;'>
-    </div>
-    <hr>
-    <div class='card card-filled' style='width:18rem;height:10rem;'>
-    </div>
-    <hr>
-    <div class='card card-outlined' style='width:18rem;height:10rem;'>
-    </div>
-    <hr>
-    <button type='button' class='button button-elevated'>Elevated button</button>
-    <hr>
-    <button type='button' class='button button-elevated' disabled>Elevated button</button>
-    <hr>
-    <a href='#' class='button button-elevated'>Elevated button</a>
-    <hr>
-    <button type='button' class='button button-filled'>Filled button</button>
-    <hr>
-    <button type='button' class='button button-tonal'>Tonal button</button>
-    <hr>
-    <button type='button' class='button button-outlined'>Outlined button</button>
-    <hr>
-    <button type='button' class='button button-text'>Text button</button>
-    <hr>
-    <button type='button' class='button button-elevated button-with-icon'><span
-        class='material-symbols-outlined button-icon'>add</span> Elevated
-    </button>
-    <hr>
-    <div class='card card-elevated card-hover' style='width:26rem'>
-      <img src='https://picsum.photos/seed/71/384/216' crossorigin alt='Demo' class='card-image-top'>
-      <div class='card-body'>
-        <h5 class='typography-headline-medium mt-2 mb-1'>Glass Souls' World Tour</h5>
-        <p class='typography-body-large m-0'>From your recent favorites</p>
-        <div class='group-inline gap-3 mt-4 mb-3'>
-          <button type='button' class='button button-filled'>Buy tickets</button>
-          <button type='button' class='button button-outlined'>Buy tickets</button>
-        </div>
+    <div class='row gap-3 my-3'>
+      <div class='col'>
+        <button type='button' class='button button-elevated'>Elevated button</button>
+      </div>
+      <div class='col'>
+        <button type='button' class='button button-elevated' disabled>Elevated button</button>
+      </div>
+      <div class='col'>
+        <a href='#' class='button button-elevated'>Elevated button</a>
+      </div>
+      <div class='col'>
+        <button type='button' class='button button-filled'>Filled button</button>
+      </div>
+      <div class='col'>
+        <button type='button' class='button button-tonal'>Tonal button</button>
+      </div>
+      <div class='col'>
+        <button type='button' class='button button-outlined'>Outlined button</button>
+      </div>
+      <div class='col'>
+        <button type='button' class='button button-text'>Text button</button>
+      </div>
+      <div class='col'>
+        <button type='button' class='button button-elevated button-with-icon'><span
+            class='material-symbols-outlined button-icon'>add</span> Elevated
+        </button>
+      </div>
+      <div class='col'>
+        <a href='#' class='button button-elevated'>Elevated button</a>
+      </div>
+      <div class='col'>
+        <a href='#' class='button button-elevated'>Elevated button</a>
+      </div>
+      <div class='col'>
+        <a href='#' class='button button-elevated'>Elevated button</a>
       </div>
     </div>
     <hr>
-    <div class='card card-filled card-hover' style='width:26rem'>
-      <img src='https://picsum.photos/seed/2/384/216' crossorigin alt='Demo' class='card-image-top'>
-      <div class='card-body'>
-        <h5 class='typography-headline-medium mt-2 mb-1'>Glass Souls' World Tour</h5>
-        <p class='typography-body-large m-0'>From your recent favorites</p>
-        <div class='group-inline gap-3 mt-4 mb-3'>
-          <button type='button' class='button button-filled'>Buy tickets</button>
-          <button type='button' class='button button-outlined'>Buy tickets</button>
+    <div class='row my-3'>
+      <div class='col'>
+        <div class='field-text field-text-filled' style='width:16rem'>
+          <label class='field-text-icon-leading' for='text'><span
+              class='material-symbols-outlined'>search</span></label>
+          <label class='field-text-label' for='text'>Label text</label>
+          <input class='field-text-input' type='text' id='text' placeholder=' ' pattern="[A-Za-z]{3}">
+          <label class='field-text-icon-trailing' for='text'><span
+              class='material-symbols-outlined material-symbols-outlined-2'>cancel</span></label>
+        </div>
+        <p class='field-text-support'>Supporting text</p>
+      </div>
+      <div class='col'>
+        <div class='field-text field-text-outlined' style='width:16rem;background: var(--md-sys-color-background);'>
+          <label class='field-text-icon-leading' for='text2'><span
+              class='material-symbols-outlined'>search</span></label>
+          <label class='field-text-label' for='text2'>Label text</label>
+          <input class='field-text-input' type='text' id='text2' placeholder=' ' pattern="[A-Za-z]{3}">
+          <label class='field-text-icon-trailing' for='text2'><span
+              class='material-symbols-outlined'>cancel</span></label>
+        </div>
+        <p class='field-text-support'>Supporting text</p>
+      </div>
+      <div class='col'>
+        <div class='field-text field-text-filled' style='width:16rem;'>
+          <label class='field-text-label' for='text'>Label text</label>
+          <input class='field-text-input' type='text' id='text' placeholder=' ' pattern="[A-Za-z]{3}">
         </div>
       </div>
-    </div>
-    <hr>
-    <div class='card card-outlined card-hover' style='width:26rem'>
-      <img src='https://picsum.photos/seed/212/384/216' crossorigin alt='Demo' class='card-image-top'>
-      <div class='card-body'>
-        <h5 class='typography-headline-medium mt-2 mb-1'>Glass Souls' World Tour</h5>
-        <p class='typography-body-large m-0'>From your recent favorites</p>
-        <div class='group-inline gap-3 mt-4 mb-3'>
-          <button type='button' class='button button-filled'>Buy tickets</button>
-          <button type='button' class='button button-outlined'>Buy tickets</button>
+      <div class='col'>
+        <div class='field-text field-text-outlined' style='width:16rem;background: var(--md-sys-color-background);'>
+          <label class='field-text-label' for='text'>Label text</label>
+          <input class='field-text-input' type='text' id='text' placeholder=' '>
         </div>
       </div>
     </div>
     <hr>
     <div class='row'>
-      <div class='col-10'>
-        <p class='typography-body-large'>Left (col-10)</p>
+      <div class='col'>
+        <div class='card card-elevated card-hover' style='width:26rem'>
+          <img src='https://picsum.photos/seed/71/384/216' crossorigin alt='Demo' class='card-image-top'>
+          <div class='card-body'>
+            <h5 class='typography-headline-medium mt-2 mb-1'>Glass Souls' World Tour</h5>
+            <p class='typography-body-large m-0'>From your recent favorites</p>
+            <div class='group-inline gap-3 mt-4 mb-3'>
+              <button type='button' class='button button-filled'>Buy tickets</button>
+              <button type='button' class='button button-outlined'>Buy tickets</button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class='col-2'>
-        <p class='typography-body-large'>Right (col-2)</p>
+      <div class='col'>
+        <div class='card card-filled card-hover' style='width:26rem'>
+          <img src='https://picsum.photos/seed/2/384/216' crossorigin alt='Demo' class='card-image-top'>
+          <div class='card-body'>
+            <h5 class='typography-headline-medium mt-2 mb-1'>Glass Souls' World Tour</h5>
+            <p class='typography-body-large m-0'>From your recent favorites</p>
+            <div class='group-inline gap-3 mt-4 mb-3'>
+              <button type='button' class='button button-filled'>Buy tickets</button>
+              <button type='button' class='button button-outlined'>Buy tickets</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='col'>
+        <div class='card card-outlined card-hover' style='width:26rem'>
+          <img src='https://picsum.photos/seed/212/384/216' crossorigin alt='Demo' class='card-image-top'>
+          <div class='card-body'>
+            <h5 class='typography-headline-medium mt-2 mb-1'>Glass Souls' World Tour</h5>
+            <p class='typography-body-large m-0'>From your recent favorites</p>
+            <div class='group-inline gap-3 mt-4 mb-3'>
+              <button type='button' class='button button-filled'>Buy tickets</button>
+              <button type='button' class='button button-outlined'>Buy tickets</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class='row'>
+      <div class='col'>
+        <div class='card card-elevated' style='width:18rem;height:10rem;'></div>
+      </div>
+      <div class='col'>
+        <div class='card card-filled' style='width:18rem;height:10rem;'></div>
+      </div>
+      <div class='col'>
+        <div class='card card-outlined' style='width:18rem;height:10rem;'></div>
       </div>
     </div>
   </div>
