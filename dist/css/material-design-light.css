@@ -1296,6 +1296,7 @@ body[data-ml-theme=dark] .card-outlined:hover:not(:disabled).card-hover, .ml-the
 }
 
 .nav-drawer .nav-drawer-item {
+  -webkit-tap-highlight-color: transparent;
   display: flex;
   height: 3.5rem;
   padding: 0 1.5rem 0 1rem;
@@ -1350,12 +1351,12 @@ body[data-ml-theme=dark] .card-outlined:hover:not(:disabled).card-hover, .ml-the
   color: #1d192b;
 }
 
-.nav-drawer .nav-drawer-item:active:not(:disabled) {
+.nav-drawer .nav-drawer-item:active:not(:disabled), .nav-drawer .nav-drawer-item.nav-drawer-item-active:active:not(:disabled) {
   background: #e4e0e5;
   color: #1c1b1f;
 }
 
-.nav-drawer .nav-drawer-item:active:not(:disabled).nav-drawer-item-active {
+.nav-drawer .nav-drawer-item:active:not(:disabled).nav-drawer-item-active, .nav-drawer .nav-drawer-item.nav-drawer-item-active:active:not(:disabled).nav-drawer-item-active {
   color: #1d192b;
 }
 
@@ -1434,6 +1435,7 @@ body[data-ml-theme=dark] .nav-drawer .nav-drawer-item:active:not(:disabled).nav-
 }
 
 .nav-drawer-modal .nav-drawer-modal-item {
+  -webkit-tap-highlight-color: transparent;
   display: flex;
   height: 3.5rem;
   padding: 0 1.5rem 0 1rem;
@@ -1488,12 +1490,12 @@ body[data-ml-theme=dark] .nav-drawer .nav-drawer-item:active:not(:disabled).nav-
   color: #1d192b;
 }
 
-.nav-drawer-modal .nav-drawer-modal-item:active:not(:disabled) {
+.nav-drawer-modal .nav-drawer-modal-item:active:not(:disabled), .nav-drawer-modal .nav-drawer-modal-item.nav-drawer-modal-item-active:active:not(:disabled) {
   background: #ddd8e1;
   color: #1c1b1f;
 }
 
-.nav-drawer-modal .nav-drawer-modal-item:active:not(:disabled).nav-drawer-modal-item-active {
+.nav-drawer-modal .nav-drawer-modal-item:active:not(:disabled).nav-drawer-modal-item-active, .nav-drawer-modal .nav-drawer-modal-item.nav-drawer-modal-item-active:active:not(:disabled).nav-drawer-modal-item-active {
   color: #1d192b;
 }
 
@@ -1839,6 +1841,345 @@ body[data-ml-theme=dark] .button-text:focus-visible:not(:disabled), .ml-theme-da
 
 body[data-ml-theme=dark] .button-text:active:not(:disabled), .ml-theme-dark .button-text:active:not(:disabled) {
   background: rgba(208, 188, 255, 0.12);
+}
+
+/* stylelint-disable no-descending-specificity -- Extremely convoluted rule for advanced styling. */
+.field-text {
+  position: relative;
+  height: 3.5rem;
+  box-sizing: border-box;
+  transition-property: background-color;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.field-text .field-text-input {
+  height: 100%;
+  width: 100%;
+  background: none;
+  box-sizing: border-box;
+  border: 0;
+  color: #1c1b1f;
+  caret-color: #6750a4;
+  font-family: "Roboto Flex", roboto, system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", helvetica, arial, ubuntu, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.03125rem;
+}
+
+.field-text .field-text-input:focus {
+  outline: none;
+}
+
+.field-text .field-text-input::placeholder {
+  color: #49454f;
+}
+
+.field-text.field-text-filled {
+  background: #e7e0ec;
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+
+.field-text.field-text-filled .field-text-input {
+  padding: 1.25rem 1rem 0.5rem;
+}
+
+.field-text.field-text-outlined .field-text-input {
+  padding: 0 1rem;
+}
+
+.field-text.field-text-outlined .field-text-label {
+  background: inherit;
+  z-index: 1;
+}
+
+.field-text.field-text-filled::after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-bottom: 0.0625rem solid #49454f;
+  transition-property: border-color, border-width;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  pointer-events: none;
+}
+
+.field-text.field-text-outlined::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0.0625rem solid #79747e;
+  border-radius: 0.25rem;
+  transition-property: border-color, border-width;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+.field-text .field-text-icon-leading {
+  position: absolute;
+  top: 50%;
+  left: 0.75rem;
+  transform: translateY(-50%);
+  user-select: none;
+  pointer-events: none;
+  color: #49454f;
+  font-size: 1.5rem;
+  line-height: 0;
+}
+
+.field-text .field-text-label {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  user-select: none;
+  pointer-events: none;
+  margin-right: 1rem;
+  color: #49454f;
+  font-family: "Roboto Flex", roboto, system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", helvetica, arial, ubuntu, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.03125rem;
+  transition-property: color, transform, top, font-size, line-height, left, padding;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.field-text .field-text-icon-trailing {
+  position: absolute;
+  top: 50%;
+  right: 0.75rem;
+  transform: translateY(-50%);
+  user-select: none;
+  pointer-events: none;
+  color: #49454f;
+  font-size: 1.5rem;
+  line-height: 0;
+  transition-property: color;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.field-text:has(> .field-text-icon-leading) .field-text-input {
+  padding-left: 3.25rem;
+}
+
+.field-text:has(> .field-text-icon-leading).field-text-filled .field-text-label {
+  left: 3.25rem;
+}
+
+.field-text:has(> .field-text-icon-trailing) .field-text-input {
+  padding-right: 3.25rem;
+}
+
+.field-text:has(> .field-text-icon-trailing) .field-text-label {
+  margin-right: 3.25rem;
+}
+
+.field-text .field-text-input:-webkit-autofill, .field-text .field-text-input:-webkit-autofill:focus {
+  transition: background-color 2147483647s 0s, color 2147483647s 0s !important;
+}
+
+.field-text:has(> .field-text-input:disabled).field-text-filled {
+  background: rgba(28, 27, 31, 0.04);
+}
+
+.field-text:has(> .field-text-input:disabled).field-text-filled::after {
+  border-color: rgba(28, 27, 31, 0.38);
+}
+
+.field-text:has(> .field-text-input:disabled) .field-text-label, .field-text:has(> .field-text-input:disabled) .field-text-input, .field-text:has(> .field-text-input:disabled) .field-text-icon-leading, .field-text:has(> .field-text-input:disabled) .field-text-icon-trailing {
+  color: rgba(28, 27, 31, 0.38);
+}
+
+.field-text:has(> .field-text-input:not(:placeholder-shown)).field-text-filled .field-text-label, .field-text:focus-within:not(:has(> .field-text-input:disabled)).field-text-filled .field-text-label {
+  top: 0.5rem;
+}
+
+.field-text:has(> .field-text-input:not(:placeholder-shown)).field-text-outlined .field-text-label, .field-text:focus-within:not(:has(> .field-text-input:disabled)).field-text-outlined .field-text-label {
+  top: -0.475rem;
+  padding: 0 0.25rem;
+}
+
+.field-text:has(> .field-text-input:not(:placeholder-shown)) .field-text-label, .field-text:focus-within:not(:has(> .field-text-input:disabled)) .field-text-label {
+  transform: translateY(0);
+  line-height: 1rem;
+  font-size: 0.75rem;
+}
+
+.field-text:has(> .field-text-input:placeholder-shown):has(> .field-text-input:not(:focus)):has(> .field-text-icon-leading).field-text-outlined .field-text-label {
+  left: 3.25rem;
+}
+
+.field-text:focus-within:not(:has(> .field-text-input:disabled)).field-text-filled::after {
+  border-bottom: 0.125rem solid #6750a4;
+}
+
+.field-text:focus-within:not(:has(> .field-text-input:disabled)).field-text-outlined::after {
+  border-width: 0.125rem;
+  border-color: #6750a4;
+}
+
+.field-text:focus-within:not(:has(> .field-text-input:disabled)) .field-text-label {
+  color: #6750a4;
+}
+
+.field-text:hover:not(:has(> .field-text-input:disabled)):not(:focus-within).field-text-filled {
+  background: #d7d0dc;
+}
+
+.field-text:hover:not(:has(> .field-text-input:disabled)):not(:focus-within).field-text-outlined::after {
+  border-color: #6750a4;
+}
+
+.field-text:hover:not(:has(> .field-text-input:disabled)):not(:focus-within).field-text-outlined .field-text-label {
+  color: #1c1b1f;
+}
+
+.field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid)::after {
+  border-color: #b3261e;
+}
+
+.field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid) .field-text-label, .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid) .field-text-icon-trailing {
+  color: #b3261e;
+}
+
+.field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid) .field-text-input {
+  caret-color: #b3261e;
+}
+
+.field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled)):not(:focus-within).field-text-filled {
+  background: #d7d0dc;
+}
+
+.field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled)):not(:focus-within).field-text-filled::after {
+  border-color: #410e0b;
+}
+
+.field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled)):not(:focus-within) .field-text-label, .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled)):not(:focus-within) .field-text-icon-trailing {
+  color: #410e0b;
+}
+
+body[data-ml-theme=dark] .field-text.field-text-filled, .ml-theme-dark .field-text.field-text-filled {
+  background: #49454f;
+}
+
+body[data-ml-theme=dark] .field-text.field-text-outlined, .ml-theme-dark .field-text.field-text-outlined {
+  border-color: #938f99;
+}
+
+body[data-ml-theme=dark] .field-text.field-text-filled::after, .ml-theme-dark .field-text.field-text-filled::after {
+  border-color: #cac4d0;
+}
+
+body[data-ml-theme=dark] .field-text .field-text-input, .ml-theme-dark .field-text .field-text-input {
+  color: #e6e1e5;
+  caret-color: #d0bcff;
+}
+
+body[data-ml-theme=dark] .field-text .field-text-input::placeholder, .ml-theme-dark .field-text .field-text-input::placeholder {
+  color: #cac4d0;
+}
+
+body[data-ml-theme=dark] .field-text .field-text-icon-leading, .ml-theme-dark .field-text .field-text-icon-leading {
+  color: #cac4d0;
+}
+
+body[data-ml-theme=dark] .field-text .field-text-label, .ml-theme-dark .field-text .field-text-label {
+  color: #cac4d0;
+}
+
+body[data-ml-theme=dark] .field-text .field-text-icon-trailing, .ml-theme-dark .field-text .field-text-icon-trailing {
+  color: #cac4d0;
+}
+
+body[data-ml-theme=dark] .field-text:has(> .field-text-input:disabled).field-text-filled, .ml-theme-dark .field-text:has(> .field-text-input:disabled).field-text-filled {
+  background: rgba(230, 225, 229, 0.04);
+}
+
+body[data-ml-theme=dark] .field-text:has(> .field-text-input:disabled).field-text-filled::after, .ml-theme-dark .field-text:has(> .field-text-input:disabled).field-text-filled::after {
+  border-color: rgba(230, 225, 229, 0.38);
+}
+
+body[data-ml-theme=dark] .field-text:has(> .field-text-input:disabled) .field-text-label, body[data-ml-theme=dark] .field-text:has(> .field-text-input:disabled) .field-text-input, body[data-ml-theme=dark] .field-text:has(> .field-text-input:disabled) .field-text-icon-leading, body[data-ml-theme=dark] .field-text:has(> .field-text-input:disabled) .field-text-icon-trailing, .ml-theme-dark .field-text:has(> .field-text-input:disabled) .field-text-label, .ml-theme-dark .field-text:has(> .field-text-input:disabled) .field-text-input, .ml-theme-dark .field-text:has(> .field-text-input:disabled) .field-text-icon-leading, .ml-theme-dark .field-text:has(> .field-text-input:disabled) .field-text-icon-trailing {
+  color: rgba(230, 225, 229, 0.38);
+}
+
+body[data-ml-theme=dark] .field-text:focus-within:not(:has(> .field-text-input:disabled)).field-text-filled::after, .ml-theme-dark .field-text:focus-within:not(:has(> .field-text-input:disabled)).field-text-filled::after {
+  border-color: #d0bcff;
+}
+
+body[data-ml-theme=dark] .field-text:focus-within:not(:has(> .field-text-input:disabled)) .field-text-label, .ml-theme-dark .field-text:focus-within:not(:has(> .field-text-input:disabled)) .field-text-label {
+  color: #d0bcff;
+}
+
+body[data-ml-theme=dark] .field-text:hover:not(:has(> .field-text-input:disabled)):not(:focus-within).field-text-filled, .ml-theme-dark .field-text:hover:not(:has(> .field-text-input:disabled)):not(:focus-within).field-text-filled {
+  background: #56515b;
+}
+
+body[data-ml-theme=dark] .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid).field-text-filled::after, .ml-theme-dark .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid).field-text-filled::after {
+  border-color: #f2b8b5;
+}
+
+body[data-ml-theme=dark] .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid) .field-text-label, body[data-ml-theme=dark] .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid) .field-text-icon-trailing, .ml-theme-dark .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid) .field-text-label, .ml-theme-dark .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid) .field-text-icon-trailing {
+  color: #f2b8b5;
+}
+
+body[data-ml-theme=dark] .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid) .field-text-input, .ml-theme-dark .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid) .field-text-input {
+  caret-color: #f2b8b5;
+}
+
+body[data-ml-theme=dark] .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled)):not(:focus-within).field-text-filled, .ml-theme-dark .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled)):not(:focus-within).field-text-filled {
+  background: #56515b;
+}
+
+body[data-ml-theme=dark] .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled)):not(:focus-within).field-text-filled::after, .ml-theme-dark .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled)):not(:focus-within).field-text-filled::after {
+  border-color: #f2b8b5;
+}
+
+body[data-ml-theme=dark] .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled)):not(:focus-within) .field-text-label, body[data-ml-theme=dark] .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled)):not(:focus-within) .field-text-icon-trailing, .ml-theme-dark .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled)):not(:focus-within) .field-text-label, .ml-theme-dark .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled)):not(:focus-within) .field-text-icon-trailing {
+  color: #f2b8b5;
+}
+
+.field-text-support {
+  margin: 0.25rem 1rem 0;
+  color: #49454f;
+  font-family: "Roboto Flex", roboto, system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", helvetica, arial, ubuntu, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1rem;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.025rem;
+}
+
+.field-text-support[aria-disabled=true] {
+  color: rgba(28, 27, 31, 0.38);
+}
+
+.field-text-support[aria-invalid=true] {
+  color: #b3261e;
+}
+
+body[data-ml-theme=dark] .field-text-support, .ml-theme-dark .field-text-support {
+  color: #cac4d0;
+}
+
+body[data-ml-theme=dark] .field-text-support[aria-disabled=true], .ml-theme-dark .field-text-support[aria-disabled=true] {
+  color: rgba(230, 225, 229, 0.38);
+}
+
+body[data-ml-theme=dark] .field-text-support[aria-invalid=true], .ml-theme-dark .field-text-support[aria-invalid=true] {
+  color: #f2b8b5;
 }
 
 .typography-headline-large {
