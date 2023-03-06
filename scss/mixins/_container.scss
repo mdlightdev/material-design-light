@@ -11,8 +11,8 @@
   --#{variables.$prefix}gutter-y: 0;
 
   width: 100%;
-  padding-right: calc(var(--#{variables.$prefix}gutter-x) * 0.5); // stylelint-disable-line function-disallowed-list
-  padding-left: calc(var(--#{variables.$prefix}gutter-x) * 0.5); // stylelint-disable-line function-disallowed-list
+  padding-right: calc(var(--#{variables.$prefix}gutter-x) * 0.5);
+  padding-left: calc(var(--#{variables.$prefix}gutter-x) * 0.5);
   margin-right: auto;
   margin-left: auto;
 }
