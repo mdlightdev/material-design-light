@@ -2,10 +2,11 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
+// fusv-disable
+
 // Plain typeface
-$md-ref-typeface-plain: 'Roboto Flex', roboto, system-ui, -apple-system,
-  blinkmacsystemfont, 'Segoe UI', helvetica, arial, ubuntu, 'Noto Sans',
-  sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+$md-ref-typeface-plain: 'Roboto Flex', roboto, system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', helvetica,
+  arial, ubuntu, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
 
 // Bold weight
 $md-ref-typeface-weight-bold: 700;
