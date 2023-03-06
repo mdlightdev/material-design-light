@@ -66,7 +66,7 @@
     "postcss-custom-selector": "^1.0.0",
     "postcss-custom-selectors": "^6.0.3",
     "postcss-import": "^15.1.0",
-    "postcss-nested": "^5.0.6",
+    "postcss-nested": "^6.0.1",
     "prettier": "2.7.1",
     "rfs": "^9.0.6",
     "sass": "^1.52.3",
