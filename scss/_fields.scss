@@ -229,7 +229,7 @@
   }
 
   // Hovered
-  &:hover:not(:has(> .field-text-input:disabled)):not(:focus-within) {
+  &:hover:not(:has(> .field-text-input:disabled), :focus-within) {
     &.field-text-filled {
       background: functions.state-layer(light.$md-sys-color-surface-variant, light.$md-sys-color-on-surface, 'hover');
     }
@@ -261,7 +261,7 @@
     }
 
     // Error hover
-    &:hover:not(:has(> .field-text-input:disabled)):not(:focus-within) {
+    &:hover:not(:has(> .field-text-input:disabled), :focus-within) {
       &.field-text-filled {
         background: functions.state-layer(light.$md-sys-color-surface-variant, light.$md-sys-color-on-surface, 'hover');
       }
@@ -340,7 +340,7 @@
       }
     }
 
-    &:hover:not(:has(> .field-text-input:disabled)):not(:focus-within) {
+    &:hover:not(:has(> .field-text-input:disabled), :focus-within) {
       &.field-text-filled {
         background: functions.state-layer(dark.$md-sys-color-surface-variant, dark.$md-sys-color-on-surface, 'hover');
       }
@@ -360,7 +360,7 @@
         caret-color: dark.$md-sys-color-error;
       }
 
-      &:hover:not(:has(> .field-text-input:disabled)):not(:focus-within) {
+      &:hover:not(:has(> .field-text-input:disabled), :focus-within) {
         &.field-text-filled {
           background: functions.state-layer(dark.$md-sys-color-surface-variant, dark.$md-sys-color-on-surface, 'hover');
         }
