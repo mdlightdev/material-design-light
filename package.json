@@ -79,6 +79,6 @@
     "scss/**/*.scss"
   ],
   "engines": {
-    "node": ">=12"
+    "node": ">=14"
   }
 }
