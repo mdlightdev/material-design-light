@@ -38,10 +38,10 @@
     "css-minify": "csso --input dist/css/material-design-light.css --input-source-map dist/css/material-design-light.css.map --output dist/css/material-design-light.min.css",
     "site-build": "npx @11ty/eleventy",
     "site-bench": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
-    "site-serve": "npx @11ty/eleventy --serve",
+    "site-serve": "npx @11ty/eleventy --serve --incremental",
     "watch": "npm-run-all --parallel watch-*",
     "watch-css-main": "nodemon --watch scss/ --ext scss --exec \"npm-run-all css-lint-stylelint css-compile\"",
-    "watch-site-main": "npx @11ty/eleventy --watch"
+    "watch-site-main": "npx @11ty/eleventy --watch --incremental"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
