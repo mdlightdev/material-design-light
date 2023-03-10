@@ -38,10 +38,10 @@
     "css-minify": "csso --input dist/css/material-design-light.css --input-source-map dist/css/material-design-light.css.map --output dist/css/material-design-light.min.css",
     "site-build": "npx @11ty/eleventy",
     "site-bench": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
-    "site-serve": "npx @11ty/eleventy --serve",
+    "site-serve": "npx @11ty/eleventy --serve --incremental",
     "watch": "npm-run-all --parallel watch-*",
     "watch-css-main": "nodemon --watch scss/ --ext scss --exec \"npm-run-all css-lint-stylelint css-compile css-minify\"",
-    "watch-site-main": "npx @11ty/eleventy --watch"
+    "watch-site-main": "npx @11ty/eleventy --watch --incremental"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
@@ -64,10 +64,10 @@
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.14",
     "postcss-custom-selector": "^1.0.0",
-    "postcss-custom-selectors": "^6.0.3",
+    "postcss-custom-selectors": "^7.1.2",
     "postcss-import": "^15.1.0",
     "postcss-nested": "^6.0.1",
-    "prettier": "2.7.1",
+    "prettier": "2.8.4",
     "rfs": "^9.0.6",
     "sass": "^1.52.3",
     "stylelint": "^14.9.1",
