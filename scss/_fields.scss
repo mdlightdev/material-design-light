@@ -68,6 +68,9 @@ $padding-between-supporting-text-and-character-counter: 1rem;
         line-height: 0;
         padding-left: 0.125rem;
         padding-right: 0.125rem;
+        & ~ .#{$classname}-label {
+          left: 3.25rem;
+        }
       }
       
       & > .#{$classname}-input {
@@ -88,6 +91,9 @@ $padding-between-supporting-text-and-character-counter: 1rem;
     
         &:focus {
           outline: none;
+          & ~ .#{$classname}-label {
+            color: light.$md-sys-color-primary;
+         }
         }
     
         // the input is empty and not focused
@@ -101,7 +107,7 @@ $padding-between-supporting-text-and-character-counter: 1rem;
       // by default the label is styled in 'populated mode' so that browsers not supporting 'advanced' css are ok
       & > .#{$classname}-label {
         position: absolute;
-        left: 3.25rem;
+        left: $left-right-padding-without-icon;
         user-select: none;
         pointer-events: none;
         margin-right: $left-right-padding-without-icon;
@@ -127,23 +133,22 @@ $padding-between-supporting-text-and-character-counter: 1rem;
         transition-property: color;
         transition-duration: motion.$md-sys-motion-transition-duration;
         transition-timing-function: motion.$md-sys-motion-easing-standard-curve;
-      }
-    
-      & > .#{$classname}-supporting-text {
-        margin-top: $supporting-text-top-padding;
-        color: light.$md-sys-color-on-surface-variant;
-        font-family: typescale.$md-sys-typescale-body-small-font;
-        line-height: typescale.$md-sys-typescale-body-small-line-height;
-        font-size: typescale.$md-sys-typescale-body-small-size;
-        font-weight: typescale.$md-sys-typescale-body-small-weight;
-        letter-spacing: typescale.$md-sys-typescale-body-small-tracking;
-      }
+      }    
+    }
+    & > .#{$classname}-supporting-text {
+      margin-top: $supporting-text-top-padding;
+      color: light.$md-sys-color-on-surface-variant;
+      font-family: typescale.$md-sys-typescale-body-small-font;
+      line-height: typescale.$md-sys-typescale-body-small-line-height;
+      font-size: typescale.$md-sys-typescale-body-small-size;
+      font-weight: typescale.$md-sys-typescale-body-small-weight;
+      letter-spacing: typescale.$md-sys-typescale-body-small-tracking;
+    }
 
-      & > .#{$classname}-character-counter {
-        margin-top: $supporting-text-top-padding;
+    & > .#{$classname}-character-counter {
+      margin-top: $supporting-text-top-padding;
 
-        // todo: complete this part
-      }
+      // todo: complete this part
     }
   }
 }
