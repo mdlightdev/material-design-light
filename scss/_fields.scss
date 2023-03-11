@@ -12,13 +12,20 @@
 @use 'tokens/sys/motion';
 
 $classname: textfield !default;
-$container-height: 3.5rem;
-$top-bottom-padding: 0.5rem;
-$left-right-padding-without-icon: 1rem;
-$left-right-padding-with-icon: 0.75rem;
-$padding-between-icons-and-text: 1rem;
-$supporting-text-top-padding: 0.25rem;
-$padding-between-supporting-text-and-character-counter: 1rem;
+
+// filled variabled
+$filled-container-height: 3.5rem;
+$filled-top-bottom-padding: 0.5rem;
+$filled-left-right-padding-without-icon: 1rem;
+$filled-left-right-padding-with-icon: 0.75rem;
+$filled-supporting-text-top-padding: 0.25rem;
+
+// outlined variabled
+$outlined-container-height: 3.5rem;
+$outlined-top-bottom-padding: 0.5rem;
+$outlined-left-right-padding-without-icon: 1rem;
+$outlined-left-right-padding-with-icon: 0.75rem;
+$outlined-supporting-text-top-padding: 0.25rem;
 
 .#{$classname} {
   &-filled {
@@ -31,43 +38,41 @@ $padding-between-supporting-text-and-character-counter: 1rem;
       background: light.$md-sys-color-surface-variant;
       border-radius: shape.$md-sys-shape-corner-extra-small-top;
       display: flex;
-      height: $container-height;
-      padding-bottom: $top-bottom-padding;
-      padding-top: $top-bottom-padding;
+      height: $filled-container-height;
+      padding-bottom: $filled-top-bottom-padding;
+      padding-top: $filled-top-bottom-padding;
       position: relative;
-      transition-property: background-color;
-      transition-duration: motion.$md-sys-motion-transition-duration;
-      transition-timing-function: motion.$md-sys-motion-easing-standard-curve;
   
       &:focus-within::after {
         border-bottom-width: 0.125rem;
         border-bottom-color: #6750a4;
+        transition-duration: motion.$md-sys-motion-transition-duration;
+        transition-property: border-color, border-width;
+        transition-timing-function: motion.$md-sys-motion-easing-standard-curve;
       }
 
       // represents the 'Active indicator' (the bottom line that changes color and increased its size when focussed)
       &::after {
-        content: ' ';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
         border-bottom: 0.0625rem solid light.$md-sys-color-on-surface-variant;
-        transition-property: border-color, border-width;
-        transition-duration: motion.$md-sys-motion-transition-duration;
-        transition-timing-function: motion.$md-sys-motion-easing-standard-curve;
-        user-select: none;
+        bottom: 0;
+        content: ' ';
+        left: 0;
         pointer-events: none;
+        position: absolute;
+        user-select: none;
+        width: 100%;
       }
   
       & > .#{$classname}-leading-icon {
-        margin-left: $left-right-padding-with-icon;
-        user-select: none;
-        pointer-events: none;
         color: light.$md-sys-color-on-surface-variant;
         font-size: 1.25em;
         line-height: 0;
+        margin-left: $filled-left-right-padding-with-icon;
         padding-left: 0.125rem;
         padding-right: 0.125rem;
+        pointer-events: none;
+        user-select: none;
+
         & ~ .#{$classname}-label {
           left: 3.25rem;
         }
@@ -82,10 +87,10 @@ $padding-between-supporting-text-and-character-counter: 1rem;
         font-family: typescale.$md-sys-typescale-body-large-font;
         font-size: typescale.$md-sys-typescale-body-large-size;
         font-weight: typescale.$md-sys-typescale-body-large-weight;
-        margin-left: $left-right-padding-without-icon;
-        margin-right: $left-right-padding-without-icon;
         letter-spacing: typescale.$md-sys-typescale-body-large-tracking;
         line-height: typescale.$md-sys-typescale-body-large-line-height;
+        margin-left: $filled-left-right-padding-without-icon;
+        margin-right: $filled-left-right-padding-without-icon;
         padding: 0;
         width: 100%;
     
@@ -106,44 +111,44 @@ $padding-between-supporting-text-and-character-counter: 1rem;
     
       // by default the label is styled in 'populated mode' so that browsers not supporting 'advanced' css are ok
       & > .#{$classname}-label {
-        position: absolute;
-        left: $left-right-padding-without-icon;
-        user-select: none;
-        pointer-events: none;
-        margin-right: $left-right-padding-without-icon;
         color: light.$md-sys-color-on-surface-variant;
         font-family: typescale.$md-sys-typescale-body-large-font;
-        line-height: typescale.$md-sys-typescale-body-small-line-height;
         font-size: typescale.$md-sys-typescale-body-small-size;
         font-weight: typescale.$md-sys-typescale-body-large-weight;
+        left: $filled-left-right-padding-without-icon;
         letter-spacing: typescale.$md-sys-typescale-body-large-tracking;
-        top: $top-bottom-padding;
-        transition-property: color, transform, top, font-size, line-height, left, padding;
+        line-height: typescale.$md-sys-typescale-body-small-line-height;
+        margin-right: $filled-left-right-padding-without-icon;
+        pointer-events: none;
+        position: absolute;
+        top: $filled-top-bottom-padding;
         transition-duration: motion.$md-sys-motion-transition-duration;
+        transition-property: color, transform, top, font-size, line-height, left, padding;
         transition-timing-function: motion.$md-sys-motion-easing-standard-curve;
+        user-select: none;
       }
     
       & > .#{$classname}-trailing-icon {
-        margin-right: $left-right-padding-with-icon;
-        user-select: none;
-        pointer-events: none;
         color: light.$md-sys-color-on-surface-variant;
         font-size: 1.5rem;
         line-height: 0;
-        transition-property: color;
+        margin-right: $filled-left-right-padding-with-icon;
+        pointer-events: none;
         transition-duration: motion.$md-sys-motion-transition-duration;
+        transition-property: color;
         transition-timing-function: motion.$md-sys-motion-easing-standard-curve;
+        user-select: none;
       }    
     }
     & > .#{$classname}-supporting-text {
-      display: block;
-      margin-left: $left-right-padding-without-icon;
-      margin-top: $supporting-text-top-padding;
       color: light.$md-sys-color-on-surface-variant;
+      display: block;
       font-family: typescale.$md-sys-typescale-body-small-font;
-      line-height: typescale.$md-sys-typescale-body-small-line-height;
       font-size: typescale.$md-sys-typescale-body-small-size;
       font-weight: typescale.$md-sys-typescale-body-small-weight;
+      line-height: typescale.$md-sys-typescale-body-small-line-height;
+      margin-left: $filled-left-right-padding-without-icon;
+      margin-top: $filled-supporting-text-top-padding;
       letter-spacing: typescale.$md-sys-typescale-body-small-tracking;
     }
   }
