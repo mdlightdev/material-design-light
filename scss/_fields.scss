@@ -136,6 +136,8 @@ $padding-between-supporting-text-and-character-counter: 1rem;
       }    
     }
     & > .#{$classname}-supporting-text {
+      display: block;
+      margin-left: $left-right-padding-without-icon;
       margin-top: $supporting-text-top-padding;
       color: light.$md-sys-color-on-surface-variant;
       font-family: typescale.$md-sys-typescale-body-small-font;
@@ -143,12 +145,6 @@ $padding-between-supporting-text-and-character-counter: 1rem;
       font-size: typescale.$md-sys-typescale-body-small-size;
       font-weight: typescale.$md-sys-typescale-body-small-weight;
       letter-spacing: typescale.$md-sys-typescale-body-small-tracking;
-    }
-
-    & > .#{$classname}-character-counter {
-      margin-top: $supporting-text-top-padding;
-
-      // todo: complete this part
     }
   }
 }
