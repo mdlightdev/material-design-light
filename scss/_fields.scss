@@ -5,27 +5,155 @@
 @use 'sass:color';
 @use 'functions';
 @use 'variables';
-@use 'tokens/sys/themes/light';
-@use 'tokens/sys/themes/dark';
-@use 'tokens/sys/shape';
-@use 'tokens/sys/typescale';
-@use 'tokens/sys/motion';
+@use 'md' as *;
+@use 'tokens/dp';
 
 $classname: textfield !default;
 
-// filled variabled
-$filled-container-height: 3.5rem;
-$filled-top-bottom-padding: 0.5rem;
-$filled-left-right-padding-without-icon: 1rem;
-$filled-left-right-padding-with-icon: 0.75rem;
-$filled-supporting-text-top-padding: 0.25rem;
+// Filled text field states
+$filled-enabled-container-color: $md-sys-color-surface-variant;
+$filled-enabled-container-shape: $md-sys-shape-corner-extra-small-top;
+$filled-enabled-leading-icon-color: $md-sys-color-on-surface-variant;
+$filled-enabled-leading-icon-size: dp.$twenty-four;
+$filled-enabled-label-text-color: $md-sys-color-on-surface-variant;
+$filled-enabled-label-text-font: $md-sys-typescale-body-large-font;
+$filled-enabled-label-text-line-height: $md-sys-typescale-body-large-line-height;
+$filled-enabled-label-text-size: $md-sys-typescale-body-large-size;
+$filled-enabled-label-text-weight: $md-sys-typescale-body-large-weight;
+$filled-enabled-label-text-tracking: $md-sys-typescale-body-large-tracking;
+$filled-enabled-label-text-line-height-populated: $md-sys-typescale-body-small-line-height;
+$filled-enabled-label-text-size-populated: $md-sys-typescale-body-small-size;
+$filled-enabled-trailing-icon-color: $md-sys-color-on-surface-variant;
+$filled-enabled-trailing-icon-size: dp.$twenty-four;
+$filled-enabled-active-indicator: dp.$one;
+$filled-enabled-active-indicator-height: dp.$one;
+$filled-enabled-active-indicator-color: $md-sys-color-on-surface-variant;
+$filled-enabled-caret-color: $md-sys-color-primary;
+$filled-enabled-input-text-color: $md-sys-color-on-surface;
+$filled-enabled-input-text-font: $md-sys-typescale-body-large-font;
+$filled-enabled-input-text-line: $md-sys-typescale-body-large-line-height;
+$filled-enabled-input-text-size: $md-sys-typescale-body-large-size;
+$filled-enabled-input-text-weight: $md-sys-typescale-body-large-weight;
+$filled-enabled-input-text-tracking: $md-sys-typescale-body-large-tracking;
+$filled-enabled-supporting-text-color: $md-sys-color-on-surface-variant;
+$filled-enabled-supporting-text-font: $md-sys-typescale-body-small-font;
+$filled-enabled-supporting-text-line-height: $md-sys-typescale-body-small-line-height;
+$filled-enabled-supporting-text-size: $md-sys-typescale-body-small-size;
+$filled-enabled-supporting-text-weight: $md-sys-typescale-body-small-weight;
+$filled-enabled-supporting-text-tracking: $md-sys-typescale-body-small-tracking;
+$filled-enabled-placeholder-input-text: $md-sys-color-on-surface-variant;
+$filled-enabled-prefix-input-label: $md-sys-color-on-surface-variant;
+$filled-enabled-suffix-input-label-color: $md-sys-color-on-surface-variant;
+$filled-focussed-active-indicator-height: dp.$two;
+$filled-focussed-active-indicator-color: $md-sys-color-primary;
+$filled-focussed-label-text: $md-sys-color-primary;
+$filled-focussed-input-text-color: $md-sys-color-on-surface;
+$filled-focussed-supporting-text: $md-sys-color-on-surface-variant;
+$filled-focussed-leading-icon-color: $md-sys-color-on-surface-variant;
+$filled-focussed-trailing-icon-color: $md-sys-color-on-surface-variant;
+$filled-hovered-active-indicator-height: dp.$one;
+$filled-hovered-active-indicator-color: $md-sys-color-on-surface;
+$filled-hovered-label-text-color: $md-sys-color-on-surface-variant;
+$filled-hovered-input-text-color: $md-sys-color-on-surface;
+$filled-hovered-supporting-text-color: $md-sys-color-on-surface-variant;
+$filled-hovered-leading-icon-color: $md-sys-color-on-surface-variant;
+$filled-hovered-trailing-icon-color: $md-sys-color-on-surface-variant;
+$filled-hovered-state-layer-color: $md-sys-color-on-surface;
+$filled-hovered-state-layer-opacity: $md-sys-state-hover-state-layer-opacity;
+$filled-disabled-container-color: $md-sys-color-on-surface;
+$filled-disabled-container-opacity: 4%;
+$filled-disabled-active-indicator-height: dp.$one;
+$filled-disabled-active-indicator-color: $md-sys-color-on-surface;
+$filled-disabled-active-indicator-opacity: 38%;
+$filled-disabled-label-text-color: $md-sys-color-on-surface;
+$filled-disabled-label-text-opacity: 38%;
+$filled-disabled-input-text-color: $md-sys-color-on-surface;
+$filled-disabled-input-text-opacity: 38%;
+$filled-disabled-supporting-text-color: $md-sys-color-on-surface;
+$filled-disabled-supporting-text-opacity: 38%;
+$filled-disabled-leading-icon-color: $md-sys-color-on-surface;
+$filled-disabled-leading-icon-opacity: 38%;
+$filled-disabled-trailing-icon-color: $md-sys-color-on-surface;
+$filled-disabled-trailing-icon-opacity: 38%;
+$filled-disabled-trailing-icon-opacity: 38%;
+
+// Filled text field layout
+$filled-default-container-height: dp.$fifty-six;
+$filled-top-bottom-padding: dp.$eight;
+$filled-left-right-padding-without-icons: dp.$sixteen;
+$filled-left-right-padding-with-icons: dp.$twelve;
+$filled-padding-between-icons-and-text: dp.$sixteen;
+$filled-supporting-text-and-character-counter-top-padding: dp.$four;
+$filled-padding-between-supporting-text-and-character-counter: dp.$sixteen;
+
+// $filled-target-size: dp.$fifty-six;
 
 // outlined variabled
-$outlined-container-height: 3.5rem;
-$outlined-top-bottom-padding: 0.5rem;
-$outlined-left-right-padding-without-icon: 1rem;
-$outlined-left-right-padding-with-icon: 0.75rem;
-$outlined-supporting-text-top-padding: 0.25rem;
+$outlined-layout-container-height: dp.$fifty-six;
+$outlined-layout-left-right-padding-without-icon: dp.$sixteen;
+$outlined-layout-left-right-padding-with-icon: dp.$twelve;
+$outlined-layout-padding-between-icons-and-text: dp.$sixteen;
+$outlined-layout-supporting-text-and-character-count-top-padding: dp.$four;
+$outlined-layout-padding-between-supporting-text-and-character-count-top-padding: dp.$sixteen;
+$outlined-layout-left-right-populated-label-ext: dp.$four;
+$outlined-enabled-container-shape: $md-sys-shape-corner-extra-small;
+$outlined-enabled-container-outline-width: dp.$one;
+$outlined-enabled-container-outline-color: $md-sys-color-outline;
+$outlined-enabled-label-text-color: $md-sys-color-on-surface-variant;
+$outlined-enabled-label-text-font: $md-sys-typescale-body-large-font;
+$outlined-enabled-label-text-line-height: $md-sys-typescale-body-large-line-height;
+$outlined-enabled-label-text-size: $md-sys-typescale-body-large-size;
+$outlined-enabled-label-text-weight: $md-sys-typescale-body-large-weight;
+$outlined-enabled-label-text-tracking: $md-sys-typescale-body-large-tracking;
+$outlined-enabled-leading-icon-color: $md-sys-color-on-surface-variant;
+$outlined-enabled-leading-icon-size: dp.$twenty-four;
+$outlined-enabled-label-text-line-height-populated: $md-sys-typescale-body-small-line-height;
+$outlined-enabled-label-text-size-populated: $md-sys-typescale-body-small-size;
+$outlined-enabled-trailing-icon-color: $md-sys-color-on-surface-variant;
+$outlined-enabled-trailing-icon-size: dp.$twenty-four;
+$outlined-enabled-caret-color: $md-sys-color-primary;
+$outlined-enabled-input-text-color: $md-sys-color-on-surface;
+$outlined-enabled-input-text-font: $md-sys-typescale-body-large-font;
+$outlined-enabled-input-text-line-height: $md-sys-typescale-body-large-line-height;
+$outlined-enabled-input-text-size: $md-sys-typescale-body-large-size;
+$outlined-enabled-input-text-weight: $md-sys-typescale-body-large-weight;
+$outlined-enabled-input-text-tracking: $md-sys-typescale-body-large-tracking;
+$outlined-enabled-supporting-text-color: $md-sys-color-on-surface-variant;
+$outlined-enabled-supporting-text-font: $md-sys-typescale-body-small-font;
+$outlined-enabled-supporting-text-line-height: $md-sys-typescale-body-small-line-height;
+$outlined-enabled-supporting-text-size: $md-sys-typescale-body-small-size;
+$outlined-enabled-supporting-text-weight: $md-sys-typescale-body-small-weight;
+$outlined-enabled-supporting-text-tracking: $md-sys-typescale-body-small-tracking;
+$outlined-enabled-placeholder-input-text-color: $md-sys-color-on-surface-variant;
+$outlined-enabled-suffix-input-text-color: $md-sys-color-on-surface-variant;
+$outlined-enabled-prefix-input-text-color: $md-sys-color-on-surface-variant;
+$outlined-disabled-outline-width: dp.$one;
+$outlined-disabled-outline-color: $md-sys-color-on-surface;
+$outlined-disabled-outline-opacity: 12%;
+$outlined-label-text-color: $md-sys-color-on-surface;
+$outlined-label-text-opacity: 38%;
+$outlined-input-text-color: $md-sys-color-on-surface;
+$outlined-input-text-opacity: 38%;
+$outlined-supporting-text-color: $md-sys-color-on-surface;
+$outlined-supporting-text-opacity: 38%;
+$outlined-leading-icon-color: $md-sys-color-on-surface;
+$outlined-leading-icon-opacity: 38%;
+$outlined-trailing-icon-color: $md-sys-color-on-surface;
+$outlined-trailing-icon-opacity: 38%;
+$outlined-focussed-outline-width: dp.$two;
+$outlined-focussed-outline-color: $md-sys-color-primary;
+$outlined-focussed-label-text-color: $md-sys-color-primary;
+$outlined-focussed-input-text-color: $md-sys-color-on-surface;
+$outlined-focussed-supporting-text-color: $md-sys-color-on-surface-variant;
+$outlined-focussed-leading-icon-color: $md-sys-color-on-surface-variant;
+$outlined-focussed-trailing-icon-color: $md-sys-color-on-surface-variant;
+$outlined-hovered-outline-width: dp.$one;
+$outlined-hovered-outline-color: $md-sys-color-on-surface;
+$outlined-hovered-label-text-color: $md-sys-color-on-surface;
+$outlined-hovered-input-text-color: $md-sys-color-on-surface;
+$outlined-hovered-supporting-text-color: $md-sys-color-on-surface-variant;
+$outlined-hovered-leading-icon-color: $md-sys-color-on-surface-variant;
+$outlined-hovered-trailing-icon-color: $md-sys-color-on-surface-variant;
 
 .#{$classname} {
   &-filled {
@@ -35,25 +163,17 @@ $outlined-supporting-text-top-padding: 0.25rem;
 
     & > .#{$classname}-container {
       align-items: center;
-      background: light.$md-sys-color-surface-variant;
-      border-radius: shape.$md-sys-shape-corner-extra-small-top;
+      background-color: $filled-enabled-container-color;
+      border-radius: $filled-enabled-container-shape;
       display: flex;
-      height: $filled-container-height;
+      height: $filled-default-container-height;
       padding-bottom: $filled-top-bottom-padding;
       padding-top: $filled-top-bottom-padding;
       position: relative;
   
-      &:focus-within::after {
-        border-bottom-width: 0.125rem;
-        border-bottom-color: #6750a4;
-        transition-duration: motion.$md-sys-motion-transition-duration;
-        transition-property: border-color, border-width;
-        transition-timing-function: motion.$md-sys-motion-easing-standard-curve;
-      }
-
-      // represents the 'Active indicator' (the bottom line that changes color and increased its size when focussed)
+      // represents the 'Active indicator' (the bottom line that changes color and increases its size when focussed)
       &::after {
-        border-bottom: 0.0625rem solid light.$md-sys-color-on-surface-variant;
+        border-bottom: $filled-enabled-active-indicator-height solid $filled-enabled-active-indicator-color;
         bottom: 0;
         content: ' ';
         left: 0;
@@ -62,14 +182,149 @@ $outlined-supporting-text-top-padding: 0.25rem;
         user-select: none;
         width: 100%;
       }
-  
+
+      // active indicator focussed
+      &:focus-within::after {
+        border-bottom-width: $filled-focussed-active-indicator-height;
+        border-bottom-color: $filled-focussed-active-indicator-color;
+        transition-duration: $md-sys-motion-transition-duration;
+        transition-property: border-color, border-width;
+        transition-timing-function: $md-sys-motion-easing-standard-curve;
+      }
+
       & > .#{$classname}-leading-icon {
-        color: light.$md-sys-color-on-surface-variant;
-        font-size: 1.25em;
+        color: $filled-enabled-leading-icon-color;
+        font-size: $filled-enabled-leading-icon-size;
         line-height: 0;
-        margin-left: $filled-left-right-padding-with-icon;
-        padding-left: 0.125rem;
-        padding-right: 0.125rem;
+        margin-left: $filled-left-right-padding-with-icons;
+        pointer-events: none;
+        user-select: none;
+
+        // re-position the label whenever the leading icon is defined
+        & ~ .#{$classname}-label {
+          left: dp.$fifty-two;
+        }
+      }
+      
+      & > .#{$classname}-input {
+        align-self: end;
+        background: none;
+        border-width: 0;
+        caret-color: $filled-enabled-caret-color;
+        color: $filled-enabled-input-text-color;
+        font-family: $filled-enabled-input-text-font;
+        font-size: $filled-enabled-input-text-size;
+        font-weight: $filled-enabled-input-text-weight;
+        letter-spacing: $filled-enabled-input-text-tracking;
+        line-height: $filled-enabled-input-text-line;
+        margin-left: $filled-left-right-padding-without-icons;
+        margin-right: $filled-left-right-padding-without-icons;
+        padding: 0;
+        width: 100%;
+    
+        // input focussed
+        &:focus {
+          outline: none;
+          & ~ .#{$classname}-label {
+            color: $filled-focussed-input-text-color;
+         }
+        }
+    
+        // the input is empty and not focused
+        &:placeholder-shown:not(:focus) ~ .#{$classname}-label {
+          font-size: $filled-enabled-label-text-size;
+          line-height: $filled-enabled-label-text-line-height;
+          top: dp.$sixteen;
+        }
+      }
+    
+      // by default the label is styled in 'populated mode' so that browsers not supporting 'advanced' css are ok
+      & > .#{$classname}-label {
+        color: $filled-enabled-label-text-color;
+        font-family: $filled-enabled-label-text-font;
+        font-size: $filled-enabled-label-text-size-populated;
+        font-weight: $filled-enabled-label-text-weight;
+        left: $filled-left-right-padding-without-icons;
+        letter-spacing: $filled-enabled-label-text-tracking;
+        line-height: $filled-enabled-label-text-line-height-populated;
+        margin-right: $filled-left-right-padding-without-icons;
+        pointer-events: none;
+        position: absolute;
+        top: $filled-top-bottom-padding;
+        transition-duration: $md-sys-motion-transition-duration;
+        transition-property: color, transform, top, font-size, line-height, left, padding;
+        transition-timing-function: $md-sys-motion-easing-standard-curve;
+        user-select: none;
+      }
+    
+      & > .#{$classname}-trailing-icon {
+        color: $filled-enabled-trailing-icon-color;
+        font-size: $filled-enabled-trailing-icon-size;
+        line-height: 0;
+        margin-right: $filled-left-right-padding-with-icons;
+        pointer-events: none;
+        transition-duration: $md-sys-motion-transition-duration;
+        transition-property: color;
+        transition-timing-function: $md-sys-motion-easing-standard-curve;
+        user-select: none;
+      }    
+    }
+    & > .#{$classname}-supporting-text {
+      color: $filled-enabled-supporting-text-color;
+      display: block;
+      font-family: $filled-enabled-supporting-text-font;
+      font-size: $filled-enabled-supporting-text-size;
+      font-weight: $filled-enabled-supporting-text-weight;
+      line-height: $filled-enabled-supporting-text-line-height;
+      margin-left: $filled-left-right-padding-without-icons;
+      margin-top: $filled-supporting-text-and-character-counter-top-padding;
+      letter-spacing: $filled-enabled-supporting-text-tracking;
+    }
+  }
+
+  &-outlined {
+    & *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    & > .#{$classname}-container {
+      align-items: center;
+      display: flex;
+      height: $outlined-layout-container-height;
+      position: relative;
+  
+      // represents the 'outline', basically the border around the input
+      &::after {
+        border-width: $outlined-enabled-container-outline-width;
+        border-color: $outlined-enabled-container-outline-color;
+        border-radius: $outlined-enabled-container-shape;
+        border-style: solid;
+        bottom: 0;
+        content: ' ';
+        height: 100%;
+        left: 0;
+        pointer-events: none; 
+        position: absolute;
+        top: 0;
+        user-select: none;
+        width: 100%;
+      }
+  
+      // outline focused
+      &:focus-within::after {
+        border-width: $outlined-focussed-outline-width;
+        border-color: $outlined-focussed-outline-color;
+        transition-duration: $md-sys-motion-transition-duration;
+        transition-property: border-color, border-width;
+        transition-timing-function: $md-sys-motion-easing-standard-curve;
+      }
+
+      // leading icon
+      & > .#{$classname}-leading-icon {
+        color: $outlined-enabled-leading-icon-color;
+        font-size: $outlined-enabled-leading-icon-size;
+        line-height: 0;
+        margin-left: $outlined-layout-left-right-padding-with-icon;
         pointer-events: none;
         user-select: none;
 
@@ -78,78 +333,84 @@ $outlined-supporting-text-top-padding: 0.25rem;
         }
       }
       
+      // input
       & > .#{$classname}-input {
-        align-self: end;
         background: none;
         border-width: 0;
-        caret-color: light.$md-sys-color-primary;
-        color: light.$md-sys-color-on-surface;
-        font-family: typescale.$md-sys-typescale-body-large-font;
-        font-size: typescale.$md-sys-typescale-body-large-size;
-        font-weight: typescale.$md-sys-typescale-body-large-weight;
-        letter-spacing: typescale.$md-sys-typescale-body-large-tracking;
-        line-height: typescale.$md-sys-typescale-body-large-line-height;
-        margin-left: $filled-left-right-padding-without-icon;
-        margin-right: $filled-left-right-padding-without-icon;
+        caret-color: $md-sys-color-primary;
+        color: $md-sys-color-on-surface;
+        font-family: $md-sys-typescale-body-large-font;
+        font-size: $md-sys-typescale-body-large-size;
+        font-weight: $md-sys-typescale-body-large-weight;
+        letter-spacing: $md-sys-typescale-body-large-tracking;
+        line-height: $md-sys-typescale-body-large-line-height;
+        margin-left: $outlined-layout-left-right-padding-without-icon;
+        margin-right: $outlined-layout-left-right-padding-without-icon;
         padding: 0;
         width: 100%;
     
         &:focus {
           outline: none;
           & ~ .#{$classname}-label {
-            color: light.$md-sys-color-primary;
+            color: $md-sys-color-primary;
          }
         }
     
-        // the input is empty and not focused
+        // input is empty and not focused
         &:placeholder-shown:not(:focus) ~ .#{$classname}-label {
-          font-size: typescale.$md-sys-typescale-body-large-size;
-          line-height: typescale.$md-sys-typescale-body-large-line-height;
-          top: 1rem;
+          font-size: $md-sys-typescale-body-large-size;
+          line-height: $md-sys-typescale-body-large-line-height;
+          top: dp.$sixteen;
         }
       }
     
-      // by default the label is styled in 'populated mode' so that browsers not supporting 'advanced' css are ok
+      // label - by default it's styled in 'populated mode' so that browsers not supporting 'advanced' css are ok
       & > .#{$classname}-label {
-        color: light.$md-sys-color-on-surface-variant;
-        font-family: typescale.$md-sys-typescale-body-large-font;
-        font-size: typescale.$md-sys-typescale-body-small-size;
-        font-weight: typescale.$md-sys-typescale-body-large-weight;
-        left: $filled-left-right-padding-without-icon;
-        letter-spacing: typescale.$md-sys-typescale-body-large-tracking;
-        line-height: typescale.$md-sys-typescale-body-small-line-height;
-        margin-right: $filled-left-right-padding-without-icon;
+        background-color: white;
+        color: $md-sys-color-on-surface-variant;
+        font-family: $md-sys-typescale-body-large-font;
+        font-size: $md-sys-typescale-body-small-size;
+        font-weight: $md-sys-typescale-body-large-weight;
+        left: $outlined-layout-left-right-padding-without-icon;
+        letter-spacing: $md-sys-typescale-body-large-tracking;
+        line-height: $md-sys-typescale-body-small-line-height;
+        margin-right: $outlined-layout-left-right-padding-without-icon;
         pointer-events: none;
         position: absolute;
-        top: $filled-top-bottom-padding;
-        transition-duration: motion.$md-sys-motion-transition-duration;
+        top: -8px;
+        transition-duration: $md-sys-motion-transition-duration;
         transition-property: color, transform, top, font-size, line-height, left, padding;
-        transition-timing-function: motion.$md-sys-motion-easing-standard-curve;
+        transition-timing-function: $md-sys-motion-easing-standard-curve;
         user-select: none;
+        z-index: 2;
       }
     
+      // trailing icon
       & > .#{$classname}-trailing-icon {
-        color: light.$md-sys-color-on-surface-variant;
+        color: $md-sys-color-on-surface-variant;
         font-size: 1.5rem;
         line-height: 0;
-        margin-right: $filled-left-right-padding-with-icon;
+        margin-right: $outlined-layout-left-right-padding-with-icon;
         pointer-events: none;
-        transition-duration: motion.$md-sys-motion-transition-duration;
+        transition-duration: $md-sys-motion-transition-duration;
         transition-property: color;
-        transition-timing-function: motion.$md-sys-motion-easing-standard-curve;
+        transition-timing-function: $md-sys-motion-easing-standard-curve;
         user-select: none;
       }    
     }
+
+    // supporting-text
     & > .#{$classname}-supporting-text {
-      color: light.$md-sys-color-on-surface-variant;
+      color: $md-sys-color-on-surface-variant;
       display: block;
-      font-family: typescale.$md-sys-typescale-body-small-font;
-      font-size: typescale.$md-sys-typescale-body-small-size;
-      font-weight: typescale.$md-sys-typescale-body-small-weight;
-      line-height: typescale.$md-sys-typescale-body-small-line-height;
-      margin-left: $filled-left-right-padding-without-icon;
-      margin-top: $filled-supporting-text-top-padding;
-      letter-spacing: typescale.$md-sys-typescale-body-small-tracking;
+      font-family: $md-sys-typescale-body-small-font;
+      font-size: $md-sys-typescale-body-small-size;
+      font-weight: $md-sys-typescale-body-small-weight;
+      line-height: $md-sys-typescale-body-small-line-height;
+      margin-left: $outlined-layout-left-right-padding-without-icon;
+      margin-top: $outlined-layout-supporting-text-and-character-count-top-padding;
+      letter-spacing: $md-sys-typescale-body-small-tracking;
     }
   }
+
 }
