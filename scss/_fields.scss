@@ -195,7 +195,7 @@ $outlined-hovered-trailing-icon-color: $md-sys-color-on-surface-variant;
       & > .#{$classname}-leading-icon {
         color: $filled-enabled-leading-icon-color;
         font-size: $filled-enabled-leading-icon-size;
-        line-height: 0;
+        line-height: 1;
         margin-left: $filled-left-right-padding-with-icons;
         pointer-events: none;
         user-select: none;
@@ -260,7 +260,7 @@ $outlined-hovered-trailing-icon-color: $md-sys-color-on-surface-variant;
       & > .#{$classname}-trailing-icon {
         color: $filled-enabled-trailing-icon-color;
         font-size: $filled-enabled-trailing-icon-size;
-        line-height: 0;
+        line-height: 1;
         margin-right: $filled-left-right-padding-with-icons;
         pointer-events: none;
         transition-duration: $md-sys-motion-transition-duration;
@@ -323,13 +323,13 @@ $outlined-hovered-trailing-icon-color: $md-sys-color-on-surface-variant;
       & > .#{$classname}-leading-icon {
         color: $outlined-enabled-leading-icon-color;
         font-size: $outlined-enabled-leading-icon-size;
-        line-height: 0;
+        line-height: 1;
         margin-left: $outlined-layout-left-right-padding-with-icon;
         pointer-events: none;
         user-select: none;
 
         & ~ .#{$classname}-label {
-          left: 3.25rem;
+          left: dp.$fifty-two;
         }
       }
       
@@ -337,13 +337,13 @@ $outlined-hovered-trailing-icon-color: $md-sys-color-on-surface-variant;
       & > .#{$classname}-input {
         background: none;
         border-width: 0;
-        caret-color: $md-sys-color-primary;
-        color: $md-sys-color-on-surface;
-        font-family: $md-sys-typescale-body-large-font;
-        font-size: $md-sys-typescale-body-large-size;
-        font-weight: $md-sys-typescale-body-large-weight;
-        letter-spacing: $md-sys-typescale-body-large-tracking;
-        line-height: $md-sys-typescale-body-large-line-height;
+        caret-color: $outlined-enabled-caret-color;
+        color: $outlined-enabled-input-text-color;
+        font-family: $outlined-enabled-input-text-font;
+        font-size: $outlined-enabled-input-text-size;
+        font-weight: $outlined-enabled-input-text-weight;
+        letter-spacing: $outlined-enabled-input-text-tracking;
+        line-height: $outlined-enabled-input-text-line-height;
         margin-left: $outlined-layout-left-right-padding-without-icon;
         margin-right: $outlined-layout-left-right-padding-without-icon;
         padding: 0;
@@ -352,14 +352,14 @@ $outlined-hovered-trailing-icon-color: $md-sys-color-on-surface-variant;
         &:focus {
           outline: none;
           & ~ .#{$classname}-label {
-            color: $md-sys-color-primary;
+            color: $outlined-focussed-input-text-color;
          }
         }
     
         // input is empty and not focused
         &:placeholder-shown:not(:focus) ~ .#{$classname}-label {
           font-size: $md-sys-typescale-body-large-size;
-          line-height: $md-sys-typescale-body-large-line-height;
+          line-height: $outlined-enabled-label-text-line-height;
           top: dp.$sixteen;
         }
       }
@@ -367,13 +367,13 @@ $outlined-hovered-trailing-icon-color: $md-sys-color-on-surface-variant;
       // label - by default it's styled in 'populated mode' so that browsers not supporting 'advanced' css are ok
       & > .#{$classname}-label {
         background-color: white;
-        color: $md-sys-color-on-surface-variant;
-        font-family: $md-sys-typescale-body-large-font;
-        font-size: $md-sys-typescale-body-small-size;
-        font-weight: $md-sys-typescale-body-large-weight;
+        color: $outlined-enabled-label-text-color;
+        font-family: $outlined-enabled-label-text-font;
+        font-size: $outlined-enabled-label-text-size;
+        font-weight: $outlined-enabled-label-text-weight;
         left: $outlined-layout-left-right-padding-without-icon;
-        letter-spacing: $md-sys-typescale-body-large-tracking;
-        line-height: $md-sys-typescale-body-small-line-height;
+        letter-spacing: $outlined-enabled-label-text-tracking;
+        line-height: $outlined-enabled-label-text-line-height-populated;
         margin-right: $outlined-layout-left-right-padding-without-icon;
         pointer-events: none;
         position: absolute;
@@ -387,9 +387,9 @@ $outlined-hovered-trailing-icon-color: $md-sys-color-on-surface-variant;
     
       // trailing icon
       & > .#{$classname}-trailing-icon {
-        color: $md-sys-color-on-surface-variant;
-        font-size: 1.5rem;
-        line-height: 0;
+        color: $outlined-enabled-trailing-icon-color;
+        font-size: $outlined-enabled-trailing-icon-size;
+        line-height: 1;
         margin-right: $outlined-layout-left-right-padding-with-icon;
         pointer-events: none;
         transition-duration: $md-sys-motion-transition-duration;
@@ -401,15 +401,15 @@ $outlined-hovered-trailing-icon-color: $md-sys-color-on-surface-variant;
 
     // supporting-text
     & > .#{$classname}-supporting-text {
-      color: $md-sys-color-on-surface-variant;
+      color: $outlined-enabled-supporting-text-color;
       display: block;
-      font-family: $md-sys-typescale-body-small-font;
-      font-size: $md-sys-typescale-body-small-size;
-      font-weight: $md-sys-typescale-body-small-weight;
-      line-height: $md-sys-typescale-body-small-line-height;
+      font-family: $outlined-enabled-supporting-text-font;
+      font-size: $outlined-enabled-supporting-text-size;
+      font-weight: $outlined-enabled-supporting-text-weight;
+      line-height: $outlined-enabled-supporting-text-line-height;
       margin-left: $outlined-layout-left-right-padding-without-icon;
       margin-top: $outlined-layout-supporting-text-and-character-count-top-padding;
-      letter-spacing: $md-sys-typescale-body-small-tracking;
+      letter-spacing: $outlined-enabled-supporting-text-tracking;
     }
   }
 
