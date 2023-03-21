@@ -20,6 +20,7 @@
 @include meta.load-css('nav');
 @include meta.load-css('buttons');
 @include meta.load-css('fields');
+@include meta.load-css('switch');
 @include meta.load-css('typography');
 
 // Utilities

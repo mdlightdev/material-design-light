@@ -1,0 +1,292 @@
+
+@use 'sass:color';
+@use 'functions';
+@use 'variables';
+@use 'md' as *;
+@use 'tokens/dp';
+
+$switch-name: switch !default;
+$track-name: #{$switch-name}-track !default;
+$thumb-name: #{$switch-name}-thumb !default;
+$thumb-selected-name: #{$thumb-name}--selected !default;
+$thumb-unselected-name: #{$thumb-name}--unselected !default;
+$thumb-icon-name: #{$thumb-name}-icon !default;
+$switch-enabled-track-color-selected: $md-sys-color-primary;
+$switch-enabled-track-color-unselected: $md-sys-color-surface-variant;
+$switch-enabled-track-outline-color: $md-sys-color-outline;
+$switch-enabled-thumb-color-selected: $md-sys-color-on-primary;
+$switch-enabled-thumb-color-unselected: $md-sys-color-outline;
+$switch-enabled-icon-color-selected: $md-sys-color-on-primary-container;
+$switch-enabled-icon-color-unselected: $md-sys-color-surface-variant;
+$switch-hover-track-color-selected: $md-sys-color-primary;
+$switch-hover-track-statelayer-color-selected: $md-sys-color-primary;
+$switch-hover-track-statelayer-opacity-selected: $md-sys-state-hover-state-layer-opacity;
+$switch-hover-track-color-unselected: $md-sys-color-surface-variant;
+$switch-hover-track-outline-color-unselected: $md-sys-color-outline;
+$switch-hover-track-statelayer-color-unselected: $md-sys-color-on-surface;
+$switch-hover-track-statelayer-opacity-unselected: $md-sys-state-hover-state-layer-opacity;
+$switch-hover-thumb-color-selected: $md-sys-color-primary-container;
+$switch-hover-thumb-color-unselected: $md-sys-color-on-surface-variant;
+$switch-hover-icon-color-selected: $md-sys-color-on-primary-container;
+$switch-hover-icon-color-unselected: $md-sys-color-surface-variant;
+$switch-focus-track-color-selected: $md-sys-color-primary;
+$switch-focus-track-statelayer-color-selected: $md-sys-color-primary;
+$switch-focus-track-statelayer-opacity-selected: $md-sys-state-focus-state-layer-opacity;
+$switch-focus-track-color-unselected: $md-sys-color-surface-variant;
+$switch-focus-track-outline-unselected: $md-sys-color-outline;
+$switch-focus-track-statelayer-color-unselected: $md-sys-color-on-surface;
+$switch-focus-track-statelayer-opacity-unselected: $md-sys-state-focus-state-layer-opacity;
+$switch-focus-thumb-color-selected: $md-sys-color-primary-container;
+$switch-focus-thumb-color-unselected: $md-sys-color-on-surface-variant;
+$switch-focus-icon-color-selected: $md-sys-color-on-primary-container;
+$switch-focus-icon-color-unselected: $md-sys-color-surface-variant;
+$switch-pressed-track-color-selected: $md-sys-color-primary;
+$switch-pressed-track-statelayer-color-selected: $md-sys-color-primary;
+$switch-pressed-track-statelayer-opacity-selected: $md-sys-state-pressed-state-layer-opacity;
+$switch-pressed-track-color-unselected: $md-sys-color-surface-variant;
+$switch-pressed-track-outline-color-unselected: $md-sys-color-outline;
+$switch-pressed-track-statelayer-color-unselected: $md-sys-color-on-surface;
+$switch-pressed-track-statelayer-opacity-unselected: $md-sys-state-pressed-state-layer-opacity;
+$switch-pressed-thumb-color-selected: $md-sys-color-primary-container;
+$switch-pressed-thumb-color-unselected: $md-sys-color-on-surface-variant;
+$switch-pressed-icon-color-selected: $md-sys-color-on-primary-container;
+$switch-pressed-icon-color-unselected: $md-sys-color-surface-variant;
+$switch-disabled-track-opacity: 12%;
+$switch-disabled-track-color-selected: $md-sys-color-on-surface;
+$switch-disabled-track-color-unselected: $md-sys-color-surface-variant;
+$switch-disabled-track-outline-color-unselected: $md-sys-color-on-surface;
+$switch-disabled-thumb-opacity-unselected: 38%;
+$switch-disabled-thumb-opacity-selected: 100%;
+$switch-disabled-thumb-color-selected: $md-sys-color-surface;
+$switch-disabled-thumb-color-unselected: $md-sys-color-on-surface;
+$switch-disabled-icon-color-selected: $md-sys-color-on-surface;
+$switch-disabled-icon-opacity-selected: 38%;
+$switch-disabled-icon-color-unselected: $md-sys-color-surface-variant;
+$switch-disabled-icon-opacity-unselected: 38%;
+$switch-layout-track-height: dp.$thirty-two;
+$switch-layout-track-width: dp.$fifty-two;
+$switch-layout-track-outline-width: dp.$two;
+$switch-layout-track-shape: $md-sys-shape-corner-full;
+$switch-layout-thumb-height-unselected: dp.$sixteen;
+$switch-layout-thumb-height-with-icon: dp.$twenty-four;
+$switch-layout-thumb-height-selected: dp.$twenty-four;
+$switch-layout-thumb-height-pressed: dp.$twenty-eight;
+$switch-layout-thumb-width-unselected: dp.$sixteen;
+$switch-layout-thumb-width-with-icon: dp.$twenty-four;
+$switch-layout-thumb-width-selected: dp.$twenty-four;
+$switch-layout-thumb-width-pressed: dp.$twenty-eight;
+$switch-layout-thumb-shape: $md-sys-shape-corner-full;
+$switch-layout-statelayer-size: dp.$fourty;
+$switch-layout-statelayer-shape: $md-sys-shape-corner-full;
+$switch-layout-icon-size-selected: dp.$sixteen;
+$switch-layout-icon-size-unselected: dp.$sixteen;
+
+.#{$switch-name} {
+  cursor: pointer;
+  display: inline-block;
+  height: $switch-layout-track-height;
+  position: relative;
+  width: $switch-layout-track-width;
+
+  & *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  & > input[role="switch"][type="checkbox"] {
+      cursor: pointer;
+      height: 100%;
+      margin: 0;
+      opacity: 0;
+      outline-style: none;
+      padding: 0;
+      position: absolute;
+      width: 100%;
+      z-index: 1; // make sure te checkbox receives click events
+
+      // the track is selected
+      &:checked ~ .#{$track-name} {
+        background-color: $switch-enabled-track-color-selected;
+        border-color: $switch-enabled-track-color-selected;
+      }
+      
+      // the thumb is selected
+      &:checked ~ .#{$thumb-name} {
+        left: dp.$twenty;
+
+        // show the selected thumb
+        & > .#{$thumb-name}--selected {
+          &:empty::before {
+            background-color: $switch-enabled-thumb-color-selected;
+            height: $switch-layout-thumb-height-selected;
+            width: $switch-layout-thumb-width-selected;
+          }
+
+          opacity: 1;
+        }
+
+        // hide the unselected thumb
+        & > .#{$thumb-name}--unselected {
+          opacity: 0;
+        }
+      }
+
+      // focus state of the statelayer (selected)
+      &:focus ~ .#{$thumb-name}  > .#{$thumb-selected-name}::after {
+        background-color: $switch-focus-track-statelayer-color-selected;
+        opacity: $switch-focus-track-statelayer-opacity-selected;
+      }
+
+      // focus state of the statelayer (unselected)
+      &:focus ~ .#{$thumb-name}  > .#{$thumb-unselected-name}::after {
+        background-color: $switch-focus-track-statelayer-color-unselected;
+        opacity: $switch-focus-track-statelayer-opacity-unselected;
+      }
+      
+      // hover state of the statelayer (selected)
+      &:hover ~ .#{$thumb-name}  > .#{$thumb-selected-name}::after {
+        background-color: $switch-hover-track-statelayer-color-selected;
+        opacity: $switch-hover-track-statelayer-opacity-selected;
+      }
+
+      // hover state of the statelayer (unselected)
+      &:hover ~ .#{$thumb-name}  > .#{$thumb-unselected-name}::after {
+        background-color: $switch-hover-track-statelayer-color-unselected;
+        opacity: $switch-hover-track-statelayer-opacity-unselected;
+      }
+
+      // pressed state of the statelayer (selected)
+      &:active ~ .#{$thumb-name}  > .#{$thumb-selected-name}::after {
+        background-color: $switch-pressed-track-statelayer-color-selected;
+        opacity: $switch-pressed-track-statelayer-opacity-selected;
+      }
+
+      // pressed state of the statelayer (unselected)
+      &:active ~ .#{$thumb-name}  > .#{$thumb-unselected-name}::after {
+        background-color: $switch-pressed-track-statelayer-color-unselected;
+        opacity: $switch-pressed-track-statelayer-opacity-unselected;
+      }
+      
+    }
+
+  & > .#{$track-name} {
+    display: block;
+    background-color: $switch-enabled-track-color-unselected;
+    border-color: $switch-enabled-track-outline-color;
+    border-radius: $switch-layout-track-shape;
+    border-style: solid;
+    border-width: $switch-layout-track-outline-width;
+    height: 100%;
+    transition-property: background-color, border-color;
+    transition-duration: $md-sys-motion-transition-duration;
+    transition-timing-function: $md-sys-motion-easing-standard-curve;
+    width: 100%;
+  }
+
+  // the thumb is a container with two children:
+  // 1) the 'selected thumb' 
+  // 2) the 'unselected thumb'. 
+  // each child can contain an icon. when no iocn is defined we use :empty to style the rounded thumb 
+  // each child uses flexbox to center their content (vertically and horizontally). 
+  // each child is absolutly positionned and then 'morphed' by transitonning their opacity to 0/1.
+  // finally moving from the state 'selected' to 'unselected' is simply a matter of updating the left position of the thumb itself
+  & > .#{$thumb-name} {
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: dp.$thirty-two;
+    transition-property: left;
+    transition-duration: $md-sys-motion-transition-duration;
+    transition-timing-function: $md-sys-motion-easing-standard-curve;
+
+    & > .#{$thumb-selected-name} {
+      align-items: center;
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      
+      // there is no nested icon, ::before is the thumb
+      &:empty::before {
+        background-color: $switch-enabled-thumb-color-selected;
+        border-radius: $switch-layout-thumb-shape;
+        content: " ";
+        height: $switch-layout-thumb-height-selected;
+        width: $switch-layout-thumb-width-selected;
+      }
+
+      // there is a nested icon
+      & > .#{$thumb-icon-name} {
+        display: block;
+        background-color: $switch-enabled-thumb-color-selected;
+        border-radius: $switch-layout-thumb-shape;
+        color: $switch-enabled-icon-color-selected;
+
+        & > * {
+          display: block; // make sure that the nested icon is a block element (as opposed to inline-block for google font)
+        }
+      }
+
+      // ::after is the statelayer
+      &::after {
+        border-radius: $switch-layout-statelayer-shape;
+        content: " ";
+        height: $switch-layout-statelayer-size;
+        opacity: 0;
+        position: absolute;
+        width: $switch-layout-statelayer-size;
+      }
+    }
+
+    & > .#{$thumb-unselected-name} {
+      align-items: center;
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      left: 0;
+      opacity: 1;
+      position: absolute;
+      top: 0;
+      transition-property: opacity;
+      transition-duration: $md-sys-motion-transition-duration;
+      transition-timing-function: $md-sys-motion-easing-standard-curve;
+      width: 100%;
+
+      // there is no nested icon, ::before is the thumb
+      &:empty::before {
+        background-color: $switch-enabled-thumb-color-unselected;
+        border-radius: $switch-layout-thumb-shape;
+        content: " ";
+        height: $switch-layout-thumb-height-unselected;
+        width: $switch-layout-thumb-width-unselected;
+      }
+      
+      // there is a nested icon
+      & > .#{$thumb-icon-name} {
+        display: block;
+        background-color: $switch-enabled-thumb-color-unselected;
+        border-radius: $switch-layout-thumb-shape;
+        color: $switch-enabled-icon-color-unselected;
+
+        & > * {
+          display: block; // make sure that the nested icon is a block element (as opposed to inline-block for google font)
+        }
+      }
+
+      // ::after is the statelayer
+      &::after {
+        border-radius: $switch-layout-statelayer-shape;
+        content: " ";
+        height: $switch-layout-statelayer-size;
+        opacity: 0;
+        position: absolute;
+        width: $switch-layout-statelayer-size;
+      }
+    }
+  }
+}
