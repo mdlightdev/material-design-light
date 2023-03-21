@@ -93,7 +93,6 @@ $switch-layout-icon-size-unselected: dp.$sixteen;
   }
 
   & > input[role="switch"][type="checkbox"] {
-      cursor: pointer;
       height: 100%;
       margin: 0;
       opacity: 0;
@@ -130,6 +129,47 @@ $switch-layout-icon-size-unselected: dp.$sixteen;
         }
       }
 
+      // disabled state
+      &:disabled {
+        // disabled and unselected
+        & ~ .#{$track-name} {
+          opacity: $switch-disabled-track-opacity;
+          background-color: $switch-disabled-track-color-unselected;
+          border-color: $switch-disabled-track-outline-color-unselected;
+        }
+
+        // without nested icon
+        & ~ .#{$thumb-name}  > .#{$thumb-unselected-name}:empty::before {
+          background-color: $switch-disabled-thumb-color-unselected;
+          opacity: $switch-disabled-thumb-opacity-unselected;
+        }
+
+        // with a nested unselected icon
+        & ~ .#{$thumb-name}  > .#{$thumb-unselected-name} > .#{$thumb-icon-name} {
+          background-color: $switch-disabled-thumb-color-unselected;
+          opacity: $switch-disabled-thumb-opacity-unselected;
+        }
+
+        // disabled and selected
+        &:checked {
+          & ~ .#{$track-name} {
+            background-color: $switch-disabled-track-color-selected;
+          }
+        }
+
+        // without nested icon
+        & ~ .#{$thumb-name}  > .#{$thumb-selected-name}:empty::before {
+          background-color: $switch-disabled-thumb-color-selected;
+          opacity: $switch-disabled-thumb-opacity-selected;
+        }
+
+        // with a nested selected icon
+        & ~ .#{$thumb-name}  > .#{$thumb-selected-name} > .#{$thumb-icon-name} {
+          background-color: $switch-disabled-thumb-color-selected;
+          opacity: $switch-disabled-thumb-opacity-selected;
+        }
+      }
+      
       // focus state of the statelayer (selected)
       &:focus ~ .#{$thumb-name}  > .#{$thumb-selected-name}::after {
         background-color: $switch-focus-track-statelayer-color-selected;
@@ -141,27 +181,31 @@ $switch-layout-icon-size-unselected: dp.$sixteen;
         background-color: $switch-focus-track-statelayer-color-unselected;
         opacity: $switch-focus-track-statelayer-opacity-unselected;
       }
-      
-      // hover state of the statelayer (selected)
-      &:hover ~ .#{$thumb-name}  > .#{$thumb-selected-name}::after {
-        background-color: $switch-hover-track-statelayer-color-selected;
-        opacity: $switch-hover-track-statelayer-opacity-selected;
-      }
 
-      // hover state of the statelayer (unselected)
-      &:hover ~ .#{$thumb-name}  > .#{$thumb-unselected-name}::after {
-        background-color: $switch-hover-track-statelayer-color-unselected;
-        opacity: $switch-hover-track-statelayer-opacity-unselected;
+      &:hover:enabled {
+        cursor: pointer;
+        
+        // hover state of the statelayer (selected)
+        & ~ .#{$thumb-name}  > .#{$thumb-selected-name}::after {
+          background-color: $switch-hover-track-statelayer-color-selected;
+          opacity: $switch-hover-track-statelayer-opacity-selected;
+        }
+
+        // hover state of the statelayer (unselected)
+        & ~ .#{$thumb-name}  > .#{$thumb-unselected-name}::after {
+          background-color: $switch-hover-track-statelayer-color-unselected;
+          opacity: $switch-hover-track-statelayer-opacity-unselected;
+        }
       }
 
       // pressed state of the statelayer (selected)
-      &:active ~ .#{$thumb-name}  > .#{$thumb-selected-name}::after {
+      &:active:enabled ~ .#{$thumb-name}  > .#{$thumb-selected-name}::after {
         background-color: $switch-pressed-track-statelayer-color-selected;
         opacity: $switch-pressed-track-statelayer-opacity-selected;
       }
 
       // pressed state of the statelayer (unselected)
-      &:active ~ .#{$thumb-name}  > .#{$thumb-unselected-name}::after {
+      &:active:enabled ~ .#{$thumb-name}  > .#{$thumb-unselected-name}::after {
         background-color: $switch-pressed-track-statelayer-color-unselected;
         opacity: $switch-pressed-track-statelayer-opacity-unselected;
       }
