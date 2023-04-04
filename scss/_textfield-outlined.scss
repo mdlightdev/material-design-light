@@ -1,0 +1,326 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+@use 'sass:color';
+@use 'functions';
+@use 'variables';
+@use 'md' as *;
+@use 'tokens/dp';
+
+$textfield-classname: textfield !default;
+$outlined-classname: #{$textfield-classname}-outlined !default;
+$container-classname: #{$textfield-classname}-container !default;
+$leadingicon-classname: #{$textfield-classname}-leading-icon !default;
+$label-classname: #{$textfield-classname}-label !default;
+$input-classname: #{$textfield-classname}-input !default;
+$trailingicon-classname: #{$textfield-classname}-trailing-icon !default;
+$supportingtext-classname: #{$textfield-classname}-supporting-text !default;
+$disabled-classname: #{$textfield-classname}-disabled !default;
+
+// outlined variables
+$outlined-layout-container-height: dp.$fifty-six;
+$outlined-layout-left-right-padding-without-icon: dp.$sixteen;
+$outlined-layout-left-right-padding-with-icon: dp.$twelve;
+
+// $outlined-layout-padding-between-icons-and-text: dp.$sixteen;
+// $outlined-layout-padding-between-supporting-text-and-character-count-top-padding: dp.$sixteen;
+$outlined-layout-supporting-text-and-character-count-top-padding: dp.$four;
+$outlined-layout-left-right-populated-label-text: dp.$four;
+
+// outlined enabled state
+$outlined-enabled-container-background-color: white;
+$outlined-enabled-container-shape: $md-sys-shape-corner-extra-small;
+$outlined-enabled-container-outline-width: dp.$one;
+$outlined-enabled-container-outline-color: $md-sys-color-outline;
+$outlined-enabled-label-text-color: $md-sys-color-on-surface-variant;
+$outlined-enabled-label-text-font: $md-sys-typescale-body-large-font;
+$outlined-enabled-label-text-line-height: $md-sys-typescale-body-large-line-height;
+$outlined-enabled-label-text-size: $md-sys-typescale-body-large-size;
+$outlined-enabled-label-text-weight: $md-sys-typescale-body-large-weight;
+$outlined-enabled-label-text-tracking: $md-sys-typescale-body-large-tracking;
+$outlined-enabled-leading-icon-color: $md-sys-color-on-surface-variant;
+$outlined-enabled-leading-icon-size: dp.$twenty-four;
+$outlined-enabled-label-text-line-height-populated: $md-sys-typescale-body-small-line-height;
+$outlined-enabled-label-text-size-populated: $md-sys-typescale-body-small-size;
+$outlined-enabled-trailing-icon-color: $md-sys-color-on-surface-variant;
+$outlined-enabled-trailing-icon-size: dp.$twenty-four;
+$outlined-enabled-caret-color: $md-sys-color-primary;
+$outlined-enabled-input-text-color: $md-sys-color-on-surface;
+$outlined-enabled-input-text-font: $md-sys-typescale-body-large-font;
+$outlined-enabled-input-text-line-height: $md-sys-typescale-body-large-line-height;
+$outlined-enabled-input-text-size: $md-sys-typescale-body-large-size;
+$outlined-enabled-input-text-weight: $md-sys-typescale-body-large-weight;
+$outlined-enabled-input-text-tracking: $md-sys-typescale-body-large-tracking;
+$outlined-enabled-supporting-text-color: $md-sys-color-on-surface-variant;
+$outlined-enabled-supporting-text-font: $md-sys-typescale-body-small-font;
+$outlined-enabled-supporting-text-line-height: $md-sys-typescale-body-small-line-height;
+$outlined-enabled-supporting-text-size: $md-sys-typescale-body-small-size;
+$outlined-enabled-supporting-text-weight: $md-sys-typescale-body-small-weight;
+$outlined-enabled-supporting-text-tracking: $md-sys-typescale-body-small-tracking;
+
+// $outlined-enabled-placeholder-input-text-color: $md-sys-color-on-surface-variant;
+// $outlined-enabled-suffix-input-text-color: $md-sys-color-on-surface-variant;
+// $outlined-enabled-prefix-input-text-color: $md-sys-color-on-surface-variant;
+
+// outlined disabled state
+$outlined-disabled-outline-width: dp.$one;
+$outlined-disabled-outline-color: $md-sys-color-on-surface;
+$outlined-disabled-outline-opacity: 12%;
+$outlined-disabled-label-text-color: $md-sys-color-on-surface;
+$outlined-disabled-label-text-opacity: 38%;
+$outlined-disabled-input-text-color: $md-sys-color-on-surface;
+$outlined-disabled-input-text-opacity: 38%;
+$outlined-disabled-supporting-text-color: $md-sys-color-on-surface;
+$outlined-disabled-supporting-text-opacity: 38%;
+$outlined-disabled-leading-icon-color: $md-sys-color-on-surface;
+$outlined-disabled-leading-icon-opacity: 38%;
+$outlined-disabled-trailing-icon-color: $md-sys-color-on-surface;
+$outlined-disabled-trailing-icon-opacity: 38%;
+
+// outlined focussed state
+$outlined-focussed-outline-width: dp.$two;
+$outlined-focussed-outline-color: $md-sys-color-primary;
+$outlined-focussed-label-text-color: $md-sys-color-primary;
+$outlined-focussed-input-text-color: $md-sys-color-on-surface;
+$outlined-focussed-supporting-text-color: $md-sys-color-on-surface-variant;
+$outlined-focussed-leading-icon-color: $md-sys-color-on-surface-variant;
+$outlined-focussed-trailing-icon-color: $md-sys-color-on-surface-variant;
+
+// outlined hovered state
+$outlined-hovered-outline-width: dp.$one;
+$outlined-hovered-outline-color: $md-sys-color-on-surface;
+$outlined-hovered-label-text-color: $md-sys-color-on-surface;
+$outlined-hovered-input-text-color: $md-sys-color-on-surface;
+$outlined-hovered-supporting-text-color: $md-sys-color-on-surface-variant;
+$outlined-hovered-leading-icon-color: $md-sys-color-on-surface-variant;
+$outlined-hovered-trailing-icon-color: $md-sys-color-on-surface-variant;
+
+.#{$outlined-classname} {
+  & *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  & > .#{$container-classname} {
+    align-items: center;
+    display: flex;
+    height: $outlined-layout-container-height;
+    margin-top: dp.$eight; // to account for the label overlapping the outline
+    position: relative;
+
+    // represents the 'outline', basically the border around the input
+    &::after {
+      border-width: $outlined-enabled-container-outline-width;
+      border-color: $outlined-enabled-container-outline-color;
+      border-radius: $outlined-enabled-container-shape;
+      border-style: solid;
+      bottom: 0;
+      content: ' ';
+      height: 100%;
+      left: 0;
+      pointer-events: none; 
+      position: absolute;
+      top: 0;
+      user-select: none;
+      width: 100%;
+    }
+
+    // leading icon
+    & > .#{$leadingicon-classname} {
+      color: $outlined-enabled-leading-icon-color;
+      font-size: $outlined-enabled-leading-icon-size;
+      line-height: 1;
+      margin-left: $outlined-layout-left-right-padding-with-icon;
+      pointer-events: none;
+      user-select: none;
+
+      & ~ .#{$input-classname}:placeholder-shown:not(:focus) ~ .#{$label-classname} {
+        left: dp.$fifty-two;
+      }
+    }
+    
+    // input
+    & > .#{$input-classname} {
+      background: none;
+      border-width: 0;
+      caret-color: $outlined-enabled-caret-color;
+      color: $outlined-enabled-input-text-color;
+      font-family: $outlined-enabled-input-text-font;
+      font-size: $outlined-enabled-input-text-size;
+      font-weight: $outlined-enabled-input-text-weight;
+      letter-spacing: $outlined-enabled-input-text-tracking;
+      line-height: $outlined-enabled-input-text-line-height;
+      margin-left: $outlined-layout-left-right-padding-without-icon;
+      margin-right: $outlined-layout-left-right-padding-without-icon;
+      padding: 0;
+      width: 100%;
+  
+      &:focus {
+        outline: none;
+      }
+  
+      // input is empty and not focused
+      &:placeholder-shown:not(:focus) ~ .#{$label-classname} {
+        font-size: $outlined-enabled-label-text-size;
+        line-height: $outlined-enabled-label-text-line-height;
+        padding-left: 0;
+        padding-right: 0;
+        top: dp.$sixteen;
+      }
+    }
+  
+    // label - by default it's styled in 'populated mode' so that browsers not supporting 'advanced' css are ok
+    & > .#{$label-classname} {
+      background-color: $outlined-enabled-container-background-color;
+      color: $outlined-enabled-label-text-color;
+      font-family: $outlined-enabled-label-text-font;
+      font-size: $outlined-enabled-label-text-size-populated;
+      font-weight: $outlined-enabled-label-text-weight;
+      left: $outlined-layout-left-right-padding-without-icon;
+      letter-spacing: $outlined-enabled-label-text-tracking;
+      line-height: $outlined-enabled-label-text-line-height-populated;
+      padding-left: $outlined-layout-left-right-populated-label-text;
+      padding-right: $outlined-layout-left-right-populated-label-text;
+      pointer-events: none;
+      position: absolute;
+      top: -(dp.$eight - dp.$one);
+      transition-duration: $md-sys-motion-transition-duration;
+      transition-property: color, transform, top, font-size, line-height, left, padding;
+      transition-timing-function: $md-sys-motion-easing-standard-curve;
+      user-select: none;
+      z-index: 2;
+    }
+  
+    // trailing icon
+    & > .#{$trailingicon-classname} {
+      color: $outlined-enabled-trailing-icon-color;
+      font-size: $outlined-enabled-trailing-icon-size;
+      line-height: 1;
+      margin-right: $outlined-layout-left-right-padding-with-icon;
+      pointer-events: none;
+      transition-duration: $md-sys-motion-transition-duration;
+      transition-property: color;
+      transition-timing-function: $md-sys-motion-easing-standard-curve;
+      user-select: none;
+    }    
+  }
+
+  // supporting-text
+  & > .#{$supportingtext-classname} {
+    color: $outlined-enabled-supporting-text-color;
+    display: block;
+    font-family: $outlined-enabled-supporting-text-font;
+    font-size: $outlined-enabled-supporting-text-size;
+    font-weight: $outlined-enabled-supporting-text-weight;
+    line-height: $outlined-enabled-supporting-text-line-height;
+    margin-left: $outlined-layout-left-right-padding-without-icon;
+    margin-top: $outlined-layout-supporting-text-and-character-count-top-padding;
+    letter-spacing: $outlined-enabled-supporting-text-tracking;
+  }
+
+  // disabled state
+  &.#{$disabled-classname} {
+    & > .#{$container-classname} {
+      // outline
+      &::after {
+        border-width: $outlined-disabled-outline-width;
+        border-color: $outlined-disabled-outline-color;
+        opacity: $outlined-disabled-outline-opacity;
+      }
+
+      & > .#{$leadingicon-classname} {
+        color: $outlined-disabled-leading-icon-color;
+        opacity: $outlined-disabled-leading-icon-opacity;
+      }
+      
+      & > .#{$input-classname} {
+        color: $outlined-disabled-input-text-color;
+        opacity: $outlined-disabled-input-text-opacity;
+        pointer-events: none;
+        user-select: none;
+      }
+    
+      & > .#{$label-classname} {
+        color: $outlined-disabled-label-text-color;
+        opacity: $outlined-disabled-label-text-opacity;
+      }
+    
+      & > .#{$trailingicon-classname} {
+        color: $outlined-disabled-trailing-icon-color;
+        opacity: $outlined-disabled-trailing-icon-opacity;
+      }    
+    }
+    & > .#{$supportingtext-classname} {
+      color: $outlined-disabled-supporting-text-color;
+      opacity: $outlined-disabled-supporting-text-opacity;
+    }
+  }
+
+  // hover state
+  &:not(.#{$disabled-classname}):hover {
+    & > .#{$container-classname} {
+      // outline
+      &::after {
+        border-width: $outlined-hovered-outline-width;
+        border-color: $outlined-hovered-outline-color;
+        transition-duration: $md-sys-motion-transition-duration;
+        transition-property: border-color, border-width;
+        transition-timing-function: $md-sys-motion-easing-standard-curve;
+      }
+
+      & > .#{$leadingicon-classname} {
+        color: $outlined-hovered-leading-icon-color;
+      }
+
+      & > .#{$input-classname} {
+        color: $outlined-hovered-input-text-color;
+      }
+
+      & > .#{$trailingicon-classname} {
+        color: $outlined-hovered-trailing-icon-color;
+      }
+
+      & > .#{$label-classname} {
+        color: $outlined-hovered-label-text-color;
+      }
+    }
+
+    & > .#{$supportingtext-classname} {
+      color: $outlined-hovered-supporting-text-color;
+    }
+  }
+  
+  // focused state
+  &:not(.#{$disabled-classname}):focus-within { // 95% browser support on caniuse
+    & > .#{$container-classname} {
+      // outline
+      &::after {
+        border-width: $outlined-focussed-outline-width;
+        border-color: $outlined-focussed-outline-color;
+        transition-duration: $md-sys-motion-transition-duration;
+        transition-property: border-color, border-width;
+        transition-timing-function: $md-sys-motion-easing-standard-curve;
+      }
+
+      & > .#{$leadingicon-classname} {
+        color: $outlined-focussed-leading-icon-color;
+      }
+
+      & > .#{$input-classname} {
+        color: $outlined-focussed-input-text-color;
+      }
+
+      & > .#{$trailingicon-classname} {
+        color: $outlined-focussed-trailing-icon-color;
+      }
+
+      & > .#{$label-classname} {
+        color: $outlined-focussed-label-text-color;
+      }
+    }
+
+    & > .#{$supportingtext-classname} {
+      color: $outlined-focussed-supporting-text-color;
+    }
+  }
+}
