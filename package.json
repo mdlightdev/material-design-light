@@ -40,7 +40,7 @@
     "site-bench": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
     "site-serve": "npx @11ty/eleventy --serve --incremental",
     "watch": "npm-run-all --parallel watch-*",
-    "watch-css-main": "nodemon --watch scss/ --ext scss --exec \"npm-run-all css-lint-stylelint css-compile\"",
+    "watch-css-main": "nodemon --watch scss/ --ext scss --exec \"npm-run-all css-lint-stylelint css-compile css-minify\"",
     "watch-site-main": "npx @11ty/eleventy --watch --incremental"
   },
   "lint-staged": {
