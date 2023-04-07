@@ -30,10 +30,10 @@ $switch-hover-thumb-color-unselected: $md-sys-color-on-surface-variant;
 $switch-hover-icon-color-selected: $md-sys-color-on-primary-container;
 $switch-hover-icon-color-unselected: $md-sys-color-surface-variant;
 $switch-focus-track-color-selected: $md-sys-color-primary;
+$switch-focus-track-color-unselected: $md-sys-color-surface-variant;
 $switch-focus-track-statelayer-color-selected: $md-sys-color-primary;
 $switch-focus-track-statelayer-opacity-selected: $md-sys-state-focus-state-layer-opacity;
-$switch-focus-track-color-unselected: $md-sys-color-surface-variant;
-$switch-focus-track-outline-unselected: $md-sys-color-outline;
+$switch-focus-track-outline-color-unselected: $md-sys-color-outline;
 $switch-focus-track-statelayer-color-unselected: $md-sys-color-on-surface;
 $switch-focus-track-statelayer-opacity-unselected: $md-sys-state-focus-state-layer-opacity;
 $switch-focus-thumb-color-selected: $md-sys-color-primary-container;
@@ -78,8 +78,9 @@ $switch-layout-thumb-width-pressed: dp.$twenty-eight;
 $switch-layout-thumb-shape: $md-sys-shape-corner-full;
 $switch-layout-statelayer-size: dp.$fourty;
 $switch-layout-statelayer-shape: $md-sys-shape-corner-full;
-$switch-layout-icon-size-selected: dp.$sixteen;
-$switch-layout-icon-size-unselected: dp.$sixteen;
+
+// $switch-layout-icon-size-selected: dp.$sixteen;
+// $switch-layout-icon-size-unselected: dp.$sixteen;
 
 .#{$switch-name} {
   cursor: pointer;
@@ -93,243 +94,378 @@ $switch-layout-icon-size-unselected: dp.$sixteen;
   }
 
   & > input[role="switch"][type="checkbox"] {
-      height: 100%;
-      margin: 0;
-      opacity: 0;
-      outline-style: none;
-      padding: 0;
-      position: absolute;
-      width: 100%;
-      z-index: 1; // make sure te checkbox receives click events
+    // =================
+    // default state (enabled)    
+    // =================
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    outline-style: none;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1; // make sure te checkbox receives click events
 
-      // the track is selected
-      &:checked ~ .#{$track-name} {
+    & ~ .#{$track-name} {
+      display: block;
+      background-color: $switch-enabled-track-color-unselected;
+      border-color: $switch-enabled-track-outline-color;
+      border-radius: $switch-layout-track-shape;
+      border-style: solid;
+      border-width: $switch-layout-track-outline-width;
+      height: 100%;
+      transition-property: background-color, border-color;
+      transition-duration: $md-sys-motion-transition-duration;
+      transition-timing-function: $md-sys-motion-easing-standard-curve;
+      width: 100%;
+    }
+  
+    // the thumb is a container with two children:
+    // 1) the 'selected thumb' 
+    // 2) the 'unselected thumb'. 
+    // the selected or unselected thumb:
+    // - can optionaly contain an icon. note that we use ':empty' to style a thumb without icon
+    // - support a state layer via the pseudo element ::after
+    // - uses flexbox to center their content (vertically and horizontally). 
+    // - is absolutly positionned and then 'morphed' by transitonning their opacity to 0/1.
+    // finally moving from the state 'selected' to 'unselected' is simply a matter of updating the left position of the thumb itself
+    & ~ .#{$thumb-name} {
+      display: block;
+      height: dp.$thirty-two;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: dp.$thirty-two;
+      transition-property: left;
+      transition-duration: $md-sys-motion-transition-duration;
+      transition-timing-function: $md-sys-motion-easing-standard-curve;
+  
+      & > .#{$thumb-selected-name} {
+        align-items: center;
+        background-color: $switch-enabled-thumb-color-selected;
+        border-radius: $switch-layout-thumb-shape;
+        display: flex;
+        height: $switch-layout-thumb-height-with-icon;
+        justify-content: center;
+        left: dp.$four;
+        position: absolute;
+        top: dp.$four;
+        visibility: hidden;
+        width: $switch-layout-thumb-width-with-icon;
+      
+        // selected thumb without an icon
+        &:empty {
+          height: $switch-layout-thumb-height-selected;
+          left: dp.$four;
+          top: dp.$four;
+          width: $switch-layout-thumb-width-selected;
+        }
+  
+        // selected thumb with an icon
+        & > .#{$thumb-icon-name} {
+          color: $switch-enabled-icon-color-selected;
+        }
+  
+        // ::after is the statelayer
+        &::after {
+          border-radius: $switch-layout-statelayer-shape;
+          content: " ";
+          height: $switch-layout-statelayer-size;
+          opacity: 0;
+          position: absolute;
+          width: $switch-layout-statelayer-size;
+        }
+      }
+  
+      & > .#{$thumb-unselected-name} {
+        align-items: center;
+        background-color: $switch-enabled-thumb-color-unselected;
+        border-radius: $switch-layout-thumb-shape;
+        display: flex;
+        height: $switch-layout-thumb-height-with-icon;
+        justify-content: center;
+        left: dp.$four;
+        position: absolute;
+        top: dp.$four;
+        transition-property: opacity;
+        transition-duration: $md-sys-motion-transition-duration;
+        transition-timing-function: $md-sys-motion-easing-standard-curve;
+        visibility: visible;
+        width: $switch-layout-thumb-width-with-icon;
+  
+        // unselected thumb without an icon
+        &:empty {
+          height: $switch-layout-thumb-height-unselected;
+          left: dp.$eight;
+          top: dp.$eight;
+          width: $switch-layout-thumb-width-unselected;
+       }
+        
+        // unselected thumb with an icon
+        & > .#{$thumb-icon-name} {
+          color: $switch-enabled-icon-color-unselected;  
+        }
+  
+        // ::after is the statelayer
+        &::after {
+          border-radius: $switch-layout-statelayer-shape;
+          content: " ";
+          height: $switch-layout-statelayer-size;
+          opacity: 0;
+          position: absolute;
+          width: $switch-layout-statelayer-size;
+        }
+      }
+    }
+  
+    // ===========================
+    // enabled state and selected
+    // ===========================
+    &:checked {
+      // selected track
+      & ~ .#{$track-name} {
         background-color: $switch-enabled-track-color-selected;
         border-color: $switch-enabled-track-color-selected;
       }
-      
-      // the thumb is selected
-      &:checked ~ .#{$thumb-name} {
+    
+      // selected thumb
+      & ~ .#{$thumb-name} {
         left: dp.$twenty;
 
         // show the selected thumb
         & > .#{$thumb-name}--selected {
-          &:empty::before {
+          &:empty {
             background-color: $switch-enabled-thumb-color-selected;
-            height: $switch-layout-thumb-height-selected;
-            width: $switch-layout-thumb-width-selected;
           }
 
-          opacity: 1;
+          visibility: visible;
         }
 
         // hide the unselected thumb
         & > .#{$thumb-name}--unselected {
-          opacity: 0;
+          visibility: hidden;
+        }
+      }
+    }
+
+    // ===============
+    // disabled state 
+    // ===============
+    &:disabled {
+      cursor: default;
+
+      // ==============================
+      // disabled state and unselected
+      // ==============================
+      & ~ .#{$track-name} {
+        opacity: $switch-disabled-track-opacity;
+        background-color: $switch-disabled-track-color-unselected;
+        border-color: $switch-disabled-track-outline-color-unselected;
+      }
+
+      // unselected without unselected icon
+      & ~ .#{$thumb-name} {
+        & > .#{$thumb-unselected-name} {
+          background-color: $switch-disabled-thumb-color-unselected;
+          opacity: $switch-disabled-thumb-opacity-unselected;
+
+          // unselected with an unselected icon
+          & .#{$thumb-icon-name} {
+            color: $switch-disabled-icon-color-unselected;
+            opacity: $switch-disabled-icon-opacity-unselected;
+          }
         }
       }
 
-      // disabled state
-      &:disabled {
-        // disabled and unselected
+      // ============================
+      // disabled state and selected
+      // ============================
+      &:checked {
         & ~ .#{$track-name} {
-          opacity: $switch-disabled-track-opacity;
-          background-color: $switch-disabled-track-color-unselected;
-          border-color: $switch-disabled-track-outline-color-unselected;
+          background-color: $switch-disabled-track-color-selected;
         }
 
-        // without nested icon
-        & ~ .#{$thumb-name}  > .#{$thumb-unselected-name}:empty::before {
-          background-color: $switch-disabled-thumb-color-unselected;
-          opacity: $switch-disabled-thumb-opacity-unselected;
-        }
+        & ~ .#{$thumb-name} {
+          & > .#{$thumb-selected-name} {
+            background-color: $switch-disabled-thumb-color-selected;
+            opacity: $switch-disabled-thumb-opacity-selected;
 
-        // with a nested unselected icon
-        & ~ .#{$thumb-name}  > .#{$thumb-unselected-name} > .#{$thumb-icon-name} {
-          background-color: $switch-disabled-thumb-color-unselected;
-          opacity: $switch-disabled-thumb-opacity-unselected;
+            // selected thumb with an icon
+            & > .#{$thumb-icon-name} {
+              color: $switch-disabled-icon-color-selected;
+              opacity: $switch-disabled-icon-opacity-selected;
+            }
+          }
         }
+      }
+    }
 
-        // disabled and selected
-        &:checked {
-          & ~ .#{$track-name} {
-            background-color: $switch-disabled-track-color-selected;
+    // ============
+    // focus state
+    // ============
+    &:focus {
+      // unselected track
+      & ~ .#{$track-name} {
+        background-color: $switch-focus-track-color-unselected;
+        border-color: $switch-focus-track-outline-color-unselected;
+      }
+
+      // selected track
+      &:checked ~ .#{$track-name} {
+        background-color: $switch-focus-track-color-selected;
+        border-color: $switch-focus-track-color-selected;
+      }
+      
+      // thumb
+      & ~ .#{$thumb-name} {        
+        & > .#{$thumb-selected-name} {
+          background-color: $switch-focus-thumb-color-selected;
+          
+          // with icon
+          & > .#{$thumb-icon-name} {            
+            color: $switch-focus-icon-color-selected;
+          }
+
+          // state layer
+          &::after {
+            background-color: $switch-focus-track-statelayer-color-selected;
+            opacity: $switch-focus-track-statelayer-opacity-selected;
           }
         }
 
-        // without nested icon
-        & ~ .#{$thumb-name}  > .#{$thumb-selected-name}:empty::before {
-          background-color: $switch-disabled-thumb-color-selected;
-          opacity: $switch-disabled-thumb-opacity-selected;
+        // unselected
+        & > .#{$thumb-unselected-name} {
+          background-color: $switch-focus-thumb-color-unselected;
+
+          // with icon
+          & > .#{$thumb-icon-name} {            
+            color: $switch-focus-icon-color-unselected;
+          }
+
+          // state layer
+          &::after {
+            background-color: $switch-focus-track-statelayer-color-unselected;
+            opacity: $switch-focus-track-statelayer-opacity-unselected;
+          }
+        }
+      }
+    }
+
+    // ============
+    // pressed state
+    // ============
+    &:active:enabled {
+      // unselected track
+      & ~ .#{$track-name} {
+        background-color: $switch-pressed-track-color-unselected;
+        border-color: $switch-pressed-track-outline-color-unselected;
+      }
+
+      // selected track
+      &:checked ~ .#{$track-name} {
+        background-color: $switch-pressed-track-color-selected;
+      }
+     
+      // thumb
+      & ~ .#{$thumb-name} {
+        // selected
+        & > .#{$thumb-selected-name} {
+          height: $switch-layout-thumb-height-pressed;
+          left: dp.$two;
+          top: dp.$two;
+          width: $switch-layout-thumb-width-pressed;
+
+          // without icon
+          &:empty {        
+            background-color: $switch-pressed-thumb-color-selected;
+          }
+
+          // with icon
+          & > .#{$thumb-icon-name} {            
+            color: $switch-pressed-icon-color-selected;
+          }
+
+          // state layer
+          &::after {
+            background-color: $switch-pressed-track-statelayer-color-selected;
+            opacity: $switch-pressed-track-statelayer-opacity-selected;
+          }
         }
 
-        // with a nested selected icon
-        & ~ .#{$thumb-name}  > .#{$thumb-selected-name} > .#{$thumb-icon-name} {
-          background-color: $switch-disabled-thumb-color-selected;
-          opacity: $switch-disabled-thumb-opacity-selected;
+        // unselected
+        & > .#{$thumb-unselected-name} {
+          height: $switch-layout-thumb-height-pressed;
+          left: dp.$two;
+          top: dp.$two;
+          width: $switch-layout-thumb-width-pressed;
+
+          // without icon
+          &:empty {        
+            background-color: $switch-pressed-thumb-color-unselected;
+          }
+
+          // with icon
+          & > .#{$thumb-icon-name} {            
+            color: $switch-pressed-icon-color-unselected;
+          }
+
+          // state layer
+          &::after {
+            background-color: $switch-pressed-track-statelayer-color-unselected;
+            opacity: $switch-pressed-track-statelayer-opacity-unselected;
+          }
         }
       }
-      
-      // focus state of the statelayer (selected)
-      &:focus ~ .#{$thumb-name}  > .#{$thumb-selected-name}::after {
-        background-color: $switch-focus-track-statelayer-color-selected;
-        opacity: $switch-focus-track-statelayer-opacity-selected;
+    }
+
+    // ========================
+    // hover state and enabled
+    // ========================
+    &:hover:enabled {
+      cursor: pointer;
+
+      // unselected track
+      & ~ .#{$track-name} {
+        background-color: $switch-hover-track-color-unselected;
+        border-color: $switch-hover-track-outline-color-unselected;
       }
 
-      // focus state of the statelayer (unselected)
-      &:focus ~ .#{$thumb-name}  > .#{$thumb-unselected-name}::after {
-        background-color: $switch-focus-track-statelayer-color-unselected;
-        opacity: $switch-focus-track-statelayer-opacity-unselected;
+      // selected track
+      &:checked ~ .#{$track-name} {
+        background-color: $switch-hover-track-color-selected;
+        border-color: $switch-hover-track-color-selected;
       }
 
-      &:hover:enabled {
-        cursor: pointer;
-        
+      & ~ .#{$thumb-name} {        
         // hover state of the statelayer (selected)
-        & ~ .#{$thumb-name}  > .#{$thumb-selected-name}::after {
-          background-color: $switch-hover-track-statelayer-color-selected;
-          opacity: $switch-hover-track-statelayer-opacity-selected;
+        & > .#{$thumb-selected-name} {
+          background-color: $switch-hover-thumb-color-selected;
+
+          // with icon
+          & > .#{$thumb-icon-name} {            
+            color: $switch-hover-icon-color-selected;
+          }
+          
+          &::after {
+            background-color: $switch-hover-track-statelayer-color-selected;
+            opacity: $switch-hover-track-statelayer-opacity-selected;
+          }
         }
 
         // hover state of the statelayer (unselected)
-        & ~ .#{$thumb-name}  > .#{$thumb-unselected-name}::after {
-          background-color: $switch-hover-track-statelayer-color-unselected;
-          opacity: $switch-hover-track-statelayer-opacity-unselected;
+        & > .#{$thumb-unselected-name} {
+          background-color: $switch-hover-thumb-color-unselected;
+
+          // with icon
+          & > .#{$thumb-icon-name} {            
+            color: $switch-hover-icon-color-unselected;
+          }
+          
+          &::after {
+            background-color: $switch-hover-track-statelayer-color-unselected;
+            opacity: $switch-hover-track-statelayer-opacity-unselected;
+          }
         }
-      }
-
-      // pressed state of the statelayer (selected)
-      &:active:enabled ~ .#{$thumb-name}  > .#{$thumb-selected-name}::after {
-        background-color: $switch-pressed-track-statelayer-color-selected;
-        opacity: $switch-pressed-track-statelayer-opacity-selected;
-      }
-
-      // pressed state of the statelayer (unselected)
-      &:active:enabled ~ .#{$thumb-name}  > .#{$thumb-unselected-name}::after {
-        background-color: $switch-pressed-track-statelayer-color-unselected;
-        opacity: $switch-pressed-track-statelayer-opacity-unselected;
-      }
-      
-    }
-
-  & > .#{$track-name} {
-    display: block;
-    background-color: $switch-enabled-track-color-unselected;
-    border-color: $switch-enabled-track-outline-color;
-    border-radius: $switch-layout-track-shape;
-    border-style: solid;
-    border-width: $switch-layout-track-outline-width;
-    height: 100%;
-    transition-property: background-color, border-color;
-    transition-duration: $md-sys-motion-transition-duration;
-    transition-timing-function: $md-sys-motion-easing-standard-curve;
-    width: 100%;
-  }
-
-  // the thumb is a container with two children:
-  // 1) the 'selected thumb' 
-  // 2) the 'unselected thumb'. 
-  // each child can contain an icon. when no iocn is defined we use :empty to style the rounded thumb 
-  // each child uses flexbox to center their content (vertically and horizontally). 
-  // each child is absolutly positionned and then 'morphed' by transitonning their opacity to 0/1.
-  // finally moving from the state 'selected' to 'unselected' is simply a matter of updating the left position of the thumb itself
-  & > .#{$thumb-name} {
-    display: block;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: dp.$thirty-two;
-    transition-property: left;
-    transition-duration: $md-sys-motion-transition-duration;
-    transition-timing-function: $md-sys-motion-easing-standard-curve;
-
-    & > .#{$thumb-selected-name} {
-      align-items: center;
-      display: flex;
-      height: 100%;
-      justify-content: center;
-      left: 0;
-      opacity: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
-      
-      // there is no nested icon, ::before is the thumb
-      &:empty::before {
-        background-color: $switch-enabled-thumb-color-selected;
-        border-radius: $switch-layout-thumb-shape;
-        content: " ";
-        height: $switch-layout-thumb-height-selected;
-        width: $switch-layout-thumb-width-selected;
-      }
-
-      // there is a nested icon
-      & > .#{$thumb-icon-name} {
-        display: block;
-        background-color: $switch-enabled-thumb-color-selected;
-        border-radius: $switch-layout-thumb-shape;
-        color: $switch-enabled-icon-color-selected;
-
-        & > * {
-          display: block; // make sure that the nested icon is a block element (as opposed to inline-block for google font)
-        }
-      }
-
-      // ::after is the statelayer
-      &::after {
-        border-radius: $switch-layout-statelayer-shape;
-        content: " ";
-        height: $switch-layout-statelayer-size;
-        opacity: 0;
-        position: absolute;
-        width: $switch-layout-statelayer-size;
-      }
-    }
-
-    & > .#{$thumb-unselected-name} {
-      align-items: center;
-      display: flex;
-      height: 100%;
-      justify-content: center;
-      left: 0;
-      opacity: 1;
-      position: absolute;
-      top: 0;
-      transition-property: opacity;
-      transition-duration: $md-sys-motion-transition-duration;
-      transition-timing-function: $md-sys-motion-easing-standard-curve;
-      width: 100%;
-
-      // there is no nested icon, ::before is the thumb
-      &:empty::before {
-        background-color: $switch-enabled-thumb-color-unselected;
-        border-radius: $switch-layout-thumb-shape;
-        content: " ";
-        height: $switch-layout-thumb-height-unselected;
-        width: $switch-layout-thumb-width-unselected;
-      }
-      
-      // there is a nested icon
-      & > .#{$thumb-icon-name} {
-        display: block;
-        background-color: $switch-enabled-thumb-color-unselected;
-        border-radius: $switch-layout-thumb-shape;
-        color: $switch-enabled-icon-color-unselected;
-
-        & > * {
-          display: block; // make sure that the nested icon is a block element (as opposed to inline-block for google font)
-        }
-      }
-
-      // ::after is the statelayer
-      &::after {
-        border-radius: $switch-layout-statelayer-shape;
-        content: " ";
-        height: $switch-layout-statelayer-size;
-        opacity: 0;
-        position: absolute;
-        width: $switch-layout-statelayer-size;
       }
     }
   }
