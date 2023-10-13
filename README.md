@@ -4,13 +4,13 @@
   <p align="center">
     CSS Framework for Material Design 3
     <br />
-    <a href="https://www.materialdesignlight.com/"><strong>Explore the docs »</strong></a>
+    <a href="https://material-design-light.pages.dev/"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/mdlightdev/material-design-light/issues">Report bug</a>
     <br />
     <br />
-    <a href="https://www.materialdesignlight.com/"><img alt="Website" src="https://img.shields.io/website?url=https%3A%2F%2Fwww.materialdesignlight.com%2F"></a>
+    <a href="https://material-design-light.pages.dev/"><img alt="Website" src="https://img.shields.io/website?url=https%3A%2F%2Fwww.materialdesignlight.com%2F"></a>
     <a href="https://github.com/mdlightdev/material-design-light/actions"><img alt="GitHub repository checks state" src="https://badgen.net/github/checks/mdlightdev/material-design-light"></a>
     <a href="https://github.com/mdlightdev/material-design-light/blob/main/LICENSE"><img alt="GitHub" src="https://img.shields.io/github/license/mdlightdev/material-design-light"></a>
     <a href="https://www.npmjs.com/package/material-design-light"><img alt="npm" src="https://img.shields.io/npm/v/material-design-light"></a>
