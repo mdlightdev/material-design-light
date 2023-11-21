@@ -84,39 +84,95 @@ keywords:
       </div>
     </div>
     <hr>
-    <div class='row my-3'>
+    <div class='row'>
       <div class='col'>
-        <div class='field-text field-text-filled' style='width:16rem'>
-          <label class='field-text-icon-leading' for='text'><span
-              class='material-symbols-outlined'>search</span></label>
-          <label class='field-text-label' for='text'>Label text</label>
-          <input class='field-text-input' type='text' id='text' placeholder=' ' pattern="[A-Za-z]{3}">
-          <label class='field-text-icon-trailing' for='text'><span
-              class='material-symbols-outlined material-symbols-outlined-2'>cancel</span></label>
-        </div>
-        <p class='field-text-support'>Supporting text</p>
+        <span class="typography-body-large">Filled with supporting text</span>
       </div>
       <div class='col'>
-        <div class='field-text field-text-outlined' style='width:16rem;background: var(--md-sys-color-background);'>
-          <label class='field-text-icon-leading' for='text2'><span
-              class='material-symbols-outlined'>search</span></label>
-          <label class='field-text-label' for='text2'>Label text</label>
-          <input class='field-text-input' type='text' id='text2' placeholder=' ' pattern="[A-Za-z]{3}">
-          <label class='field-text-icon-trailing' for='text2'><span
-              class='material-symbols-outlined'>cancel</span></label>
-        </div>
-        <p class='field-text-support'>Supporting text</p>
-      </div>
-      <div class='col'>
-        <div class='field-text field-text-filled' style='width:16rem;'>
-          <label class='field-text-label' for='text'>Label text</label>
-          <input class='field-text-input' type='text' id='text' placeholder=' ' pattern="[A-Za-z]{3}">
+        <div class='textfield-filled'>
+            <label class="textfield-container">
+                <input class='textfield-input' type="text" placeholder=' ' value=''>
+                <span class='textfield-label'>Label</span>
+            </label>
+            <a class='textfield-supporting-text'>Supporting text</a>
         </div>
       </div>
+    </div>
+    <div class='row'>
       <div class='col'>
-        <div class='field-text field-text-outlined' style='width:16rem;background: var(--md-sys-color-background);'>
-          <label class='field-text-label' for='text'>Label text</label>
-          <input class='field-text-input' type='text' id='text' placeholder=' '>
+        <span class="typography-body-large">Filled with leading icon,trailing icon and support text</span>
+      </div>
+      <div class='col'>
+        <div class='textfield-filled'>
+            <label class="textfield-container">
+                <span class='textfield-leading-icon material-symbols-outlined'>search</span>
+                <input class='textfield-input' type="text" placeholder=' ' value=''>
+                <span class='textfield-label'>Label</span>
+                <span class='textfield-trailing-icon material-symbols-outlined'>cancel</span>
+            </label>
+            <a class='textfield-supporting-text'>Supporting text</a>
+        </div>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col'>
+        <span class="typography-body-large">Filled and disabled</span>
+      </div>
+      <div class='col'>
+        <div class='textfield-filled textfield-disabled'>
+            <label class="textfield-container">
+                <span class='textfield-leading-icon material-symbols-outlined'>search</span>
+                <input class='textfield-input' type="text" placeholder=' ' value='' disabled>
+                <span class='textfield-label'>Label</span>
+                <span class='textfield-trailing-icon material-symbols-outlined'>cancel</span>
+            </label>
+            <a class='textfield-supporting-text'>Supporting text</a>
+        </div>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col'>
+        <span class="typography-body-large">Outlined with supporting text</span>
+      </div>
+      <div class='col'>
+        <div class='textfield-outlined'>
+            <label class="textfield-container">
+                <input class='textfield-input' type="text" placeholder=' ' value=''>
+                <span class='textfield-label'>Label</span>
+            </label>
+            <a class='textfield-supporting-text'>Supporting text</a>
+        </div>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col'>
+        <span class="typography-body-large">Outlined with leading icon,trailing icon and supporting text</span>
+      </div>
+      <div class='col'>
+        <div class='textfield-outlined'>
+            <label class="textfield-container">
+                <span class='textfield-leading-icon material-symbols-outlined'>search</span>
+                <input class='textfield-input' type="text" placeholder=' ' value=''>
+                <span class='textfield-label'>Label</span>
+                <span class='textfield-trailing-icon material-symbols-outlined'>cancel</span>
+            </label>
+            <a class='textfield-supporting-text'>Supporting text</a>
+        </div>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col'>
+        <span class="typography-body-large">Outlined and disabled</span>
+      </div>
+      <div class='col'>
+        <div class='textfield-outlined textfield-disabled'>
+            <label class="textfield-container">
+                <span class='textfield-leading-icon material-symbols-outlined'>search</span>
+                <input class='textfield-input' type="text" placeholder=' ' value='' disabled>
+                <span class='textfield-label'>Label</span>
+                <span class='textfield-trailing-icon material-symbols-outlined'>cancel</span>
+            </label>
+            <a class='textfield-supporting-text'>Supporting text</a>
         </div>
       </div>
     </div>
