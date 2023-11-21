@@ -465,51 +465,51 @@ body {
     margin-left: 91.6666666667%;
   }
   .g-sm-0,
-.gx-sm-0 {
+  .gx-sm-0 {
     --ml-gutter-x: 0;
   }
   .g-sm-0,
-.gy-sm-0 {
+  .gy-sm-0 {
     --ml-gutter-y: 0;
   }
   .g-sm-1,
-.gx-sm-1 {
+  .gx-sm-1 {
     --ml-gutter-x: 0.25rem;
   }
   .g-sm-1,
-.gy-sm-1 {
+  .gy-sm-1 {
     --ml-gutter-y: 0.25rem;
   }
   .g-sm-2,
-.gx-sm-2 {
+  .gx-sm-2 {
     --ml-gutter-x: 0.5rem;
   }
   .g-sm-2,
-.gy-sm-2 {
+  .gy-sm-2 {
     --ml-gutter-y: 0.5rem;
   }
   .g-sm-3,
-.gx-sm-3 {
+  .gx-sm-3 {
     --ml-gutter-x: 1rem;
   }
   .g-sm-3,
-.gy-sm-3 {
+  .gy-sm-3 {
     --ml-gutter-y: 1rem;
   }
   .g-sm-4,
-.gx-sm-4 {
+  .gx-sm-4 {
     --ml-gutter-x: 1.5rem;
   }
   .g-sm-4,
-.gy-sm-4 {
+  .gy-sm-4 {
     --ml-gutter-y: 1.5rem;
   }
   .g-sm-5,
-.gx-sm-5 {
+  .gx-sm-5 {
     --ml-gutter-x: 3rem;
   }
   .g-sm-5,
-.gy-sm-5 {
+  .gy-sm-5 {
     --ml-gutter-y: 3rem;
   }
 }
@@ -634,51 +634,51 @@ body {
     margin-left: 91.6666666667%;
   }
   .g-md-0,
-.gx-md-0 {
+  .gx-md-0 {
     --ml-gutter-x: 0;
   }
   .g-md-0,
-.gy-md-0 {
+  .gy-md-0 {
     --ml-gutter-y: 0;
   }
   .g-md-1,
-.gx-md-1 {
+  .gx-md-1 {
     --ml-gutter-x: 0.25rem;
   }
   .g-md-1,
-.gy-md-1 {
+  .gy-md-1 {
     --ml-gutter-y: 0.25rem;
   }
   .g-md-2,
-.gx-md-2 {
+  .gx-md-2 {
     --ml-gutter-x: 0.5rem;
   }
   .g-md-2,
-.gy-md-2 {
+  .gy-md-2 {
     --ml-gutter-y: 0.5rem;
   }
   .g-md-3,
-.gx-md-3 {
+  .gx-md-3 {
     --ml-gutter-x: 1rem;
   }
   .g-md-3,
-.gy-md-3 {
+  .gy-md-3 {
     --ml-gutter-y: 1rem;
   }
   .g-md-4,
-.gx-md-4 {
+  .gx-md-4 {
     --ml-gutter-x: 1.5rem;
   }
   .g-md-4,
-.gy-md-4 {
+  .gy-md-4 {
     --ml-gutter-y: 1.5rem;
   }
   .g-md-5,
-.gx-md-5 {
+  .gx-md-5 {
     --ml-gutter-x: 3rem;
   }
   .g-md-5,
-.gy-md-5 {
+  .gy-md-5 {
     --ml-gutter-y: 3rem;
   }
 }
@@ -803,51 +803,51 @@ body {
     margin-left: 91.6666666667%;
   }
   .g-lg-0,
-.gx-lg-0 {
+  .gx-lg-0 {
     --ml-gutter-x: 0;
   }
   .g-lg-0,
-.gy-lg-0 {
+  .gy-lg-0 {
     --ml-gutter-y: 0;
   }
   .g-lg-1,
-.gx-lg-1 {
+  .gx-lg-1 {
     --ml-gutter-x: 0.25rem;
   }
   .g-lg-1,
-.gy-lg-1 {
+  .gy-lg-1 {
     --ml-gutter-y: 0.25rem;
   }
   .g-lg-2,
-.gx-lg-2 {
+  .gx-lg-2 {
     --ml-gutter-x: 0.5rem;
   }
   .g-lg-2,
-.gy-lg-2 {
+  .gy-lg-2 {
     --ml-gutter-y: 0.5rem;
   }
   .g-lg-3,
-.gx-lg-3 {
+  .gx-lg-3 {
     --ml-gutter-x: 1rem;
   }
   .g-lg-3,
-.gy-lg-3 {
+  .gy-lg-3 {
     --ml-gutter-y: 1rem;
   }
   .g-lg-4,
-.gx-lg-4 {
+  .gx-lg-4 {
     --ml-gutter-x: 1.5rem;
   }
   .g-lg-4,
-.gy-lg-4 {
+  .gy-lg-4 {
     --ml-gutter-y: 1.5rem;
   }
   .g-lg-5,
-.gx-lg-5 {
+  .gx-lg-5 {
     --ml-gutter-x: 3rem;
   }
   .g-lg-5,
-.gy-lg-5 {
+  .gy-lg-5 {
     --ml-gutter-y: 3rem;
   }
 }
@@ -972,51 +972,51 @@ body {
     margin-left: 91.6666666667%;
   }
   .g-xl-0,
-.gx-xl-0 {
+  .gx-xl-0 {
     --ml-gutter-x: 0;
   }
   .g-xl-0,
-.gy-xl-0 {
+  .gy-xl-0 {
     --ml-gutter-y: 0;
   }
   .g-xl-1,
-.gx-xl-1 {
+  .gx-xl-1 {
     --ml-gutter-x: 0.25rem;
   }
   .g-xl-1,
-.gy-xl-1 {
+  .gy-xl-1 {
     --ml-gutter-y: 0.25rem;
   }
   .g-xl-2,
-.gx-xl-2 {
+  .gx-xl-2 {
     --ml-gutter-x: 0.5rem;
   }
   .g-xl-2,
-.gy-xl-2 {
+  .gy-xl-2 {
     --ml-gutter-y: 0.5rem;
   }
   .g-xl-3,
-.gx-xl-3 {
+  .gx-xl-3 {
     --ml-gutter-x: 1rem;
   }
   .g-xl-3,
-.gy-xl-3 {
+  .gy-xl-3 {
     --ml-gutter-y: 1rem;
   }
   .g-xl-4,
-.gx-xl-4 {
+  .gx-xl-4 {
     --ml-gutter-x: 1.5rem;
   }
   .g-xl-4,
-.gy-xl-4 {
+  .gy-xl-4 {
     --ml-gutter-y: 1.5rem;
   }
   .g-xl-5,
-.gx-xl-5 {
+  .gx-xl-5 {
     --ml-gutter-x: 3rem;
   }
   .g-xl-5,
-.gy-xl-5 {
+  .gy-xl-5 {
     --ml-gutter-y: 3rem;
   }
 }
@@ -1141,51 +1141,51 @@ body {
     margin-left: 91.6666666667%;
   }
   .g-xxl-0,
-.gx-xxl-0 {
+  .gx-xxl-0 {
     --ml-gutter-x: 0;
   }
   .g-xxl-0,
-.gy-xxl-0 {
+  .gy-xxl-0 {
     --ml-gutter-y: 0;
   }
   .g-xxl-1,
-.gx-xxl-1 {
+  .gx-xxl-1 {
     --ml-gutter-x: 0.25rem;
   }
   .g-xxl-1,
-.gy-xxl-1 {
+  .gy-xxl-1 {
     --ml-gutter-y: 0.25rem;
   }
   .g-xxl-2,
-.gx-xxl-2 {
+  .gx-xxl-2 {
     --ml-gutter-x: 0.5rem;
   }
   .g-xxl-2,
-.gy-xxl-2 {
+  .gy-xxl-2 {
     --ml-gutter-y: 0.5rem;
   }
   .g-xxl-3,
-.gx-xxl-3 {
+  .gx-xxl-3 {
     --ml-gutter-x: 1rem;
   }
   .g-xxl-3,
-.gy-xxl-3 {
+  .gy-xxl-3 {
     --ml-gutter-y: 1rem;
   }
   .g-xxl-4,
-.gx-xxl-4 {
+  .gx-xxl-4 {
     --ml-gutter-x: 1.5rem;
   }
   .g-xxl-4,
-.gy-xxl-4 {
+  .gy-xxl-4 {
     --ml-gutter-y: 1.5rem;
   }
   .g-xxl-5,
-.gx-xxl-5 {
+  .gx-xxl-5 {
     --ml-gutter-x: 3rem;
   }
   .g-xxl-5,
-.gy-xxl-5 {
+  .gy-xxl-5 {
     --ml-gutter-y: 3rem;
   }
 }
@@ -1987,7 +1987,8 @@ body[data-ml-theme=dark] .button-text:active:not(:disabled), .ml-theme-dark .but
   margin-right: 3.25rem;
 }
 
-.field-text .field-text-input:-webkit-autofill, .field-text .field-text-input:-webkit-autofill:focus {
+.field-text .field-text-input:-webkit-autofill,
+.field-text .field-text-input:-webkit-autofill:focus {
   transition: background-color 2147483647s 0s, color 2147483647s 0s !important;
 }
 
@@ -1999,7 +2000,10 @@ body[data-ml-theme=dark] .button-text:active:not(:disabled), .ml-theme-dark .but
   border-color: rgba(28, 27, 31, 0.38);
 }
 
-.field-text:has(> .field-text-input:disabled) .field-text-label, .field-text:has(> .field-text-input:disabled) .field-text-input, .field-text:has(> .field-text-input:disabled) .field-text-icon-leading, .field-text:has(> .field-text-input:disabled) .field-text-icon-trailing {
+.field-text:has(> .field-text-input:disabled) .field-text-label,
+.field-text:has(> .field-text-input:disabled) .field-text-input,
+.field-text:has(> .field-text-input:disabled) .field-text-icon-leading,
+.field-text:has(> .field-text-input:disabled) .field-text-icon-trailing {
   color: rgba(28, 27, 31, 0.38);
 }
 
@@ -2035,15 +2039,15 @@ body[data-ml-theme=dark] .button-text:active:not(:disabled), .ml-theme-dark .but
   color: #6750a4;
 }
 
-.field-text:hover:not(:has(> .field-text-input:disabled)):not(:focus-within).field-text-filled {
+.field-text:hover:not(:has(> .field-text-input:disabled), :focus-within).field-text-filled {
   background: #d7d0dc;
 }
 
-.field-text:hover:not(:has(> .field-text-input:disabled)):not(:focus-within).field-text-outlined::after {
+.field-text:hover:not(:has(> .field-text-input:disabled), :focus-within).field-text-outlined::after {
   border-color: #6750a4;
 }
 
-.field-text:hover:not(:has(> .field-text-input:disabled)):not(:focus-within).field-text-outlined .field-text-label {
+.field-text:hover:not(:has(> .field-text-input:disabled), :focus-within).field-text-outlined .field-text-label {
   color: #1c1b1f;
 }
 
@@ -2051,7 +2055,8 @@ body[data-ml-theme=dark] .button-text:active:not(:disabled), .ml-theme-dark .but
   border-color: #b3261e;
 }
 
-.field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid) .field-text-label, .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid) .field-text-icon-trailing {
+.field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid) .field-text-label,
+.field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid) .field-text-icon-trailing {
   color: #b3261e;
 }
 
@@ -2059,15 +2064,16 @@ body[data-ml-theme=dark] .button-text:active:not(:disabled), .ml-theme-dark .but
   caret-color: #b3261e;
 }
 
-.field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled)):not(:focus-within).field-text-filled {
+.field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled), :focus-within).field-text-filled {
   background: #d7d0dc;
 }
 
-.field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled)):not(:focus-within).field-text-filled::after {
+.field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled), :focus-within).field-text-filled::after {
   border-color: #410e0b;
 }
 
-.field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled)):not(:focus-within) .field-text-label, .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled)):not(:focus-within) .field-text-icon-trailing {
+.field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled), :focus-within) .field-text-label,
+.field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled), :focus-within) .field-text-icon-trailing {
   color: #410e0b;
 }
 
@@ -2112,7 +2118,13 @@ body[data-ml-theme=dark] .field-text:has(> .field-text-input:disabled).field-tex
   border-color: rgba(230, 225, 229, 0.38);
 }
 
-body[data-ml-theme=dark] .field-text:has(> .field-text-input:disabled) .field-text-label, body[data-ml-theme=dark] .field-text:has(> .field-text-input:disabled) .field-text-input, body[data-ml-theme=dark] .field-text:has(> .field-text-input:disabled) .field-text-icon-leading, body[data-ml-theme=dark] .field-text:has(> .field-text-input:disabled) .field-text-icon-trailing, .ml-theme-dark .field-text:has(> .field-text-input:disabled) .field-text-label, .ml-theme-dark .field-text:has(> .field-text-input:disabled) .field-text-input, .ml-theme-dark .field-text:has(> .field-text-input:disabled) .field-text-icon-leading, .ml-theme-dark .field-text:has(> .field-text-input:disabled) .field-text-icon-trailing {
+body[data-ml-theme=dark] .field-text:has(> .field-text-input:disabled) .field-text-label,
+body[data-ml-theme=dark] .field-text:has(> .field-text-input:disabled) .field-text-input,
+body[data-ml-theme=dark] .field-text:has(> .field-text-input:disabled) .field-text-icon-leading,
+body[data-ml-theme=dark] .field-text:has(> .field-text-input:disabled) .field-text-icon-trailing, .ml-theme-dark .field-text:has(> .field-text-input:disabled) .field-text-label,
+.ml-theme-dark .field-text:has(> .field-text-input:disabled) .field-text-input,
+.ml-theme-dark .field-text:has(> .field-text-input:disabled) .field-text-icon-leading,
+.ml-theme-dark .field-text:has(> .field-text-input:disabled) .field-text-icon-trailing {
   color: rgba(230, 225, 229, 0.38);
 }
 
@@ -2124,7 +2136,7 @@ body[data-ml-theme=dark] .field-text:focus-within:not(:has(> .field-text-input:d
   color: #d0bcff;
 }
 
-body[data-ml-theme=dark] .field-text:hover:not(:has(> .field-text-input:disabled)):not(:focus-within).field-text-filled, .ml-theme-dark .field-text:hover:not(:has(> .field-text-input:disabled)):not(:focus-within).field-text-filled {
+body[data-ml-theme=dark] .field-text:hover:not(:has(> .field-text-input:disabled), :focus-within).field-text-filled, .ml-theme-dark .field-text:hover:not(:has(> .field-text-input:disabled), :focus-within).field-text-filled {
   background: #56515b;
 }
 
@@ -2132,7 +2144,9 @@ body[data-ml-theme=dark] .field-text:not(:has(> .field-text-input:disabled)):has
   border-color: #f2b8b5;
 }
 
-body[data-ml-theme=dark] .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid) .field-text-label, body[data-ml-theme=dark] .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid) .field-text-icon-trailing, .ml-theme-dark .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid) .field-text-label, .ml-theme-dark .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid) .field-text-icon-trailing {
+body[data-ml-theme=dark] .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid) .field-text-label,
+body[data-ml-theme=dark] .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid) .field-text-icon-trailing, .ml-theme-dark .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid) .field-text-label,
+.ml-theme-dark .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid) .field-text-icon-trailing {
   color: #f2b8b5;
 }
 
@@ -2140,15 +2154,17 @@ body[data-ml-theme=dark] .field-text:not(:has(> .field-text-input:disabled)):has
   caret-color: #f2b8b5;
 }
 
-body[data-ml-theme=dark] .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled)):not(:focus-within).field-text-filled, .ml-theme-dark .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled)):not(:focus-within).field-text-filled {
+body[data-ml-theme=dark] .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled), :focus-within).field-text-filled, .ml-theme-dark .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled), :focus-within).field-text-filled {
   background: #56515b;
 }
 
-body[data-ml-theme=dark] .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled)):not(:focus-within).field-text-filled::after, .ml-theme-dark .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled)):not(:focus-within).field-text-filled::after {
+body[data-ml-theme=dark] .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled), :focus-within).field-text-filled::after, .ml-theme-dark .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled), :focus-within).field-text-filled::after {
   border-color: #f2b8b5;
 }
 
-body[data-ml-theme=dark] .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled)):not(:focus-within) .field-text-label, body[data-ml-theme=dark] .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled)):not(:focus-within) .field-text-icon-trailing, .ml-theme-dark .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled)):not(:focus-within) .field-text-label, .ml-theme-dark .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled)):not(:focus-within) .field-text-icon-trailing {
+body[data-ml-theme=dark] .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled), :focus-within) .field-text-label,
+body[data-ml-theme=dark] .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled), :focus-within) .field-text-icon-trailing, .ml-theme-dark .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled), :focus-within) .field-text-label,
+.ml-theme-dark .field-text:not(:has(> .field-text-input:disabled)):has(> .field-text-input:invalid):hover:not(:has(> .field-text-input:disabled), :focus-within) .field-text-icon-trailing {
   color: #f2b8b5;
 }
 
@@ -2180,6 +2196,306 @@ body[data-ml-theme=dark] .field-text-support[aria-disabled=true], .ml-theme-dark
 
 body[data-ml-theme=dark] .field-text-support[aria-invalid=true], .ml-theme-dark .field-text-support[aria-invalid=true] {
   color: #f2b8b5;
+}
+
+.switch {
+  cursor: pointer;
+  display: inline-block;
+  height: 2rem;
+  position: relative;
+  width: 3.25rem;
+}
+
+.switch *, .switch *::before, .switch *::after {
+  box-sizing: border-box;
+}
+
+.switch > input[role=switch][type=checkbox] {
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  outline-style: none;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.switch > input[role=switch][type=checkbox] ~ .switch-track {
+  display: block;
+  background-color: #e7e0ec;
+  border-color: #79747e;
+  border-radius: 10rem;
+  border-style: solid;
+  border-width: 0.125rem;
+  height: 100%;
+  transition-property: background-color, border-color;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+}
+
+.switch > input[role=switch][type=checkbox] ~ .switch-thumb {
+  display: block;
+  height: 2rem;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 2rem;
+  transition-property: left;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.switch > input[role=switch][type=checkbox] ~ .switch-thumb > .switch-thumb--selected {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10rem;
+  display: flex;
+  height: 1.5rem;
+  justify-content: center;
+  left: 0.25rem;
+  position: absolute;
+  top: 0.25rem;
+  visibility: hidden;
+  width: 1.5rem;
+}
+
+.switch > input[role=switch][type=checkbox] ~ .switch-thumb > .switch-thumb--selected:empty {
+  height: 1.5rem;
+  left: 0.25rem;
+  top: 0.25rem;
+  width: 1.5rem;
+}
+
+.switch > input[role=switch][type=checkbox] ~ .switch-thumb > .switch-thumb--selected > .switch-thumb-icon {
+  color: #21005d;
+}
+
+.switch > input[role=switch][type=checkbox] ~ .switch-thumb > .switch-thumb--selected::after {
+  border-radius: 10rem;
+  content: " ";
+  height: 2.5rem;
+  opacity: 0;
+  position: absolute;
+  width: 2.5rem;
+}
+
+.switch > input[role=switch][type=checkbox] ~ .switch-thumb > .switch-thumb--unselected {
+  align-items: center;
+  background-color: #79747e;
+  border-radius: 10rem;
+  display: flex;
+  height: 1.5rem;
+  justify-content: center;
+  left: 0.25rem;
+  position: absolute;
+  top: 0.25rem;
+  transition-property: opacity;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  visibility: visible;
+  width: 1.5rem;
+}
+
+.switch > input[role=switch][type=checkbox] ~ .switch-thumb > .switch-thumb--unselected:empty {
+  height: 1rem;
+  left: 0.5rem;
+  top: 0.5rem;
+  width: 1rem;
+}
+
+.switch > input[role=switch][type=checkbox] ~ .switch-thumb > .switch-thumb--unselected > .switch-thumb-icon {
+  color: #e7e0ec;
+}
+
+.switch > input[role=switch][type=checkbox] ~ .switch-thumb > .switch-thumb--unselected::after {
+  border-radius: 10rem;
+  content: " ";
+  height: 2.5rem;
+  opacity: 0;
+  position: absolute;
+  width: 2.5rem;
+}
+
+.switch > input[role=switch][type=checkbox]:checked ~ .switch-track {
+  background-color: #6750a4;
+  border-color: #6750a4;
+}
+
+.switch > input[role=switch][type=checkbox]:checked ~ .switch-thumb {
+  left: 1.25rem;
+}
+
+.switch > input[role=switch][type=checkbox]:checked ~ .switch-thumb > .switch-thumb--selected {
+  visibility: visible;
+}
+
+.switch > input[role=switch][type=checkbox]:checked ~ .switch-thumb > .switch-thumb--selected:empty {
+  background-color: #fff;
+}
+
+.switch > input[role=switch][type=checkbox]:checked ~ .switch-thumb > .switch-thumb--unselected {
+  visibility: hidden;
+}
+
+.switch > input[role=switch][type=checkbox]:disabled {
+  cursor: default;
+}
+
+.switch > input[role=switch][type=checkbox]:disabled ~ .switch-track {
+  opacity: 12%;
+  background-color: #e7e0ec;
+  border-color: #1c1b1f;
+}
+
+.switch > input[role=switch][type=checkbox]:disabled ~ .switch-thumb > .switch-thumb--unselected {
+  background-color: #1c1b1f;
+  opacity: 38%;
+}
+
+.switch > input[role=switch][type=checkbox]:disabled ~ .switch-thumb > .switch-thumb--unselected .switch-thumb-icon {
+  color: #e7e0ec;
+  opacity: 38%;
+}
+
+.switch > input[role=switch][type=checkbox]:disabled:checked ~ .switch-track {
+  background-color: #1c1b1f;
+}
+
+.switch > input[role=switch][type=checkbox]:disabled:checked ~ .switch-thumb > .switch-thumb--selected {
+  background-color: #fffbfe;
+  opacity: 100%;
+}
+
+.switch > input[role=switch][type=checkbox]:disabled:checked ~ .switch-thumb > .switch-thumb--selected > .switch-thumb-icon {
+  color: #1c1b1f;
+  opacity: 38%;
+}
+
+.switch > input[role=switch][type=checkbox]:focus ~ .switch-track {
+  background-color: #e7e0ec;
+  border-color: #79747e;
+}
+
+.switch > input[role=switch][type=checkbox]:focus:checked ~ .switch-track {
+  background-color: #6750a4;
+  border-color: #6750a4;
+}
+
+.switch > input[role=switch][type=checkbox]:focus ~ .switch-thumb > .switch-thumb--selected {
+  background-color: #eaddff;
+}
+
+.switch > input[role=switch][type=checkbox]:focus ~ .switch-thumb > .switch-thumb--selected > .switch-thumb-icon {
+  color: #21005d;
+}
+
+.switch > input[role=switch][type=checkbox]:focus ~ .switch-thumb > .switch-thumb--selected::after {
+  background-color: #6750a4;
+  opacity: 12%;
+}
+
+.switch > input[role=switch][type=checkbox]:focus ~ .switch-thumb > .switch-thumb--unselected {
+  background-color: #49454f;
+}
+
+.switch > input[role=switch][type=checkbox]:focus ~ .switch-thumb > .switch-thumb--unselected > .switch-thumb-icon {
+  color: #e7e0ec;
+}
+
+.switch > input[role=switch][type=checkbox]:focus ~ .switch-thumb > .switch-thumb--unselected::after {
+  background-color: #1c1b1f;
+  opacity: 12%;
+}
+
+.switch > input[role=switch][type=checkbox]:active:enabled ~ .switch-track {
+  background-color: #e7e0ec;
+  border-color: #79747e;
+}
+
+.switch > input[role=switch][type=checkbox]:active:enabled:checked ~ .switch-track {
+  background-color: #6750a4;
+}
+
+.switch > input[role=switch][type=checkbox]:active:enabled ~ .switch-thumb > .switch-thumb--selected {
+  height: 1.75rem;
+  left: 0.125rem;
+  top: 0.125rem;
+  width: 1.75rem;
+}
+
+.switch > input[role=switch][type=checkbox]:active:enabled ~ .switch-thumb > .switch-thumb--selected:empty {
+  background-color: #eaddff;
+}
+
+.switch > input[role=switch][type=checkbox]:active:enabled ~ .switch-thumb > .switch-thumb--selected > .switch-thumb-icon {
+  color: #21005d;
+}
+
+.switch > input[role=switch][type=checkbox]:active:enabled ~ .switch-thumb > .switch-thumb--selected::after {
+  background-color: #6750a4;
+  opacity: 12%;
+}
+
+.switch > input[role=switch][type=checkbox]:active:enabled ~ .switch-thumb > .switch-thumb--unselected {
+  height: 1.75rem;
+  left: 0.125rem;
+  top: 0.125rem;
+  width: 1.75rem;
+}
+
+.switch > input[role=switch][type=checkbox]:active:enabled ~ .switch-thumb > .switch-thumb--unselected:empty {
+  background-color: #49454f;
+}
+
+.switch > input[role=switch][type=checkbox]:active:enabled ~ .switch-thumb > .switch-thumb--unselected > .switch-thumb-icon {
+  color: #e7e0ec;
+}
+
+.switch > input[role=switch][type=checkbox]:active:enabled ~ .switch-thumb > .switch-thumb--unselected::after {
+  background-color: #1c1b1f;
+  opacity: 12%;
+}
+
+.switch > input[role=switch][type=checkbox]:hover:enabled {
+  cursor: pointer;
+}
+
+.switch > input[role=switch][type=checkbox]:hover:enabled ~ .switch-track {
+  background-color: #e7e0ec;
+  border-color: #79747e;
+}
+
+.switch > input[role=switch][type=checkbox]:hover:enabled:checked ~ .switch-track {
+  background-color: #6750a4;
+  border-color: #6750a4;
+}
+
+.switch > input[role=switch][type=checkbox]:hover:enabled ~ .switch-thumb > .switch-thumb--selected {
+  background-color: #eaddff;
+}
+
+.switch > input[role=switch][type=checkbox]:hover:enabled ~ .switch-thumb > .switch-thumb--selected > .switch-thumb-icon {
+  color: #21005d;
+}
+
+.switch > input[role=switch][type=checkbox]:hover:enabled ~ .switch-thumb > .switch-thumb--selected::after {
+  background-color: #6750a4;
+  opacity: 8%;
+}
+
+.switch > input[role=switch][type=checkbox]:hover:enabled ~ .switch-thumb > .switch-thumb--unselected {
+  background-color: #49454f;
+}
+
+.switch > input[role=switch][type=checkbox]:hover:enabled ~ .switch-thumb > .switch-thumb--unselected > .switch-thumb-icon {
+  color: #e7e0ec;
+}
+
+.switch > input[role=switch][type=checkbox]:hover:enabled ~ .switch-thumb > .switch-thumb--unselected::after {
+  background-color: #1c1b1f;
+  opacity: 8%;
 }
 
 .typography-headline-large {

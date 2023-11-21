@@ -1,0 +1,154 @@
+---
+layout: layouts/base.njk
+title: Material Design Light
+description: A lightweight CSS framework implementing the Material Design 3.
+thumbnail:
+path: /assets/img/thumb.png
+type: image/jpeg
+width: 1280
+height: 720
+alt: Pastel photograph with the Material Design Light logo.
+keywords:
+- CSS
+- CSS framework
+- Material Design
+- Material Design 3
+- MD3
+- Web
+- HTML
+- Sass
+- SCSS
+---
+<h1 style='font-family: var(--ml-font-sans-serif)'>Switch component</h1>
+<p class='typography-body-large'>Web implementation of <a href='https://m3.material.io/components/switch/overview' target='_blank'>Material design 3 switch component</p>
+
+<h2 style='font-family: var(--ml-font-sans-serif)'>No icon</h2>
+<p class='typography-body-large'>Html Markup</p>
+<span class='switch'>
+  <input type='checkbox' role='switch' id='text1'>
+  <span class='switch-track'></span>
+  <span class='switch-thumb'>
+    <span class='switch-thumb--selected'></span>
+    <span class='switch-thumb--unselected'></span>
+  </span>
+</span>
+
+<h2 style='font-family: var(--ml-font-sans-serif)'>With 'on' icon</h2>
+<p class='typography-body-large'>Html Markup</p>
+<span class='switch'>
+  <input type='checkbox' role='switch' id='text2'>
+  <span class='switch-track'></span>
+  <span class='switch-thumb'>
+    <span class='switch-thumb--selected'>
+      <span class='switch-thumb-icon material-symbols-outlined'>check</span>
+    </span>
+    <span class='switch-thumb--unselected'></span>
+  </span>
+</span>
+
+<h2 style='font-family: var(--ml-font-sans-serif)'>With 'off' icon</h2>
+<p class='typography-body-large'>Html Markup</p>
+<span class='switch'>
+  <input type='checkbox' role='switch' id='text3'>
+  <span class='switch-track'></span>
+  <span class='switch-thumb'>
+    <span class='switch-thumb--selected'></span>
+    <span class='switch-thumb--unselected'>
+      <span class='switch-thumb-icon material-symbols-outlined'>close</span>
+    </span>
+  </span>
+</span>
+
+<h2 style='font-family: var(--ml-font-sans-serif)'>With 'on' and 'off' icon</h2>
+<p class='typography-body-large'>Html Markup</p>
+<span class='switch'>
+  <input type='checkbox' role='switch' id='text4'>
+  <span class='switch-track'></span>
+  <span class='switch-thumb'>
+    <span class='switch-thumb--selected'>
+      <span class='switch-thumb-icon material-symbols-outlined'>check</span>
+    </span>
+    <span class='switch-thumb--unselected'>
+      <span class='switch-thumb-icon material-symbols-outlined'>close</span>
+    </span>
+  </span>
+</span>
+
+<h2 style='font-family: var(--ml-font-sans-serif)'>Disabled - unselected - no icon</h2>
+<p class='typography-body-large'>Html Markup</p>
+<span class='switch'>
+  <input type='checkbox' role='switch' id='text5' disabled>
+  <span class='switch-track'></span>
+  <span class='switch-thumb'>
+    <span class='switch-thumb--selected'></span>
+    <span class='switch-thumb--unselected'></span>
+  </span>
+</span>
+
+<h2 style='font-family: var(--ml-font-sans-serif)'>Disabled - selected - no icon</h2>
+<p class='typography-body-large'>Html Markup</p>
+<span class='switch'>
+  <input type='checkbox' role='switch' id='text5' disabled checked>
+  <span class='switch-track'></span>
+  <span class='switch-thumb'>
+    <span class='switch-thumb--selected'></span>
+    <span class='switch-thumb--unselected'></span>
+  </span>
+</span>
+
+<h2 style='font-family: var(--ml-font-sans-serif)'>Disabled - unselected - unselected icon</h2>
+<p class='typography-body-large'>Html Markup</p>
+<span class='switch'>
+  <input type='checkbox' role='switch' id='text7' disabled>
+  <span class='switch-track'></span>
+  <span class='switch-thumb'>
+    <span class='switch-thumb--selected'></span>
+    <span class='switch-thumb--unselected'>
+      <span class='switch-thumb-icon material-symbols-outlined'>close</span>
+    </span>
+  </span>
+</span>
+
+<h2 style='font-family: var(--ml-font-sans-serif)'>Disabled - selected - selected icon</h2>
+<p class='typography-body-large'>Html Markup</p>
+<span class='switch'>
+  <input type='checkbox' role='switch' id='text6' checked disabled>
+  <span class='switch-track'></span>
+  <span class='switch-thumb'>
+    <span class='switch-thumb--selected'>
+      <span class='switch-thumb-icon material-symbols-outlined'>check</span>
+    </span>
+    <span class='switch-thumb--unselected'></span>
+  </span>
+</span>
+
+
+<h2 style='font-family: var(--ml-font-sans-serif)'>Disabled - unselected - selected and unselected icons</h2>
+<p class='typography-body-large'>Html Markup</p>
+<span class='switch'>
+  <input type='checkbox' role='switch' id='text8' disabled>
+  <span class='switch-track'></span>
+  <span class='switch-thumb'>
+    <span class='switch-thumb--selected'>
+      <span class='switch-thumb-icon material-symbols-outlined'>check</span>
+    </span>
+    <span class='switch-thumb--unselected'>
+      <span class='switch-thumb-icon material-symbols-outlined'>close</span>
+    </span>
+  </span>
+</span>
+
+<h2 style='font-family: var(--ml-font-sans-serif)'>Disabled - selected - selected and unselected icons</h2>
+<p class='typography-body-large'>Html Markup</p>
+<span class='switch'>
+  <input type='checkbox' role='switch' id='text8' checked disabled>
+  <span class='switch-track'></span>
+  <span class='switch-thumb'>
+    <span class='switch-thumb--selected'>
+      <span class='switch-thumb-icon material-symbols-outlined'>check</span>
+    </span>
+    <span class='switch-thumb--unselected'>
+      <span class='switch-thumb-icon material-symbols-outlined'>close</span>
+    </span>
+  </span>
+</span>
